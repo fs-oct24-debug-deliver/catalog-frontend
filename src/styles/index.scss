@@ -1,31 +1,21 @@
 @use './reset.scss';
-
-$secondary: #75767f;
-$icons: #4a4d58;
-$elements: #3b3e4a;
-$surface2: #323542;
-$surface1: #161827;
-$black: #0f1121;
-$white: #f1f2f9;
-$accent: #905bff;
-$green: #27ae60;
-$red: #eb5757;
+@use './utils/variables.scss' as v;
 
 @font-face {
   font-family: Mont;
-  src: url('../../src/assets/fonts/Mont-Bold.otf');
+  src: url('./fonts/Mont-Bold.otf');
   font-weight: 800;
 }
 
 @font-face {
   font-family: Mont;
-  src: url('../../src/assets/fonts/Mont-SemiBold.otf');
+  src: url('./fonts/Mont-SemiBold.otf');
   font-weight: 700;
 }
 
 @font-face {
   font-family: Mont;
-  src: url('../../src/assets/fonts/Mont-Regular.otf');
+  src: url('./fonts/Mont-Regular.otf');
   font-weight: 500;
 }
 
@@ -40,8 +30,8 @@ body {
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
-  color: $white;
-  background-color: $black;
+  color: v.$white;
+  background-color: v.$black;
 }
 
 h1 {
