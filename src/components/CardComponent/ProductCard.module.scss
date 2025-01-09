@@ -1,14 +1,24 @@
+@import '../../styles/index.scss';
+@import '../../styles/utils/mixins.scss';
+
 .card {
-  width: 272px;
+  min-width: 212px;
   padding: 32px;
   gap: 8px;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: space-between;
-  background-color: #161827;
+  background-color: $surface1;
+
+  @include screen-width(table) {
+    min-width: 237px;
+  }
+
+  @include screen-width(desktop) {
+    min-width: 277px;
+  }
 }
 
 .photo {
@@ -27,14 +37,14 @@
   font-weight: 600;
   line-height: 21px;
   text-align: left;
-  color: #f1f2f9;
+  color: $white;
 }
 
 .price {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #f1f2f9;
+  color: $white;
 
   &__actual {
     font-size: 22px;
@@ -47,12 +57,12 @@
     font-weight: 600;
     line-height: 28.12px;
     text-decoration: line-through;
-    color: #75767f;
+    color: $secondary;
   }
 }
 
 .separator {
-  border: 1px solid #3b3e4a;
+  border: 1px solid $elements;
 }
 
 .details {
@@ -75,11 +85,16 @@
 .itemName {
   margin: 0;
   text-align: left;
-  color: #75767f;
+  color: $secondary;
 }
 
 .itemValue {
   margin: 0;
   text-align: right;
-  color: #f1f2f9;
+  color: $white;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
 }
