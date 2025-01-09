@@ -1,0 +1,85 @@
+.card {
+  width: 272px;
+  padding: 32px;
+  gap: 8px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: space-between;
+  background-color: #161827;
+}
+
+.photo {
+  height: 196px;
+  width: 208px;
+  padding: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title {
+  padding-top: 16px;
+  margin: 0;
+  font-family: Mont;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  text-align: left;
+  color: #f1f2f9;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f1f2f9;
+
+  &__actual {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 30.8px;
+  }
+
+  &__old {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28.12px;
+    text-decoration: line-through;
+    color: #75767f;
+  }
+}
+
+.separator {
+  border: 1px solid #3b3e4a;
+}
+
+.details {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 15.34px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.itemName {
+  margin: 0;
+  text-align: left;
+  color: #75767f;
+}
+
+.itemValue {
+  margin: 0;
+  text-align: right;
+  color: #f1f2f9;
+}
