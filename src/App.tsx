@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import './App.module.scss';
 
 const App = () => <h1>Debug & Deliver</h1>;
