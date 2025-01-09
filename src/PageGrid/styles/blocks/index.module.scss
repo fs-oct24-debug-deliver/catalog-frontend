@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  margin: 0 auto;
+  gap: 16px;
+
+  grid-template-columns: repeat(4, 32px);
+
+  @include on-desktop() {
+    grid-template-columns: repeat(24, 32px);
+    @include padding-inline();
+  }
+
+  @include on-tablet() {
+    grid-template-columns: repeat(12, 32px);
+    @include padding-inline();
+  }
+}
+
+.item {
+  background-color: #4a4a4a;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+}
