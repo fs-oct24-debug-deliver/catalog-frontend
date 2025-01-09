@@ -1,0 +1,59 @@
+@import '../../styles//utils/variables.scss';
+
+.footer {
+  display: block;
+  text-align: left;
+  padding-block: 32px;
+  padding-inline: 16px;
+  border-top: 1px solid $elements;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 1200px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background-color: $surface2;
+  height: 32px;
+  width: 32px;
+  border: 1px solid $surface2;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: $secondary;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  margin-top: 0;
+  margin-inline: auto;
+  gap: 106px;
+}
+
+.link {
+  color: $secondary;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: $white;
+}
+
+.to_top {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  color: $secondary;
+  margin-right: 16px;
+}
