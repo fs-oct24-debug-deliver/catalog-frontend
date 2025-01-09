@@ -1,6 +1,5 @@
 import './App.module.scss';
-import { Outlet } from 'react-router-dom';
 
-const App = () => <Outlet />;
+const App = () => <h1>Debug & Deliver</h1>;
 
 export default App;

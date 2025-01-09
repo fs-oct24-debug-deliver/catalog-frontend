@@ -24,11 +24,7 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       react, // We register the "eslint-plugin-react" plugin
     },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
+
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...react.configs.recommended.rules, // This way we use recommended set of rules from "eslint-plugin-react" plugin
