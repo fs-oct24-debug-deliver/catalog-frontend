@@ -1,0 +1,23 @@
+@mixin screen-width($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 640px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: 16px;
+
+  @include screen-width(tablet) {
+    padding-inline: 24px;
+  }
+
+  @include screen-width(desktop) {
+    padding-inline: 32px;
+  }
+}

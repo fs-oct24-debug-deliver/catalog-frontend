@@ -1,8 +1,11 @@
-import './App.css';
-import { PageGrid } from './PageGrid/PageGrid';
+import './App.module.scss';
 
-function App() {
-  return <PageGrid />;
-}
+const App = () => {
+  return (
+    <>
+      <h1>Debug & Deliver</h1>
+    </>
+  );
+};
 
 export default App;
