@@ -1,0 +1,92 @@
+@use './reset.scss';
+
+$secondary: #75767f;
+$icons: #4a4d58;
+$elements: #3b3e4a;
+$surface2: #323542;
+$surface1: #161827;
+$black: #0f1121;
+$white: #f1f2f9;
+$accent: #905bff;
+$green: #27ae60;
+$red: #eb5757;
+
+@font-face {
+  font-family: Mont;
+  src: url('../../src/assets/fonts/Mont-Bold.otf');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: Mont;
+  src: url('../../src/assets/fonts/Mont-SemiBold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Mont;
+  src: url('../../src/assets/fonts/Mont-Regular.otf');
+  font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Mont, 'serif';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $white;
+  background-color: $black;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1%;
+}
+h2 {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -1%;
+}
+h3 {
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0;
+}
+h4 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.defaultButtonStyles {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+.defaultSmallTextStyles {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0;
+}
+
+.defaultUppercaseStyles {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 11px;
+  letter-spacing: 4%;
+}
