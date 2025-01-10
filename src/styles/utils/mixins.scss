@@ -1,5 +1,5 @@
 @mixin screen-width($breakpoint) {
-  @if $breakpoint == table {
+  @if $breakpoint == tablet {
     @media (min-width: 640px) {
       @content;
     }
