@@ -1,0 +1,136 @@
+@use '../../../styles/utils/variables.scss' as v;
+
+.menu {
+  &__layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+    transition: 0.4s;
+    background: v.$black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    border-bottom: 1px solid v.$secondary;
+  }
+  &__logo {
+    margin-inline: 16px;
+  }
+  &__topLink {
+    width: 48px;
+    border-left: 1px solid v.$secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &__nav {
+    margin-block: 24px;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+  &__link {
+    color: v.$secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    padding-block: 8px;
+
+    &:hover {
+      color: v.$white;
+    }
+
+    &_active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: relative;
+      padding-block: 8px;
+
+      color: v.$white;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: v.$white;
+      }
+    }
+  }
+  &__bottom {
+    height: 64px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid v.$secondary;
+
+    &_link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &.border {
+        border-right: 1px solid v.$secondary;
+      }
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: v.$white;
+        }
+      }
+    }
+  }
+  &__link_block {
+    position: relative;
+  }
+  &__counter {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -6px;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: v.$red;
+  }
+  &__counter_number {
+    transform: translateY(1px);
+    font-family: Mont;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 11.5px;
+    color: v.$white;
+  }
+}
+
+.open {
+  transform: translateX(0);
+}

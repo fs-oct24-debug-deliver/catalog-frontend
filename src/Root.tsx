@@ -5,7 +5,7 @@ import { PhonesPage } from './pages/PhonesPage';
 import { ProductDetailsPage } from './pages/ProductDetailsPage';
 import { TabletsPage } from './pages/TabletsPage';
 import { AccessoriesPage } from './pages/AccessoriesPage';
-import { FavoritePage } from './pages/FavoritePage';
+import { FavoritesPage } from './pages/FavoritesPage';
 import { CartPage } from './pages/CartPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -49,7 +49,7 @@ export const Root = () => (
         </Route>
         <Route
           path="favorites"
-          element={<FavoritePage />}
+          element={<FavoritesPage />}
         />
         <Route
           path="cart"
