@@ -1,5 +1,5 @@
-@import '../../styles/utils/variables.scss';
-@import '../../styles/utils/mixins.scss';
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
 
 .container_back {
   margin: 40px 0 16px 0;
@@ -52,10 +52,14 @@
 .checkout {
   background-color: $surface1;
   width: 100%;
+  @include screen-width(desktop) {
+    max-width: 206px;
+  }
 }
 
 .card_wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 16px;
 }
