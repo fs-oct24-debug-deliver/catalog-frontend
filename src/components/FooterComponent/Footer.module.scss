@@ -1,4 +1,5 @@
-@import '../../styles//utils/variables.scss';
+@import '../../styles/utils/variables.scss';
+@import '../../styles/utils/mixins.scss';
 
 .footer {
   display: block;
@@ -10,12 +11,26 @@
 
 .wrapper {
   display: flex;
-  align-items: center;
-  margin-inline: auto;
-  max-width: 1200px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+
+  @include screen-width(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 32px;
+  }
+
+  @include screen-width(desktop) {
+    padding-inline: 152px;
+  }
+}
+
+.logo {
+  margin-bottom: 32px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .button {
@@ -24,33 +39,44 @@
   width: 32px;
   border: 1px solid $surface2;
   transition: background-color 0.3s;
-}
 
-.button:hover {
-  background-color: $secondary;
-  cursor: pointer;
+  &:hover {
+    background-color: $secondary;
+    cursor: pointer;
+  }
 }
 
 .links {
   display: flex;
   margin-top: 0;
-  margin-inline: auto;
-  gap: 106px;
+  gap: 16px;
+  flex-direction: column;
+
+  @include screen-width(tablet) {
+    gap: 106px;
+    flex-direction: row;
+  }
 }
 
 .link {
   color: $secondary;
   text-decoration: none;
   transition: color 0.3s;
-}
 
-.link:hover {
-  color: $white;
+  &:hover {
+    color: $white;
+  }
 }
 
 .to_top {
   display: flex;
   align-items: center;
+  margin-top: 16px;
+  justify-content: center;
+
+  @include screen-width(tablet) {
+    margin-top: 0;
+  }
 }
 
 .label {

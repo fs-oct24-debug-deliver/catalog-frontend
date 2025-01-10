@@ -5,12 +5,11 @@ export const Footer = () => {
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.wrapper}>
-        <div className="footer__logo-wrapper">
+        <div className={footerStyles.logo}>
           <NavLink to="/">
             <img
               src="../public/img/icons/logo.svg"
               alt="Logo"
-              className="footer__logo"
             />
           </NavLink>
         </div>
