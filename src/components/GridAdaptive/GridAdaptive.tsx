@@ -1,5 +1,4 @@
 import stylesGrid from '../../components/GridAdaptive/styles/blocks/index.module.scss';
-import '../../../src/styles/utils/mixins.scss';
 
 export const GridAdaptive = () => {
   return (
