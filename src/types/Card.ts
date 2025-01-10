@@ -1,6 +1,6 @@
 export interface Card {
   id: number;
-  cactegory: string;
+  category: string;
   itemId: string;
   name: string;
   fullPrice: number;
