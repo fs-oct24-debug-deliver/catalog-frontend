@@ -1,26 +1,26 @@
-@import '../../styles/utils/variables.scss';
-@import '../../styles/utils/mixins.scss';
+@use '../../styles/utils/variables.scss' as variables;
+@use '../../styles/utils/mixins.scss' as mixins;
 
 .footer {
   display: block;
   text-align: left;
   padding-block: 32px;
   padding-inline: 16px;
-  border-top: 1px solid $elements;
+  border-top: 1px solid variables.$elements;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
 
-  @include screen-width(tablet) {
+  @include mixins.screen-width(tablet) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-inline: 32px;
   }
 
-  @include screen-width(desktop) {
+  @include mixins.screen-width(desktop) {
     padding-inline: 152px;
   }
 }
@@ -28,20 +28,20 @@
 .logo {
   margin-bottom: 32px;
 
-  @include screen-width(tablet) {
+  @include mixins.screen-width(tablet) {
     margin-bottom: 0;
   }
 }
 
 .button {
-  background-color: $surface2;
+  background-color: variables.$surface2;
   height: 32px;
   width: 32px;
-  border: 1px solid $surface2;
+  border: 1px solid variables.$surface2;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: $secondary;
+    background-color: variables.$secondary;
     cursor: pointer;
   }
 }
@@ -52,19 +52,19 @@
   gap: 16px;
   flex-direction: column;
 
-  @include screen-width(tablet) {
+  @include mixins.screen-width(tablet) {
     gap: 106px;
     flex-direction: row;
   }
 }
 
 .link {
-  color: $secondary;
+  color: variables.$secondary;
   text-decoration: none;
   transition: color 0.3s;
 
   &:hover {
-    color: $white;
+    color: variables.$white;
   }
 }
 
@@ -74,12 +74,12 @@
   margin-top: 16px;
   justify-content: center;
 
-  @include screen-width(tablet) {
+  @include mixins.screen-width(tablet) {
     margin-top: 0;
   }
 }
 
 .label {
-  color: $secondary;
+  color: variables.$secondary;
   margin-right: 16px;
 }
