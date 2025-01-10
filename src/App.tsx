@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
+import { Header } from './components/Header.tsx/Header';
+import { Footer } from './components/FooterComponent/Footer';
 
-import './App.module.scss';
-
-const App = () => {
-  return (
-    <div>
-      {/* <Header /> */}
+const App = () => (
+  <>
+    <Header />
+    <div className="container">
       <Outlet />
-      {/* <Footer /> */}
     </div>
-  );
-};
+    <Footer />
+  </>
+);
 
 export default App;
