@@ -1,0 +1,61 @@
+@import '../../styles/utils/variables.scss';
+@import '../../styles/utils/mixins.scss';
+
+.container_back {
+  margin: 40px 0 16px 0;
+  display: flex;
+  gap: 4px;
+}
+
+.button {
+  background-color: $black;
+  height: 20px;
+  width: 20px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  transition: background-color, 0.3s;
+
+  &:hover {
+    background-color: $secondary;
+    cursor: pointer;
+  }
+}
+
+.back {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 32px 0 56px;
+
+  @include screen-width(tablet) {
+    margin: 32px 0 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin: 32px 0 80px;
+    flex-direction: row;
+  }
+}
+
+.card {
+  background-color: $surface1;
+  width: 100%;
+}
+
+.checkout {
+  background-color: $surface1;
+  width: 100%;
+}
+
+.card_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
