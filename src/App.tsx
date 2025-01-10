@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
 import './App.module.scss';
-import { CartPage } from './pages/CartPage';
 
 const App = () => {
   return (
@@ -9,7 +8,6 @@ const App = () => {
       {/* <Header /> */}
       <Outlet />
       {/* <Footer /> */}
-      <CartPage />
     </div>
   );
 };
