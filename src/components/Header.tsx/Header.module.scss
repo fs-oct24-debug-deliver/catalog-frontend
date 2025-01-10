@@ -1,8 +1,8 @@
+@use '../../styles/utils/variables.scss' as v;
 @import '../../styles/utils/mixins.scss';
-@import '../../styles/utils/variables.scss';
 
 .header {
-  border-bottom: 1px solid $secondary;
+  border-bottom: 1px solid v.$secondary;
   display: flex;
   height: 48px;
   justify-content: space-between;
@@ -63,13 +63,13 @@
     height: 100%;
   }
   &__link {
-    color: $secondary;
+    color: v.$secondary;
     display: flex;
     align-items: center;
     transition: 0.3s;
 
     &:hover {
-      color: $white;
+      color: v.$white;
     }
 
     &_active {
@@ -78,7 +78,7 @@
       height: 100%;
       position: relative;
 
-      color: $white;
+      color: v.$white;
       &::after {
         content: '';
         position: absolute;
@@ -86,7 +86,7 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: $white;
+        background: v.$white;
       }
     }
   }
@@ -103,7 +103,7 @@
   }
   &__iconLeft_link {
     width: 48px;
-    border-left: 1px solid $secondary;
+    border-left: 1px solid v.$secondary;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +125,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: $red;
+    background: v.$red;
   }
   &__counter_number {
     transform: translateY(1px);
@@ -133,7 +133,7 @@
     font-size: 9px;
     font-weight: 700;
     line-height: 11.5px;
-    color: $white;
+    color: v.$white;
   }
   &__burger {
     display: block;
