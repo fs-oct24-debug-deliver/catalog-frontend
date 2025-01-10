@@ -1,0 +1,85 @@
+@use '../../styles/utils/variables.scss' as variables;
+@use '../../styles/utils/mixins.scss' as mixins;
+
+.footer {
+  display: block;
+  text-align: left;
+  padding-block: 32px;
+  padding-inline: 16px;
+  border-top: 1px solid variables.$elements;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.screen-width(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 32px;
+  }
+
+  @include mixins.screen-width(desktop) {
+    padding-inline: 152px;
+  }
+}
+
+.logo {
+  margin-bottom: 32px;
+
+  @include mixins.screen-width(tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.button {
+  background-color: variables.$surface2;
+  height: 32px;
+  width: 32px;
+  border: 1px solid variables.$surface2;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: variables.$secondary;
+    cursor: pointer;
+  }
+}
+
+.links {
+  display: flex;
+  margin-top: 0;
+  gap: 16px;
+  flex-direction: column;
+
+  @include mixins.screen-width(tablet) {
+    gap: 106px;
+    flex-direction: row;
+  }
+}
+
+.link {
+  color: variables.$secondary;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: variables.$white;
+  }
+}
+
+.to_top {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  justify-content: center;
+
+  @include mixins.screen-width(tablet) {
+    margin-top: 0;
+  }
+}
+
+.label {
+  color: variables.$secondary;
+  margin-right: 16px;
+}
