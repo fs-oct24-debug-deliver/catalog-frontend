@@ -7,11 +7,11 @@ export const CartPage = () => {
       <div className={styles.container_back}>
         <button className={styles.button}>
           <img
-            src="../public/img/icons/arrow-back.svg"
+            src="./img/icons/arrow-back.svg"
             alt="aroow back icon"
           />
+          <span>Back</span>
         </button>
-        <span>Back</span>
       </div>
       <h1>Cart</h1>
       <div className={styles.wrapper}>

@@ -8,12 +8,16 @@
 }
 
 .button {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  color: $white;
+  font-size: 12px;
+  font-weight: 700;
   background-color: $black;
-  height: 20px;
-  width: 20px;
-  box-shadow: none;
-  border: none;
-  outline: none;
+  line-height: 20px;
+  padding: 3px;
+  border-radius: 7px;
   transition: background-color, 0.3s;
 
   &:hover {
