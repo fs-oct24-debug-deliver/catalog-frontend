@@ -10,7 +10,7 @@ export const CartPage = () => {
         <span>Back</span>
       </div>
 
-      <h1 className={styles.title}>Cart</h1>
+      <h1 className={`h1`}>Cart</h1>
 
       <div className={styles.wrapper}>
         <div className={styles.card_wrapper}>
