@@ -6,10 +6,10 @@ permissions:
 on:
   pull_request:
     branches:
-      - main
+      - develop
   push:
     branches:
-      - main # Replace with the correct branch name if different
+      - develop # Replace with the correct branch name if different
 
 jobs:
   lint:
