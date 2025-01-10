@@ -37,6 +37,7 @@
   background-color: variables.$surface2;
   height: 32px;
   width: 32px;
+  min-width: 32px;
   border: 1px solid variables.$surface2;
   transition: background-color 0.3s;
 
@@ -51,9 +52,10 @@
   margin-top: 0;
   gap: 16px;
   flex-direction: column;
+  width: 100%;
 
   @include mixins.screen-width(tablet) {
-    gap: 106px;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 }
@@ -73,6 +75,7 @@
   align-items: center;
   margin-top: 16px;
   justify-content: center;
+  min-width: 118px;
 
   @include mixins.screen-width(tablet) {
     margin-top: 0;

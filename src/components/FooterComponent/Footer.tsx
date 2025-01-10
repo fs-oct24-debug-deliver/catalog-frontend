@@ -1,16 +1,22 @@
 import { Link, NavLink } from 'react-router-dom';
 import footerStyles from './Footer.module.scss';
+import ArrowUp from '../../../public/img/icons/arrow-up.svg?react';
+import Logo from '../../../public/img/icons/logo.svg?react';
 
 export const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.wrapper}>
         <div className={footerStyles.logo}>
           <NavLink to="/">
-            <img
-              src="../public/img/icons/logo.svg"
-              alt="Logo"
-            />
+            <Logo />
           </NavLink>
         </div>
 
@@ -44,8 +50,11 @@ export const Footer = () => {
           <span className={`${footerStyles.label} defaultSmallTextStyles`}>
             Back to top
           </span>
-          <button className={footerStyles.button}>
-            <img src="../public/img/icons/arrow-up.svg"></img>
+          <button
+            className={footerStyles.button}
+            onClick={scrollToTop}
+          >
+            <ArrowUp />
           </button>
         </div>
       </div>
