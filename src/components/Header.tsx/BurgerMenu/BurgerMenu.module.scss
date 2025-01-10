@@ -1,4 +1,4 @@
-@import '../../../styles/utils/variables.scss';
+@use '../../../styles/utils/variables.scss' as v;
 
 .menu {
   &__layout {
@@ -9,7 +9,7 @@
     width: 100%;
     transform: translateX(100%);
     transition: 0.4s;
-    background: $black;
+    background: v.$black;
     display: flex;
     flex-direction: column;
   }
@@ -19,14 +19,14 @@
     justify-content: space-between;
     align-items: center;
     height: 48px;
-    border-bottom: 1px solid $secondary;
+    border-bottom: 1px solid v.$secondary;
   }
   &__logo {
     margin-inline: 16px;
   }
   &__topLink {
     width: 48px;
-    border-left: 1px solid $secondary;
+    border-left: 1px solid v.$secondary;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@
     justify-content: center;
   }
   &__link {
-    color: $secondary;
+    color: v.$secondary;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +56,7 @@
     padding-block: 8px;
 
     &:hover {
-      color: $white;
+      color: v.$white;
     }
 
     &_active {
@@ -67,7 +67,7 @@
       position: relative;
       padding-block: 8px;
 
-      color: $white;
+      color: v.$white;
       &::after {
         content: '';
         position: absolute;
@@ -75,7 +75,7 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: $white;
+        background: v.$white;
       }
     }
   }
@@ -83,7 +83,7 @@
     height: 64px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border-top: 1px solid $secondary;
+    border-top: 1px solid v.$secondary;
 
     &_link {
       display: flex;
@@ -91,7 +91,7 @@
       justify-content: center;
       position: relative;
       &.border {
-        border-right: 1px solid $secondary;
+        border-right: 1px solid v.$secondary;
       }
       &.active {
         &::after {
@@ -101,7 +101,7 @@
           left: 0;
           width: 100%;
           height: 3px;
-          background: $white;
+          background: v.$white;
         }
       }
     }
@@ -119,7 +119,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: $red;
+    background: v.$red;
   }
   &__counter_number {
     transform: translateY(1px);
@@ -127,7 +127,7 @@
     font-size: 9px;
     font-weight: 700;
     line-height: 11.5px;
-    color: $white;
+    color: v.$white;
   }
 }
 
