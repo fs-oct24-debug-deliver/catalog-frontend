@@ -1,0 +1,67 @@
+@use '../../styles/utils/mixins.scss' as m;
+@use '../../styles/utils/variables.scss' as v;
+
+.layout {
+  background: v.$surface1;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  @include m.screen-width(tablet) {
+    padding: 24px;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+.first {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+
+  @include m.screen-width(tablet) {
+    gap: 24px;
+  }
+}
+.image {
+  width: 66px;
+  height: 66px;
+  padding: 7px;
+  margin-left: 10px;
+
+  @include m.screen-width(tablet) {
+    margin-left: 0;
+  }
+}
+.second {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  &_right {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  @include m.screen-width(tablet) {
+    justify-content: end;
+    gap: 24px;
+  }
+}
+.button {
+  height: 32px;
+  width: 32px;
+  border: 1px solid v.$surface2;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 7px;
+
+  &_plus {
+    background: v.$surface2;
+  }
+}

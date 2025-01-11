@@ -6,12 +6,14 @@ import { TemplatePage } from '../TemplatePage';
 export const AccessoriesPage = () => {
   const [accessories, setAccessories] = useState<Card[]>([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getProductsByCategory('accessories')
       .then(setAccessories)
       .catch(() => setErrorMessage('Looks like something went Wrong!'))
-      .finally();
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
@@ -19,6 +21,7 @@ export const AccessoriesPage = () => {
       title={'Accessories'}
       products={accessories}
       errorMessage={errorMessage}
+      isLoading={isLoading}
     />
   );
 };

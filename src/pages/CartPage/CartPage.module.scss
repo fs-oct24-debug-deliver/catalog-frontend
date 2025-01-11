@@ -1,5 +1,5 @@
-@import '../../styles/utils/variables.scss';
-@import '../../styles/utils/mixins.scss';
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
 
 .container_back {
   margin: 40px 0 16px 0;
@@ -8,18 +8,22 @@
 }
 
 .button {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  color: $white;
+  font-size: 12px;
+  font-weight: 700;
   background-color: $black;
-  height: 20px;
-  width: 20px;
-  box-shadow: none;
-  border: none;
-  outline: none;
+  line-height: 20px;
+  padding: 3px;
+  border-radius: 7px;
   transition: background-color, 0.3s;
 
   &:hover {
     background-color: $secondary;
     cursor: pointer;
-  }
+  }git 
 }
 
 .back {
@@ -52,10 +56,14 @@
 .checkout {
   background-color: $surface1;
   width: 100%;
+  @include screen-width(desktop) {
+    max-width: 206px;
+  }
 }
 
 .card_wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 16px;
 }

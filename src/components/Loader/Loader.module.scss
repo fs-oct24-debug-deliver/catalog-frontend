@@ -1,4 +1,5 @@
 @import '../../styles/index.scss';
+@import '../../styles/utils/variables.scss';
 
 .Loader {
   display: flex;
@@ -11,8 +12,8 @@
     width: 2em;
     height: 2em;
     margin: 1em auto;
-    border: 0.3em solid $white-color;
-    border-left-color: $accent-color-hover;
+    border: 0.3em solid $white;
+    border-left-color: $accent2;
     animation: load8 1.2s infinite linear;
   }
 }
