@@ -12,7 +12,9 @@ export const PhonesPage = () => {
     setIsLoading(true);
     getProductsByCategory('phones')
       .then(setPhones)
-      .catch(() => setErrorMessage('Looks like something went Wrong!'))
+      .catch(() =>
+        setErrorMessage('Failed to load phones. Please try again later.'),
+      )
       .finally(() => setIsLoading(false));
   }, []);
 

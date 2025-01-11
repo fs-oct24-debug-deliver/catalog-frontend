@@ -7,7 +7,7 @@ import { Loader } from '../../components/Loader';
 type Props = {
   title: string;
   products: Card[];
-  errorMessage: string;
+  errorMessage?: string;
   isLoading: boolean;
 };
 
@@ -25,7 +25,9 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
           {isLoading && <Loader />}
 
-          <GridAdaptive products={products} />
+          {!products.length ?
+            <p className={templateStyles.emptyState}>No models available.</p>
+          : <GridAdaptive products={products} />}
         </div>
       }
     </>

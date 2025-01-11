@@ -20,7 +20,7 @@ export const CartPage = () => {
           <CartItem />
           <CartItem />
         </div>
-        <div className={styles.checkout}>CHECKOUT</div>
+        <div className={styles.checkout}>Checkout</div>
       </div>
     </>
   );

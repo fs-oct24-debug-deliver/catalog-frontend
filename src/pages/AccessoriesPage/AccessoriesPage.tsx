@@ -12,7 +12,9 @@ export const AccessoriesPage = () => {
     setIsLoading(true);
     getProductsByCategory('accessories')
       .then(setAccessories)
-      .catch(() => setErrorMessage('Looks like something went Wrong!'))
+      .catch(() =>
+        setErrorMessage('Failed to load accessories. Please try again later.'),
+      )
       .finally(() => setIsLoading(false));
   }, []);
 
