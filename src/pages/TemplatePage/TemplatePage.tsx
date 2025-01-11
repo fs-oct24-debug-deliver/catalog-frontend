@@ -15,8 +15,6 @@ export const TemplatePage: React.FC<Props> = (props) => {
   const { title, products, errorMessage, isLoading } = props;
   return (
     <>
-      {isLoading && <Loader />}
-
       {errorMessage ?
         <h1 className={templateStyles.title}>{errorMessage}</h1>
       : <div>
@@ -24,6 +22,8 @@ export const TemplatePage: React.FC<Props> = (props) => {
           <p
             className={templateStyles.countOfModels}
           >{`${products.length} models`}</p>
+
+          {isLoading && <Loader />}
 
           <GridAdaptive products={products} />
         </div>

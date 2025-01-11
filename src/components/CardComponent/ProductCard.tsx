@@ -49,7 +49,7 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
       </ul>
 
       <div className={cardStyles.buttons}>
-        <ButtonAddToCard />
+        <ButtonAddToCard title="Add to cart" />
         <ButtonAddToFavourites />
       </div>
     </div>
