@@ -1,0 +1,57 @@
+@use '../../../styles/utils/mixins.scss' as mixins;
+@use '../../../styles/utils/variables.scss' as variables;
+
+.swiperButtonLeft,
+.swiperButtonRight {
+  display: none;
+
+  @include mixins.screen-width(tablet) {
+    display: block;
+    width: 32px;
+    height: 100%;
+
+    border: 1px solid;
+    color: variables.$white;
+    border-radius: 6px;
+    background-color: variables.$surface2;
+
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+.swiperPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.swiper-pagination-bullet {
+  width: 30px;
+}
+
+.swiperButtonLeft {
+  left: 0;
+}
+
+.swiperButtonRight {
+  right: 0;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16/9;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
