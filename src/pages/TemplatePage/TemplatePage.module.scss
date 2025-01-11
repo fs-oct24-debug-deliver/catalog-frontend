@@ -1,10 +1,10 @@
-@import '../../styles/utils/variables.scss';
+@use '../../styles/utils/variables.scss' as variables;
 
 .title {
   margin-bottom: 8px;
 }
 
 .countOfModels {
-  color: $secondary;
+  color: variables.$secondary;
   margin-bottom: 8px;
 }
