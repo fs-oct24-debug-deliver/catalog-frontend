@@ -8,9 +8,9 @@ import 'swiper/swiper-bundle.css';
 import styles from './HomePageSwiper.module.scss';
 import './HomePageSwiperBullets.css';
 
-import bannerAccessories from '../../../../public/img/HomePageSwiper/bannerAccessories.png';
-import bannerPhones from '../../../../public/img/HomePageSwiper/bannerPhones.png';
-import bannerTablets from '../../../../public/img/HomePageSwiper/bannerTablets.png';
+import bannerAccessories from './img/bannerAccessories.png';
+import bannerPhones from './img/bannerPhones.png';
+import bannerTablets from './img/bannerTablets.png';
 
 export const HomePageSwiper: React.FC = () => {
   return (
@@ -63,10 +63,10 @@ export const HomePageSwiper: React.FC = () => {
               />
             </div>
           </SwiperSlide>
-          <div className={styles.swiperPagination}></div>
         </Swiper>
         <button className={styles.swiperButtonNext}>{'>'}</button>
       </div>
+      <div className={styles.swiperPagination}></div>
     </>
   );
 };

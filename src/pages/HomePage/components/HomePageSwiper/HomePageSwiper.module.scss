@@ -1,5 +1,5 @@
-@use '../../../styles/utils/mixins.scss' as *;
-@use '../../../styles/utils/variables.scss' as variables;
+@use '../../../../../src/styles/utils/mixins.scss' as *;
+@use '../../../../styles/utils/variables.scss' as variables;
 
 .swiperPagination {
   display: flex;
@@ -47,4 +47,12 @@
   display: flex;
   gap: 16px;
   padding-top: 56px;
+
+  @include screen-width(tablet) {
+    padding-inline: 24px;
+  }
+
+  @include screen-width(desktop) {
+    padding-inline: 152px;
+  }
 }
