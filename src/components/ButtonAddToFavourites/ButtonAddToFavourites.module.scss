@@ -1,4 +1,4 @@
-@import '../../styles/utils/variables.scss';
+@use '../../styles/utils/variables.scss' as variables;
 
 .buttonOfHeart {
   display: flex;
@@ -6,12 +6,12 @@
   align-items: center;
   min-width: 40px;
   height: 40px;
-  background-color: $surface2;
+  background-color: variables.$surface2;
   cursor: pointer;
   border: 0;
   box-sizing: border-box;
 
   &:hover {
-    background-color: $icons;
+    background-color: variables.$icons;
   }
 }

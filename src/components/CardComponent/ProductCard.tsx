@@ -9,21 +9,25 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ card }) => {
+  const { image, name, fullPrice, price, screen, capacity, ram } = card;
   return (
-    <div className={cardStyles.card}>
-      <img
-        src={card.image}
-        alt="Photo phone"
-        className={cardStyles.photo}
-      />
+    <section className={cardStyles.card}>
+      <a
+        href="#"
+        className={cardStyles.imgLink}
+      >
+        <img
+          src={image}
+          alt="Photo phone"
+          className={cardStyles.photo}
+        />
+      </a>
 
-      <h4 className={cardStyles.title}>{card.name}</h4>
+      <h4 className={cardStyles.title}>{name}</h4>
 
       <div className={cardStyles.price}>
-        <div className={cardStyles.price__actual}>
-          ${card.fullPrice - card.price}
-        </div>
-        <div className={cardStyles.price__old}>${card.fullPrice}</div>
+        <div className={cardStyles.price__actual}>${fullPrice - price}</div>
+        <div className={cardStyles.price__old}>${fullPrice}</div>
       </div>
 
       <div className={cardStyles.separator}></div>
@@ -31,22 +35,22 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
       <ul className={cardStyles.details}>
         <li className={cardStyles.item}>
           <p className={cardStyles.itemName}>Screen</p>
-          <p className={cardStyles.itemValue}>{card.screen}</p>
+          <p className={cardStyles.itemValue}>{screen}</p>
         </li>
         <li className={cardStyles.item}>
           <p className={cardStyles.itemName}>Capacity</p>
-          <p className={cardStyles.itemValue}>{card.capacity}</p>
+          <p className={cardStyles.itemValue}>{capacity}</p>
         </li>
         <li className={cardStyles.item}>
           <p className={cardStyles.itemName}>RAM</p>
-          <p className={cardStyles.itemValue}>{card.ram}</p>
+          <p className={cardStyles.itemValue}>{ram}</p>
         </li>
       </ul>
 
       <div className={cardStyles.buttons}>
-        <ButtonAddToCard />
+        <ButtonAddToCard title="Add to cart" />
         <ButtonAddToFavourites />
       </div>
-    </div>
+    </section>
   );
 };
