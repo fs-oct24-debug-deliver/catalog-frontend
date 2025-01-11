@@ -29,13 +29,11 @@ const cartSlice = createSlice({
       const exists = state.items.find((item) => item.id === action.payload.id);
       if (!exists) {
         state.items.push(action.payload);
-        // localStorage.setItem('cart', JSON.stringify(state.items));
       }
     },
 
     removeCart: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
-      // localStorage.setItem('cart', JSON.stringify(state.items));
     },
 
     addQuantity: (state, action: PayloadAction<number>) => {
@@ -54,7 +52,6 @@ const cartSlice = createSlice({
 
     clearCart: (state) => {
       state.items = [];
-      // localStorage.setItem('cart', JSON.stringify(state.items));
     },
   },
 });
