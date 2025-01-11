@@ -25,13 +25,13 @@ const favoritesSlice = createSlice({
       const exists = state.items.find((item) => item.id === action.payload.id);
       if (!exists) {
         state.items.push(action.payload);
-        // localStorage.setItem('cart', JSON.stringify(state.items));
       }
     },
+
     removeFavorite: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
-      // localStorage.setItem('cart', JSON.stringify(state.items));
     },
+
     clearFavorites: (state) => {
       state.items = [];
     },
