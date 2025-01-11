@@ -6,6 +6,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/swiper-bundle.css';
 import styles from './HomePageSwiper.module.scss';
+import './HomePageSwiperBullets.css';
 
 import bannerAccessories from '../../../../public/img/HomePageSwiper/bannerAccessories.png';
 import bannerPhones from '../../../../public/img/HomePageSwiper/bannerPhones.png';
@@ -14,9 +15,8 @@ import bannerTablets from '../../../../public/img/HomePageSwiper/bannerTablets.p
 export const HomePageSwiper: React.FC = () => {
   return (
     <>
-      <div className="container">
-        {/* <button className={styles.swiperButtonLeft}>{'<'}</button>
-        <button className={styles.swiperButtonRight}>{'>'}</button> */}
+      <div className={styles.swiperWrapper}>
+        <button className={styles.swiperButtonPrev}>{'<'}</button>
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={0}
@@ -27,8 +27,11 @@ export const HomePageSwiper: React.FC = () => {
             disableOnInteraction: false,
           }}
           speed={1200}
-          style={{ width: '100%', maxWidth: '100%' }}
-          navigation
+          style={{ width: '100%' }}
+          navigation={{
+            nextEl: `.${styles.swiperButtonNext}`,
+            prevEl: `.${styles.swiperButtonPrev}`,
+          }}
           pagination={{ clickable: true, el: `.${styles.swiperPagination}` }}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
@@ -62,6 +65,7 @@ export const HomePageSwiper: React.FC = () => {
           </SwiperSlide>
           <div className={styles.swiperPagination}></div>
         </Swiper>
+        <button className={styles.swiperButtonNext}>{'>'}</button>
       </div>
     </>
   );
