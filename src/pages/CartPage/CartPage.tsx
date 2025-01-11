@@ -1,5 +1,6 @@
 import styles from './CartPage.module.scss';
 import { CartItem } from '../../components/CartItem/CartItem.tsx';
+import { CartCheckout } from '../../components/CartCheckout/CartCheckout.tsx';
 
 export const CartPage = () => {
   return (
@@ -20,7 +21,9 @@ export const CartPage = () => {
           <CartItem />
           <CartItem />
         </div>
-        <div className={styles.checkout}>Checkout</div>
+        <div className={styles.checkout}>
+          <CartCheckout />
+        </div>
       </div>
     </>
   );

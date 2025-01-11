@@ -54,7 +54,6 @@
 }
 
 .checkout {
-  background-color: $surface1;
   width: 100%;
   @include screen-width(desktop) {
     max-width: 206px;

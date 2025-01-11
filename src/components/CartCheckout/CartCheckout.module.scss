@@ -1,0 +1,23 @@
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/index.scss';
+
+.container {
+  padding: 24px;
+  border: 1px solid $elements;
+  background-color: $surface1;
+}
+
+.total {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  margin-bottom: 25px;
+  color: $secondary;
+}
+
+.separator {
+  border: 1px solid $elements;
+  margin-bottom: 24px;
+}
