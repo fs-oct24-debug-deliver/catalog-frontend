@@ -10,8 +10,8 @@ export const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <>
-      <header className={styles.header}>
+    <header>
+      <div className={styles.header}>
         <div className={styles.header__right}>
           <Link to={'/'}>
             <img
@@ -102,11 +102,11 @@ export const Header: React.FC = () => {
             />
           </button>
         </div>
-      </header>
+      </div>
       <BurgerMenu
         open={openMenu}
         setOpen={setOpenMenu}
       />
-    </>
+    </header>
   );
 };

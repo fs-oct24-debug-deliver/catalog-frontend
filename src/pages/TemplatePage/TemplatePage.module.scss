@@ -1,0 +1,10 @@
+@use '../../styles/utils/variables.scss' as variables;
+
+.title {
+  margin-bottom: 8px;
+}
+
+.countOfModels {
+  color: variables.$secondary;
+  margin-bottom: 8px;
+}
