@@ -11,11 +11,16 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ card }) => {
   return (
     <div className={cardStyles.card}>
-      <img
-        src={card.image}
-        alt="Photo phone"
-        className={cardStyles.photo}
-      />
+      <a
+        href="#"
+        className={cardStyles.imgLink}
+      >
+        <img
+          src={card.image}
+          alt="Photo phone"
+          className={cardStyles.photo}
+        />
+      </a>
 
       <h4 className={cardStyles.title}>{card.name}</h4>
 

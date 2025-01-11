@@ -21,11 +21,16 @@
   }
 }
 
+.imgLink {
+  display: flex;
+  justify-content: center;
+}
+
 .photo {
-  height: 196px;
   width: 208px;
-  padding: 0 auto;
-  background-size: contain;
+  height: 196px;
+  object-fit: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
