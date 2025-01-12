@@ -1,4 +1,4 @@
-@use '../../../../styles/utils/mixins.scss' as mixins;
+@use '../../../../styles/utils/mixins.scss' as *;
 
 .container {
   display: grid;
@@ -7,11 +7,11 @@
 
   grid-template-columns: 1fr;
 
-  @include mixins.screen-width(tablet) {
+  @include screen-width(tablet) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include mixins.screen-width(desktop) {
+  @include screen-width(desktop) {
     grid-template-columns: repeat(4, 1fr);
   }
 }

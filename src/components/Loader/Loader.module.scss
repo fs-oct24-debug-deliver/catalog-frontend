@@ -1,4 +1,4 @@
-@use '../../styles/utils/variables.scss' as variables;
+@use '../../styles/utils/variables.scss' as *;
 @use '../../styles/index';
 
 .Loader {
@@ -12,8 +12,8 @@
     width: 2em;
     height: 2em;
     margin: 1em auto;
-    border: 0.3em solid variables.$white;
-    border-left-color: variables.$accent2;
+    border: 0.3em solid $white;
+    border-left-color: $accent2;
     animation: load8 1.2s infinite linear;
   }
 }

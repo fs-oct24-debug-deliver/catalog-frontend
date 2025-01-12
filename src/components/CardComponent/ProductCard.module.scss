@@ -1,5 +1,5 @@
-@use '../../styles/utils/variables.scss' as variables;
-@use '../../styles/utils/mixins.scss' as mixins;
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
 
 .card {
   min-width: 212px;
@@ -10,13 +10,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: variables.$surface1;
+  background-color: $surface1;
 
-  @include mixins.screen-width(table) {
+  @include screen-width(table) {
     min-width: 237px;
   }
 
-  @include mixins.screen-width(desktop) {
+  @include screen-width(desktop) {
     min-width: 277px;
   }
 }
@@ -42,14 +42,14 @@
   font-weight: 600;
   line-height: 21px;
   text-align: left;
-  color: variables.$white;
+  color: $white;
 }
 
 .price {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: variables.$white;
+  color: $white;
 
   &__actual {
     font-size: 22px;
@@ -62,12 +62,12 @@
     font-weight: 600;
     line-height: 28.12px;
     text-decoration: line-through;
-    color: variables.$secondary;
+    color: $secondary;
   }
 }
 
 .separator {
-  border: 1px solid variables.$elements;
+  border: 1px solid $elements;
 }
 
 .details {
@@ -90,13 +90,13 @@
 .itemName {
   margin: 0;
   text-align: left;
-  color: variables.$secondary;
+  color: $secondary;
 }
 
 .itemValue {
   margin: 0;
   text-align: right;
-  color: variables.$white;
+  color: $white;
 }
 
 .buttons {
