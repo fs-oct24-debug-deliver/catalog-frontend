@@ -1,18 +1,13 @@
 import styles from './CartPage.module.scss';
 import { CartItem } from '../../components/CartItem/CartItem.tsx';
+import { ButtonBack } from '../../components/ButtonBack';
 import { CartCheckout } from '../../components/CartCheckout/CartCheckout.tsx';
 
 export const CartPage = () => {
   return (
     <>
       <div className={styles.container_back}>
-        <button className={styles.button}>
-          <img
-            src="./img/icons/arrow-back.svg"
-            alt="aroow back icon"
-          />
-          <span>Back</span>
-        </button>
+        <ButtonBack />
       </div>
       <h1>Cart</h1>
       <div className={styles.wrapper}>

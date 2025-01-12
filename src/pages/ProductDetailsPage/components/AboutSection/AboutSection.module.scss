@@ -1,0 +1,63 @@
+@use '../../../../styles/utils/mixins.scss' as m;
+@use '../../../../styles/utils/variables.scss' as v;
+
+.about {
+  width: 100%;
+  margin: 56px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 16px;
+
+  @include m.screen-width(tablet) {
+    gap: 24px;
+  }
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding-block: 32px;
+  border-top: 1px solid v.$elements;
+}
+
+.articleTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+  color: v.$white;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text {
+  color: v.$text;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@include m.screen-width(tablet) {
+  .text {
+    color: v.$secondary;
+  }
+
+  .articleTitle {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+@include m.screen-width(desktop) {
+  .about {
+    margin-right: 64px;
+    max-width: 560px;
+  }
+}
