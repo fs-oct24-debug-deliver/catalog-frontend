@@ -20,8 +20,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
-    "react-redux": "^9.2.0",
     "redux-persist": "^6.0.0",
+    "svgr": "^1.10.0",
+    "swiper": "^11.2.1",
+    "react-redux": "^9.2.0",
     "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {
@@ -45,7 +47,8 @@
     "sass-embedded": "^1.83.1",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.19.1",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "lint-staged": {
     "*": "npm run fix-style"
