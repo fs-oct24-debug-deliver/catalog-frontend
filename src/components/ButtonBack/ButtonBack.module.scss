@@ -1,0 +1,32 @@
+@use '../../styles/utils/variables.scss' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: $white;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: $black;
+  line-height: 20px;
+  padding: 3px;
+  border-radius: 7px;
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    filter 0.3s;
+
+  &:hover {
+    color: $accent;
+    img {
+      filter: brightness(0) invert(36%) sepia(93%) saturate(550%)
+        hue-rotate(210deg) brightness(95%) contrast(100%);
+    }
+  }
+
+  img {
+    width: 12px;
+    height: 12px;
+    transition: filter 0.3s;
+  }
+}
