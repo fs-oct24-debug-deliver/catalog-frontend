@@ -4,6 +4,7 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './app/store';
+import { Toaster } from 'react-hot-toast';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
@@ -11,6 +12,10 @@ createRoot(document.getElementById('root') as HTMLElement).render(
       loading={null}
       persistor={persistor}
     >
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
       <Root />
     </PersistGate>
   </Provider>,

@@ -1,52 +1,31 @@
 import React from 'react';
 import styles from './CartItem.module.scss';
-import { Card } from '../../types/Card';
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch } from '../../app/hooks';
 import {
   addQuantity,
+  CartProduct,
   decrementQuantity,
   removeCart,
 } from '../../features/cartSlice';
 
-const product: Card = {
-  id: 1,
-  category: 'phones',
-  itemId: 'apple-iphone-7-32gb-black',
-  name: 'Apple iPhone 7 32GB Black',
-  fullPrice: 400,
-  price: 375,
-  screen: "4.7' IPS",
-  capacity: '32GB',
-  color: 'black',
-  ram: '2GB',
-  year: 2016,
-  image: 'img/phones/apple-iphone-7/black/00.webp',
-};
+interface Props {
+  card: CartProduct;
+}
 
-export const CartItem: React.FC = () => {
+export const CartItem: React.FC<Props> = ({ card }) => {
   const dispatch = useAppDispatch();
 
-  const productCart = useAppSelector((state) =>
-    state.cart.items.find((item) => item.id === product.id),
-  );
-
   const handleIncreaseQuantity = () => {
-    if (productCart) {
-      dispatch(addQuantity(productCart.id));
-    }
+    dispatch(addQuantity(card.id));
   };
 
   const handleDecreaseQuantity = () => {
-    if (productCart) {
-      dispatch(decrementQuantity(productCart.id));
-    }
+    dispatch(decrementQuantity(card.id));
   };
 
   const handleRemoveCart = () => {
-    if (productCart) {
-      dispatch(removeCart(productCart.id));
-    }
+    dispatch(removeCart(card.id));
   };
 
   return (
@@ -60,10 +39,10 @@ export const CartItem: React.FC = () => {
         </button>
         <img
           className={styles.image}
-          src="img/phones/apple-iphone-7/black/00.webp"
+          src={card.image}
           alt="product image"
         />
-        <Link to={`products/${product.itemId}`}>{product.name}</Link>
+        <Link to={`products/${card.itemId}`}>{card.name}</Link>
       </div>
       <div className={styles.second}>
         <div className={styles.second_right}>
@@ -76,7 +55,7 @@ export const CartItem: React.FC = () => {
               alt="Plus icon"
             />
           </button>
-          <span>{productCart ? productCart.quantity : 0}</span>
+          <span>{card.quantity}</span>
           <button
             className={`${styles.button} ${styles.button_plus}`}
             onClick={handleIncreaseQuantity}
@@ -88,11 +67,7 @@ export const CartItem: React.FC = () => {
           </button>
         </div>
         <div className={styles.second_left}>
-          <h3 className={styles.price}>
-            {productCart ?
-              `$${productCart.price * productCart.quantity}`
-            : `$0`}
-          </h3>
+          <h3 className={styles.price}>${card.price * card.quantity}</h3>
         </div>
       </div>
     </div>
