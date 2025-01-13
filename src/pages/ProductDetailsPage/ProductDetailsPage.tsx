@@ -1,76 +1,71 @@
 // import detailStyle from './ProductDetailsPage.module.scss';
-import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getProductById } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
-import { AboutSection } from './components/AboutSection';
-import productDetailsStyles from './ProductDetailsPage.module.scss';
-import { Gallery } from './components/Gallery';
-import { Product } from '../../types/Product.ts';
-import { Loader } from '../../components/Loader/Loader.tsx';
+// import { Gallery } from '../../components/Gallery';
+// import { Characteristics } from '../../components/Characteristics';
+import { AboutSection } from './components/AboutSection/AboutSection';
+import {
+  getProductById,
+  getProductsByCategory,
+} from '../../servises/productFunctions';
+import { Product } from '../../types/Product';
+import { Loader } from '../../components/Loader';
+import { Card } from '../../types/Card';
+import { SwiperComponent } from '../../components/Swiper/Swiper';
+// import { TechSpecs } from './components/AboutSection/AboutSection';
+
+// type Props = {
+//   id: string;
+//   category: string;
+// };
 
 export const ProductDetailsPage = () => {
-  const { itemId } = useParams();
-  const location = useLocation();
-
-  const getCategoryFromPath = (): string => {
-    if (location.pathname.includes('phones')) return 'phones';
-    if (location.pathname.includes('tablets')) return 'tablets';
-    if (location.pathname.includes('accessories')) return 'accessories';
-    return 'phones';
-  };
-
-  const category = getCategoryFromPath();
+  // const { id, category } = props;
   const [product, setProduct] = useState<Product | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [recomendedProducts, setRecomendedProducts] = useState<Card[]>();
+  const [isLoadingRecomendedProducts, setIsLoadingRecomendedProducts] =
+    useState(true);
+
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    if (!itemId) return;
-
     setIsLoading(true);
-    getProductById(itemId, category)
+
+    getProductsByCategory('phones')
+      .then((products) => setRecomendedProducts(products.slice(0, 8)))
+      .catch(() => console.warn('Error to load '))
+      .finally(() => setIsLoadingRecomendedProducts(false));
+
+    getProductById('apple-iphone-11-128gb-green', 'phones')
       .then(setProduct)
       .catch(() =>
-        setErrorMessage('Failed to load product details. Please try again.'),
+        setErrorMessage('Failed to load this product. Please try again later.'),
       )
       .finally(() => setIsLoading(false));
-  }, [itemId, category]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (errorMessage) {
-    return <h1>{errorMessage}</h1>;
-  }
-
-  if (!product) {
-    return (
-      <>
-        <ButtonBack />
-        <h1>Product not found! {product}</h1>
-      </>
-    );
-  }
-
+  }, []);
   return (
-    <div>
-      <ButtonBack />
-      <h1 className={productDetailsStyles.title}>{product.name}</h1>
-      <Gallery images={product.images} />
-      <AboutSection
-        description={product.description}
-        specs={{
-          screen: product.screen,
-          resolution: product.resolution,
-          processor: product.processor,
-          ram: product.ram,
-          camera: product.camera,
-          zoom: product.zoom,
-          cell: product.cell,
-        }}
-      />
-    </div>
+    <>
+      {errorMessage ?
+        <h1>{errorMessage}</h1>
+      : <div>
+          <h1>ProductDetailsPage</h1>
+          <ButtonBack />
+          {isLoading && <Loader />}
+          <p>{product?.name}</p>
+          {/* <Gallery />
+          <Characteristics /> */}
+          <AboutSection />
+          {/* <TechSpecs /> */}
+          {!isLoadingRecomendedProducts && recomendedProducts?.length && (
+            <SwiperComponent
+              cards={recomendedProducts}
+              title="You may also like"
+            />
+          )}
+        </div>
+      }
+    </>
   );
 };
