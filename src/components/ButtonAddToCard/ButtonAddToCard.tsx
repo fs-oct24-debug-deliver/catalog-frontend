@@ -21,6 +21,7 @@ export const ButtonAddToCard: React.FC<Props> = ({
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
+    toast.dismiss();
     setTitle((prevTitle) => {
       if (prevTitle === 'Add to cart') {
         if (card) {
