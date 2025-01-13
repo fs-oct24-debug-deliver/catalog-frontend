@@ -10,3 +10,5 @@ $accent: #905bff;
 $accent2: #a378ff;
 $green: #27ae60;
 $red: #eb5757;
+$filter-purple: brightness(0) invert(36%) sepia(93%) saturate(550%)
+  hue-rotate(210deg) brightness(95%) contrast(100%);

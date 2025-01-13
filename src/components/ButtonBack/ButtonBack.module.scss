@@ -19,8 +19,7 @@
   &:hover {
     color: $accent;
     img {
-      filter: brightness(0) invert(36%) sepia(93%) saturate(550%)
-        hue-rotate(210deg) brightness(95%) contrast(100%);
+      filter: $filter-purple;
     }
   }
 
