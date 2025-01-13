@@ -1,4 +1,5 @@
 import { HomePageSwiper } from './components/HomePageSwiper';
+import { Category } from './components/Category';
 
 export const HomePage = () => {
   return (
@@ -8,7 +9,7 @@ export const HomePage = () => {
         <HomePageSwiper />
       </section>
       {/* <ProductsSlider />  Brand new models*/}
-      {/* <ShopByCategory />  Shop by category*/}
+      <Category />
       {/* <ProductsSlider />  Hot prices*/}
     </div>
   );
