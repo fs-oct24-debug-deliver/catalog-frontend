@@ -1,5 +1,5 @@
-@use '../../../../styles/index.scss';
-@use '../../../../styles/utils/variables.scss';
+@use '../../../../styles/index.scss' as *;
+@use '../../../../styles/utils/variables.scss' as *;
 
 .title {
   &::after {
