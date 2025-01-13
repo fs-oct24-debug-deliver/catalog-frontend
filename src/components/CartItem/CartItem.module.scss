@@ -1,8 +1,8 @@
-@use '../../styles/utils/mixins.scss' as m;
-@use '../../styles/utils/variables.scss' as v;
+@use '../../styles/utils/mixins.scss' as *;
+@use '../../styles/utils/variables.scss' as *;
 
 .layout {
-  background: v.$surface1;
+  background: $surface1;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   justify-content: space-between;
   gap: 16px;
 
-  @include m.screen-width(tablet) {
+  @include screen-width(tablet) {
     padding: 24px;
     flex-direction: row;
     gap: 24px;
@@ -23,7 +23,7 @@
   width: 100%;
   gap: 16px;
 
-  @include m.screen-width(tablet) {
+  @include screen-width(tablet) {
     gap: 24px;
   }
 }
@@ -36,7 +36,7 @@
   padding: 7px;
   margin-left: 10px;
 
-  @include m.screen-width(tablet) {
+  @include screen-width(tablet) {
     margin-left: 0;
   }
 }
@@ -52,7 +52,7 @@
     gap: 14px;
     align-items: center;
   }
-  @include m.screen-width(tablet) {
+  @include screen-width(tablet) {
     justify-content: end;
     gap: 24px;
   }
@@ -60,12 +60,12 @@
 .button {
   height: 32px;
   width: 32px;
-  border: 1px solid v.$surface2;
+  border: 1px solid $surface2;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 7px;
 
   &_plus {
-    background: v.$surface2;
+    background: $surface2;
   }
 }
