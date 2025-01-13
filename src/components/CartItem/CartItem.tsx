@@ -37,11 +37,12 @@ export const CartItem: React.FC<Props> = ({ card }) => {
             alt="Cart item close icon"
           />
         </button>
-        <img
-          className={styles.image}
-          src={card.image}
-          alt="product image"
-        />
+        <div className={styles.image_container}>
+          <img
+            src={card.image}
+            alt="product image"
+          />
+        </div>
         <Link to={`products/${card.itemId}`}>{card.name}</Link>
       </div>
       <div className={styles.second}>

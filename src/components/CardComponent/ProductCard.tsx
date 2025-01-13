@@ -3,6 +3,7 @@ import { Card } from '../../types/Card';
 import { ButtonAddToCard } from '../ButtonAddToCard/ButtonAddToCard';
 import { ButtonAddToFavourites } from '../ButtonAddToFavourites/ButtonAddToFavourites';
 import cardStyles from './ProductCard.module.scss';
+import { useAppSelector } from '../../app/hooks';
 
 type Props = {
   card: Card;
@@ -10,6 +11,11 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ card }) => {
   const { image, name, fullPrice, price, screen, capacity, ram } = card;
+
+  const isInCart = useAppSelector(({ cart }) =>
+    cart.items.some((item) => item.id === card.id),
+  );
+
   return (
     <section className={cardStyles.card}>
       <a
@@ -48,7 +54,10 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
       </ul>
 
       <div className={cardStyles.buttons}>
-        <ButtonAddToCard title="Add to cart" />
+        <ButtonAddToCard
+          title={isInCart ? 'Added to cart' : 'Add to cart'}
+          card={card}
+        />
         <ButtonAddToFavourites />
       </div>
     </section>
