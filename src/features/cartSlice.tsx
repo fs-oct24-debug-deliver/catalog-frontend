@@ -3,7 +3,7 @@ import { Card } from '../types/Card';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-interface CartProduct extends Card {
+export interface CartProduct extends Card {
   quantity: number;
 }
 
