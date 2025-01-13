@@ -11,14 +11,6 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: $surface1;
-
-  @include screen-width(table) {
-    min-width: 237px;
-  }
-
-  @include screen-width(desktop) {
-    min-width: 277px;
-  }
 }
 
 .imgLink {
