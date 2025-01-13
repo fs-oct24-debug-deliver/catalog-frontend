@@ -9,20 +9,20 @@ import { Product } from '../../types/Product';
 import { Loader } from '../../components/Loader';
 // import { TechSpecs } from './components/AboutSection/AboutSection';
 
-type Props = {
-  id: string;
-  category: string;
-};
+// type Props = {
+//   id: string;
+//   category: string;
+// };
 
-export const ProductDetailsPage: React.FC<Props> = (props) => {
-  const { id, category } = props;
+export const ProductDetailsPage = () => {
+  // const { id, category } = props;
   const [product, setProduct] = useState<Product | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    getProductById(id, category)
+    getProductById('apple-iphone-11-128gb-green', 'phones')
       .then(setProduct)
       .catch(() =>
         setErrorMessage('Failed to load this product. Please try again later.'),
