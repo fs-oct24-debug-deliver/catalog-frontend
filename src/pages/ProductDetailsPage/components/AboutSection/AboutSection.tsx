@@ -1,4 +1,4 @@
-import aboutStyle from './AboutSection.module.scss';
+import styles from './AboutSection.module.scss';
 
 const description = {
   description: [
@@ -27,20 +27,20 @@ const description = {
 
 export const AboutSection = () => {
   return (
-    <section className={aboutStyle.about}>
+    <section className={styles.about}>
       <h3>About</h3>
-      <div className={aboutStyle.articles}>
+      <div className={styles.articles}>
         {description.description.map((item, index) => (
           <article
             key={index}
-            className={aboutStyle.article}
+            className={styles.article}
           >
-            <h4 className={aboutStyle.articleTitle}>{item.title}</h4>
-            <div className={aboutStyle.textContainer}>
+            <h4 className={styles.articleTitle}>{item.title}</h4>
+            <div className={styles.textContainer}>
               {item.text.map((paragraph, idx) => (
                 <p
                   key={idx}
-                  className={aboutStyle.text}
+                  className={styles.text}
                 >
                   {paragraph}
                 </p>
