@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import footerStyles from './Footer.module.scss';
-import ArrowUp from '../../../public/img/icons/arrow-up.svg?react';
-import Logo from '../../../public/img/icons/logo.svg?react';
+import ArrowUp from './img/arrow-up.svg?react';
+import Logo from './img/logo.svg?react';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -54,6 +54,7 @@ export const Footer = () => {
             className={footerStyles.button}
             onClick={scrollToTop}
           >
+            {' '}
             <ArrowUp />
           </button>
         </div>
