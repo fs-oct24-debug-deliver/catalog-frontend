@@ -25,8 +25,22 @@ export const ButtonAddToCard: React.FC<Props> = ({
       if (prevTitle === 'Add to cart') {
         if (card) {
           dispatch(addCart({ ...card, quantity: 1 }));
-          toast.success('Added to cart');
-          // #89939A
+          toast('Added to cart', {
+            icon: (
+              <div className={buttonStyle.modal}>
+                <img
+                  className={buttonStyle.modal_image}
+                  src="./img/add-to-cart2.png"
+                  alt="add to cart icon"
+                />
+              </div>
+            ),
+            style: {
+              borderRadius: '10px',
+              background: '#323542',
+              color: '#F1F2F9',
+            },
+          });
         } else {
           toast.error('Something went wrong');
           console.warn('No card provided for adding to cart.');
@@ -36,7 +50,22 @@ export const ButtonAddToCard: React.FC<Props> = ({
       } else {
         if (card) {
           dispatch(removeCart(card.id));
-          toast.error('Removed from cart');
+          toast.error('Removed from cart', {
+            icon: (
+              <div className={buttonStyle.modal}>
+                <img
+                  className={buttonStyle.modal_image}
+                  src="./img/remove-from-cart.png"
+                  alt="add to cart icon"
+                />
+              </div>
+            ),
+            style: {
+              borderRadius: '10px',
+              background: '#323542',
+              color: '#F1F2F9',
+            },
+          });
         } else {
           toast.error('Something went wrong');
         }

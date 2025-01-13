@@ -24,3 +24,13 @@
     background-color: $surface2;
   }
 }
+
+.modal {
+  display: flex;
+  align-items: center;
+
+  &_image {
+    height: 28px;
+    width: 28px;
+  }
+}
