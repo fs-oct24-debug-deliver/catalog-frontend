@@ -1,13 +1,17 @@
-// import detailStyle from './ProductDetailsPage.module.scss';
 import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getProductById } from '../../servises/productFunctions';
+import {
+  getProductById,
+  getProductsByCategory,
+} from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
 import { AboutSection } from './components/AboutSection';
 import productDetailsStyles from './ProductDetailsPage.module.scss';
 import { Gallery } from './components/Gallery';
-import { Product } from '../../types/Product.ts';
-import { Loader } from '../../components/Loader/Loader.tsx';
+import { Product } from '../../types/Product';
+import { Loader } from '../../components/Loader';
+import { Card } from '../../types/Card';
+import { SwiperComponent } from '../../components/Swiper/Swiper';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
@@ -22,13 +26,22 @@ export const ProductDetailsPage = () => {
 
   const category = getCategoryFromPath();
   const [product, setProduct] = useState<Product | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [recomendedProducts, setRecomendedProducts] = useState<Card[]>();
+  const [isLoadingRecomendedProducts, setIsLoadingRecomendedProducts] =
+    useState(true);
 
   useEffect(() => {
     if (!itemId) return;
 
     setIsLoading(true);
+
+    getProductsByCategory('phones')
+      .then((products) => setRecomendedProducts(products.slice(0, 8)))
+      .catch(() => console.warn('Error to load '))
+      .finally(() => setIsLoadingRecomendedProducts(false));
+
     getProductById(itemId, category)
       .then(setProduct)
       .catch(() =>
@@ -36,14 +49,6 @@ export const ProductDetailsPage = () => {
       )
       .finally(() => setIsLoading(false));
   }, [itemId, category]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  if (errorMessage) {
-    return <h1>{errorMessage}</h1>;
-  }
 
   if (!product) {
     return (
@@ -55,22 +60,35 @@ export const ProductDetailsPage = () => {
   }
 
   return (
-    <div>
-      <ButtonBack />
-      <h1 className={productDetailsStyles.title}>{product.name}</h1>
-      <Gallery images={product.images} />
-      <AboutSection
-        description={product.description}
-        specs={{
-          screen: product.screen,
-          resolution: product.resolution,
-          processor: product.processor,
-          ram: product.ram,
-          camera: product.camera,
-          zoom: product.zoom,
-          cell: product.cell,
-        }}
-      />
-    </div>
+    <>
+      {errorMessage ?
+          <h1>{errorMessage}</h1>
+          : <div>
+        <ButtonBack />
+        {isLoading && <Loader />}
+        <h1 className={productDetailsStyles.title}>{product.name}</h1>
+        <Gallery images={product.images} />
+        <AboutSection
+          description={product.description}
+          specs={{
+            screen: product.screen,
+            resolution: product.resolution,
+            processor: product.processor,
+            ram: product.ram,
+            camera: product.camera,
+            zoom: product.zoom,
+            cell: product.cell,
+          }}
+        />
+        {/* <TechSpecs /> */}
+        {!isLoadingRecomendedProducts && recomendedProducts?.length && (
+          <SwiperComponent
+            cards={recomendedProducts}
+            title="You may also like"
+          />
+        )}
+      </div>
+      }
+    </>
   );
 };
