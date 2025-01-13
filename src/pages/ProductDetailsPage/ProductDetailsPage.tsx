@@ -1,5 +1,5 @@
 // import detailStyle from './ProductDetailsPage.module.scss';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonBack } from '../../components/ButtonBack';
 // import { Gallery } from '../../components/Gallery';
 // import { Characteristics } from '../../components/Characteristics';
