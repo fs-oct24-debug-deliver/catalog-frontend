@@ -1,13 +1,20 @@
 // import detailStyle from './ProductDetailsPage.module.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getProductById } from '../../servises/productFunctions';
+import { getProductById, getProductsByCategory } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
 import { AboutSection } from './components/AboutSection';
 import productDetailsStyles from './ProductDetailsPage.module.scss';
 import { Gallery } from './components/Gallery';
 import { Product } from '../../types/Product.ts';
 import { Loader } from '../../components/Loader/Loader.tsx';
+import { Card } from '../../types/Card';
+import { SwiperComponent } from '../../components/Swiper/Swiper';
+
+// type Props = {
+//   id: string;
+//   category: string;
+// };
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();

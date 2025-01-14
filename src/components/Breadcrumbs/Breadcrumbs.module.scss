@@ -1,0 +1,54 @@
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include screen-width(tablet) {
+    margin-bottom: 40px;
+  }
+
+  & .container {
+    display: flex;
+    align-items: center;
+  }
+
+  & .link {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: $secondary;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  & .icon {
+    margin: 0 8px;
+    transition: fill 0.3s;
+    cursor: pointer;
+  }
+
+  & .home {
+    display: flex;
+    height: 14px;
+    width: 14px;
+    background: url('../../assets/icons/home.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  & .arrow {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('../../assets/icons/arrow-right.svg') no-repeat center;
+    background-size: contain;
+    margin: 0 8px;
+  }
+}

@@ -22,14 +22,17 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite: (state, action: PayloadAction<Card>) => {
-      const exists = state.items.find((item) => item.id === action.payload.id);
+      const exists = state.items.some((item) => item?.id === action.payload.id);
+
       if (!exists) {
         state.items.push(action.payload);
       }
     },
 
     removeFavorite: (state, action: PayloadAction<number>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter(
+        (item) => item && item.id !== action.payload,
+      );
     },
 
     clearFavorites: (state) => {
