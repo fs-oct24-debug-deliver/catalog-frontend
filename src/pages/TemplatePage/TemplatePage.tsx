@@ -3,6 +3,7 @@ import { Card } from '../../types/Card';
 import templateStyles from './TemplatePage.module.scss';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
 import { Loader } from '../../components/Loader';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { SortSelectAndDropdowns } from '../../components/SortSelectAndDropdowns/SortSelectAndDropdowns';
 
 type Props = {
@@ -43,6 +44,8 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
   return (
     <>
+      <Breadcrumbs />
+
       {errorMessage ?
         <h1 className={templateStyles.title}>{errorMessage}</h1>
       : <div>

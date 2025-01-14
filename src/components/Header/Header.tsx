@@ -5,9 +5,15 @@ import { Link, NavLink } from 'react-router-dom';
 import { navLinks } from './Links';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { getNavLinkClass } from '../../utils';
+import { useAppSelector } from '../../app/hooks';
 
 export const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  const cartCount = useAppSelector(({ cart }) => cart.items).length;
+  const favoritesCount = useAppSelector(
+    ({ favorites }) => favorites.items,
+  ).length;
 
   return (
     <header>
@@ -63,7 +69,9 @@ export const Header: React.FC = () => {
             >
               <div className={styles.header__link_block}>
                 <div className={styles.header__counter}>
-                  <span className={styles.header__counter_number}>13</span>
+                  <span className={styles.header__counter_number}>
+                    {favoritesCount}
+                  </span>
                 </div>
                 <img
                   src="./img/icons/favorites-hart.svg"
@@ -83,7 +91,9 @@ export const Header: React.FC = () => {
             >
               <div className={styles.header__link_block}>
                 <div className={styles.header__counter}>
-                  <span className={styles.header__counter_number}>4</span>
+                  <span className={styles.header__counter_number}>
+                    {cartCount}
+                  </span>
                 </div>
                 <img
                   src="./img/icons/shopping-cart.svg"
@@ -106,6 +116,8 @@ export const Header: React.FC = () => {
       <BurgerMenu
         open={openMenu}
         setOpen={setOpenMenu}
+        favoritesCount={favoritesCount}
+        cartCount={cartCount}
       />
     </header>
   );

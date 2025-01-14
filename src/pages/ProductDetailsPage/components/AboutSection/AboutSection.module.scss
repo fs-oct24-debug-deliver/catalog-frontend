@@ -1,5 +1,5 @@
-@use '../../../../styles/utils/mixins.scss' as m;
-@use '../../../../styles/utils/variables.scss' as v;
+@use '../../../../styles/utils/mixins.scss' as *;
+@use '../../../../styles/utils/variables.scss' as *;
 
 .about {
   width: 100%;
@@ -10,7 +10,7 @@
   justify-content: center;
   gap: 16px;
 
-  @include m.screen-width(tablet) {
+  @include screen-width(tablet) {
     gap: 24px;
   }
 }
@@ -21,7 +21,7 @@
   gap: 32px;
   width: 100%;
   padding-block: 32px;
-  border-top: 1px solid v.$elements;
+  border-top: 1px solid $elements;
 }
 
 .articleTitle {
@@ -29,7 +29,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 21px;
-  color: v.$white;
+  color: $white;
 }
 
 .textContainer {
@@ -39,15 +39,15 @@
 }
 
 .text {
-  color: v.$text;
+  color: $text;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
 }
 
-@include m.screen-width(tablet) {
+@include screen-width(tablet) {
   .text {
-    color: v.$secondary;
+    color: $secondary;
   }
 
   .articleTitle {
@@ -55,7 +55,7 @@
     line-height: 26px;
   }
 }
-@include m.screen-width(desktop) {
+@include screen-width(desktop) {
   .about {
     margin-right: 64px;
     max-width: 560px;
