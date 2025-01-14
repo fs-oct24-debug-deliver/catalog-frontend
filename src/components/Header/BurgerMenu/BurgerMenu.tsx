@@ -8,9 +8,16 @@ import { getNavLinkClass } from '../../../utils';
 interface Props {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  favoritesCount: number;
+  cartCount: number;
 }
 
-export const BurgerMenu: React.FC<Props> = ({ open, setOpen }) => {
+export const BurgerMenu: React.FC<Props> = ({
+  open,
+  setOpen,
+  favoritesCount,
+  cartCount,
+}) => {
   const handleCloseMenu = () => {
     setOpen(false);
   };
@@ -76,7 +83,9 @@ export const BurgerMenu: React.FC<Props> = ({ open, setOpen }) => {
         >
           <div className={styles.menu__link_block}>
             <div className={styles.menu__counter}>
-              <span className={styles.menu__counter_number}>4</span>
+              <span className={styles.menu__counter_number}>
+                {favoritesCount}
+              </span>
             </div>
             <img
               src="./img/icons/favorites-hart.svg"
@@ -97,7 +106,7 @@ export const BurgerMenu: React.FC<Props> = ({ open, setOpen }) => {
         >
           <div className={styles.menu__link_block}>
             <div className={styles.menu__counter}>
-              <span className={styles.menu__counter_number}>13</span>
+              <span className={styles.menu__counter_number}>{cartCount}</span>
             </div>
             <img
               src="./img/icons/shopping-cart.svg"
