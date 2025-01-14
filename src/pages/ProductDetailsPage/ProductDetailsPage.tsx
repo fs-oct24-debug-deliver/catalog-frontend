@@ -3,13 +3,11 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getProductById } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
-// import { Gallery } from '../../pages/ProductDetailsPage/components/Gallery';
-// import { Characteristics } from '../../components/Characteristics';
 import { AboutSection } from './components/AboutSection';
-// import { TechSpecs } from './components/AboutSection/AboutSection';
 import productDetailsStyles from './ProductDetailsPage.module.scss';
 import { Gallery } from './components/Gallery';
 import { Product } from '../../types/Product.ts';
+import { Loader } from '../../components/Loader/Loader.tsx';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
@@ -21,13 +19,9 @@ export const ProductDetailsPage = () => {
   useEffect(() => {
     if (!itemId) return;
 
-    console.log(`Fetching product with ID: ${itemId}`);
     setIsLoading(true);
     getProductById(itemId, category)
-      .then((data) => {
-        console.log('Product data:', data);
-        setProduct(data);
-      })
+      .then(setProduct)
       .catch(() =>
         setErrorMessage('Failed to load product details. Please try again.'),
       )
@@ -35,15 +29,20 @@ export const ProductDetailsPage = () => {
   }, [itemId, category]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (errorMessage) {
-    return <div>{errorMessage}</div>;
+    return <h1>{errorMessage}</h1>;
   }
 
   if (!product) {
-    return <div>Product not found!</div>;
+    return (
+      <>
+        <ButtonBack />
+        <h1>Product not found! {product}</h1>
+      </>
+    );
   }
 
   return (
@@ -51,10 +50,18 @@ export const ProductDetailsPage = () => {
       <ButtonBack />
       <h1 className={productDetailsStyles.title}>{product.name}</h1>
       <Gallery images={product.images} />
-      {/* <Gallery />
-      <Characteristics /> */}
-      <AboutSection />
-      {/* <TechSpecs /> */}
+      <AboutSection
+        description={product.description}
+        specs={{
+          screen: product.screen,
+          resolution: product.resolution,
+          processor: product.processor,
+          ram: product.ram,
+          camera: product.camera,
+          zoom: product.zoom,
+          cell: product.cell,
+        }}
+      />
     </div>
   );
 };

@@ -1,7 +1,7 @@
-@use '../../../../styles/utils/mixins.scss' as m;
-@use '../../../../styles/utils/variables.scss' as v;
+@use '../../../../styles/utils/mixins.scss' as *;
+@use '../../../../styles/utils/variables.scss' as *;
 
-.about {
+.info {
   width: 100%;
   margin: 56px 0;
   display: flex;
@@ -9,10 +9,6 @@
   align-items: start;
   justify-content: center;
   gap: 16px;
-
-  @include m.screen-width(tablet) {
-    gap: 24px;
-  }
 }
 
 .articles {
@@ -20,8 +16,6 @@
   flex-direction: column;
   gap: 32px;
   width: 100%;
-  padding-block: 32px;
-  border-top: 1px solid v.$elements;
 }
 
 .articleTitle {
@@ -29,7 +23,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 21px;
-  color: v.$white;
+  color: $white;
 }
 
 .textContainer {
@@ -39,15 +33,15 @@
 }
 
 .text {
-  color: v.$text;
+  color: $text;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
 }
 
-@include m.screen-width(tablet) {
+@include screen-width(tablet) {
   .text {
-    color: v.$secondary;
+    color: $secondary;
   }
 
   .articleTitle {
@@ -55,9 +49,33 @@
     line-height: 26px;
   }
 }
-@include m.screen-width(desktop) {
-  .about {
+
+@include screen-width(desktop) {
+  .info {
     margin-right: 64px;
-    max-width: 560px;
+    width: 100%;
+    flex-direction: row;
+    gap: 64px;
+    padding-top: 80px;
+  }
+
+  .techSpecs {
+    width: 50%;
+  }
+
+  .about {
+    width: 50%;
+  }
+}
+
+.title {
+  width: 100%;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $elements;
+    margin: 16px 0 30px;
   }
 }
