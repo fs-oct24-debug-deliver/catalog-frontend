@@ -10,22 +10,21 @@
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    flex-direction: column; /* For mobile: stack thumbnails below the main image */
+    flex-direction: column;
   }
 }
 
-/* Thumbnails column */
 .thumbnailColumn {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 
   @media (max-width: 768px) {
-    flex-direction: row; /* For mobile: arrange thumbnails in a row */
+    flex-direction: row;
   }
 }
 
-/* Individual thumbnails */
 .thumbnail {
   width: 80px;
   height: 80px;

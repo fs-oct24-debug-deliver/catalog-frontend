@@ -21,7 +21,6 @@
   gap: 32px;
   width: 100%;
   padding-block: 32px;
-  border-top: 1px solid $elements;
 }
 
 .articleTitle {
@@ -71,6 +70,10 @@
 
   .about {
     width: 50%;
+  }
+
+  .articles {
+    padding-block: 0;
   }
 }
 
