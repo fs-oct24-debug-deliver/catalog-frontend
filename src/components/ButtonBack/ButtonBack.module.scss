@@ -21,4 +21,11 @@
     height: 12px;
     transition: filter 0.3s;
   }
+
+  &:hover {
+    color: $accent;
+    img {
+      filter: $filter-purple;
+    }
+  }
 }
