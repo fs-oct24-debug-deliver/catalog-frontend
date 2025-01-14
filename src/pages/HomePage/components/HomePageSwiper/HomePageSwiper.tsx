@@ -33,8 +33,6 @@ export const HomePageSwiper: React.FC = () => {
             prevEl: `.${styles.swiperButtonPrev}`,
           }}
           pagination={{ clickable: true, el: `.${styles.swiperPagination}` }}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
             <div className={styles.imageContainer}>

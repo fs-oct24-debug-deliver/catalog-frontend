@@ -6,7 +6,7 @@
   padding: 32px;
   gap: 8px;
   box-sizing: border-box;
-
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,6 +28,9 @@
 
 .title {
   padding-top: 16px;
+  height: 50px;
+  display: flex;
+  align-items: center;
   margin: 0;
   font-family: Mont;
   font-size: 14px;
