@@ -26,6 +26,8 @@
 
     &:hover {
       text-decoration: none;
+
+      color: $accent;
     }
   }
 
@@ -41,6 +43,11 @@
     width: 14px;
     background: url('../../assets/icons/home.svg') no-repeat center;
     background-size: contain;
+
+    &:hover {
+      transition: fill 0.3s;
+      filter: $filter-purple;
+    }
   }
 
   & .arrow {
