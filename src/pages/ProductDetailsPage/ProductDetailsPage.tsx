@@ -26,8 +26,8 @@ export const ProductDetailsPage = () => {
 
   const category = getCategoryFromPath();
   const [product, setProduct] = useState<Product | null>(null);
-  const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [recomendedProducts, setRecomendedProducts] = useState<Card[]>();
   const [isLoadingRecomendedProducts, setIsLoadingRecomendedProducts] =
     useState(true);
@@ -43,7 +43,9 @@ export const ProductDetailsPage = () => {
       .finally(() => setIsLoadingRecomendedProducts(false));
 
     getProductById(itemId, category)
-      .then(setProduct)
+      .then((data) => {
+        setProduct(data);
+      })
       .catch(() =>
         setErrorMessage('Failed to load product details. Please try again.'),
       )
