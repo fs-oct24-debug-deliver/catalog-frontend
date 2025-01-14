@@ -58,7 +58,7 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
           title={isInCart ? 'Added to cart' : 'Add to cart'}
           card={card}
         />
-        <ButtonAddToFavourites />
+        <ButtonAddToFavourites card={card} />
       </div>
     </section>
   );
