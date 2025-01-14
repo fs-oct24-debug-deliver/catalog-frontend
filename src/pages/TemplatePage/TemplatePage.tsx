@@ -21,6 +21,10 @@ export const TemplatePage: React.FC<Props> = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (_: React.ChangeEvent<unknown>, page: number) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setCurrentPage(page);
   };
 
