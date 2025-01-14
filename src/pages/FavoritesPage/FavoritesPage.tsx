@@ -6,10 +6,10 @@ import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
 
 type Props = {
-  isLoading: boolean;
+  isLoading?: boolean;
 };
 
-export const FavoritesPage: React.FC<Props> = ({ isLoading }) => {
+export const FavoritesPage: React.FC<Props> = ({ isLoading = false }) => {
   const favorites = useAppSelector((state) => state.favorites.items);
 
   return (
