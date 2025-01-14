@@ -1,0 +1,57 @@
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
+
+.favorites {
+  margin: 24px 0 80px 0;
+
+  &.route {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: left;
+    align-items: center;
+
+    @include screen-width(tablet) {
+      margin-bottom: 40px;
+    }
+
+    p {
+      color: $white;
+      font-size: 12px;
+    }
+  }
+
+  &.title {
+    font-size: 32px;
+    margin-bottom: 8px;
+
+    @include screen-width(tablet) {
+      font-size: 48px;
+    }
+  }
+
+  &.text {
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+
+  &.list {
+    div {
+      grid-column: span 4;
+
+      @include screen-width(tablet) {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  .countOfModels {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: $secondary;
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
+}

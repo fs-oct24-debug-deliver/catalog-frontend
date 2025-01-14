@@ -4,6 +4,7 @@ import templateStyles from './TemplatePage.module.scss';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
 import { Loader } from '../../components/Loader';
 import { TemplatePagePagination } from './components/templatePagePagination';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
 type Props = {
   title: string;
@@ -30,6 +31,8 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
   return (
     <>
+      <Breadcrumbs />
+
       {errorMessage ?
         <h1 className={templateStyles.title}>{errorMessage}</h1>
       : <div>
