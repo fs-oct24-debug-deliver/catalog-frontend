@@ -51,17 +51,4 @@
     background-size: contain;
     margin: 0 8px;
   }
-
-  &:hover {
-    .link {
-      color: $accent;
-    }
-
-    .home,
-    .arrow {
-      transition: fill 0.3s;
-
-      filter: $filter-purple;
-    }
-  }
 }

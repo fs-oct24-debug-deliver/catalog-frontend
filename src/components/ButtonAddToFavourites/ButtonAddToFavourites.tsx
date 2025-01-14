@@ -1,6 +1,6 @@
 import imgHeart from './imagesOfHeart/unSelectedHeart.svg';
 import imgHeartFilled from './imagesOfHeart/selectedHeart.svg';
-import buttonStyles from './ButtonAddToFavourites.module.scss';
+import styles from './ButtonAddToFavourites.module.scss';
 import { Card } from '../../types/Card';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
@@ -28,7 +28,7 @@ export const ButtonAddToFavourites = ({ card }: ButtonAddToFavouritesProps) => {
 
   return (
     <button
-      className={buttonStyles.buttonOfHeart}
+      className={`${styles.buttonOfHeart} ${isFavorite ? styles.active : ''}`}
       onClick={handleClick}
     >
       <img
