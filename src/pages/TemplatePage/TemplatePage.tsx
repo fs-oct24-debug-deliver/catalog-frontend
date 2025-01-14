@@ -5,6 +5,7 @@ import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
 import { Loader } from '../../components/Loader';
 import { TemplatePagePagination } from './components/templatePagePagination';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+import { SortSelectAndDropdowns } from '../../components/SortSelectAndDropdowns/SortSelectAndDropdowns';
 
 type Props = {
   title: string;
@@ -15,7 +16,8 @@ type Props = {
 
 export const TemplatePage: React.FC<Props> = (props) => {
   const { title, products, errorMessage, isLoading } = props;
-
+  const [valueSelectSort, setValueSelectSort] = useState<string>('newest');
+  const [valueSelectItems, setValueSelectItems] = useState<string>('16');
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (_: React.ChangeEvent<unknown>, page: number) => {
@@ -26,11 +28,33 @@ export const TemplatePage: React.FC<Props> = (props) => {
     setCurrentPage(page);
   };
 
-  const NUMBER_OF_PRODUCTS_ON_PAGE = 16;
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (valueSelectSort) {
+      case 'newest':
+        return b.year - a.year;
 
-  const paginatedProducts = products.slice(
-    (currentPage - 1) * NUMBER_OF_PRODUCTS_ON_PAGE,
-    currentPage * NUMBER_OF_PRODUCTS_ON_PAGE,
+      case 'priceLowToHigh':
+        return a.price - b.price;
+
+      case 'priceHighToLow':
+        return b.price - a.price;
+
+      case 'all':
+        return 0;
+
+      default:
+        return 0;
+    }
+  });
+
+  const countOnPage =
+    valueSelectItems === 'all' ?
+      sortedProducts.length
+    : Number(valueSelectItems);
+
+  const paginatedProducts = sortedProducts.slice(
+    (currentPage - 1) * Number(countOnPage),
+    currentPage * Number(countOnPage),
   );
 
   return (
@@ -45,8 +69,17 @@ export const TemplatePage: React.FC<Props> = (props) => {
             className={templateStyles.countOfModels}
           >{`${products.length} models`}</p>
 
-          {isLoading && <Loader />}
-
+          {isLoading ?
+            <Loader />
+          : products.length && (
+              <SortSelectAndDropdowns
+                valueSelectSort={valueSelectSort}
+                setValueSelectSort={setValueSelectSort}
+                valueSelectItems={valueSelectItems}
+                setValueSelectItems={setValueSelectItems}
+              />
+            )
+          }
           {!products.length ?
             <p className={templateStyles.emptyState}>No models available.</p>
           : <>
@@ -54,7 +87,7 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
               <TemplatePagePagination
                 count={products.length}
-                countOnPages={16}
+                countOnPages={countOnPage}
                 handleChange={handleChange}
                 currentPage={currentPage}
               />
