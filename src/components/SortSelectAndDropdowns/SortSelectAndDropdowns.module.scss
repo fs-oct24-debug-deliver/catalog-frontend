@@ -1,0 +1,43 @@
+@use '../../styles/index.scss' as *;
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
+
+.wrapper {
+  display: flex;
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+
+.input_label {
+  color: $secondary !important;
+}
+
+.selectSort {
+  width: 136px;
+  height: 40px;
+  background-color: $surface2;
+  color: $white !important;
+
+  @include screen-width(tablet) {
+    width: 187px;
+  }
+
+  @include screen-width(desktop) {
+    width: 176px;
+  }
+}
+
+.selectItemOnPage {
+  width: 136px;
+  height: 40px;
+  background-color: $surface2;
+  color: $white !important;
+
+  @include screen-width(desktop) {
+    width: 128px;
+  }
+}
+
+.option {
+  color: $surface2 !important;
+}
