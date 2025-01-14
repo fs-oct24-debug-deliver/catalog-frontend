@@ -1,5 +1,7 @@
 // import detailStyle from './ProductDetailsPage.module.scss';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { getProductById } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
 // import { Gallery } from '../../components/Gallery';
 // import { Characteristics } from '../../components/Characteristics';
