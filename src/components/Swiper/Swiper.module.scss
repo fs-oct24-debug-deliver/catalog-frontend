@@ -1,0 +1,43 @@
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.navigation {
+  display: flex;
+  gap: 16px;
+}
+
+.swiperButtonPrev,
+.swiperButtonNext {
+  height: 32px;
+  width: 32px;
+  background: $surface2;
+  border: 1px solid $surface2;
+  color: $white;
+  transition: 0.2s;
+
+  @include screen-width(desktop) {
+    &:hover {
+      background: $elements;
+      color: $white;
+    }
+  }
+}
+.disabled {
+  color: $elements;
+  border: 1px solid $elements;
+  background: transparent;
+
+  @include screen-width(desktop) {
+    &:hover {
+      background: transparent;
+      border: 1px solid $icons;
+      color: $text;
+    }
+  }
+}
