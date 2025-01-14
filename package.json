@@ -46,6 +46,7 @@
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
     "sass-embedded": "^1.83.1",
+    "sass-export": "^2.1.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.19.1",
     "vite": "^6.0.5",

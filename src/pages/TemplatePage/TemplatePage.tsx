@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '../../types/Card';
 import templateStyles from './TemplatePage.module.scss';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
 import { Loader } from '../../components/Loader';
+import { TemplatePagePagination } from './components/templatePagePagination';
 
 type Props = {
   title: string;
@@ -13,6 +14,20 @@ type Props = {
 
 export const TemplatePage: React.FC<Props> = (props) => {
   const { title, products, errorMessage, isLoading } = props;
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleChange = (_: React.ChangeEvent<unknown>, page: number) => {
+    setCurrentPage(page);
+  };
+
+  const NUMBER_OF_PRODUCTS_ON_PAGE = 16;
+
+  const paginatedProducts = products.slice(
+    (currentPage - 1) * NUMBER_OF_PRODUCTS_ON_PAGE,
+    currentPage * NUMBER_OF_PRODUCTS_ON_PAGE,
+  );
+
   return (
     <>
       {errorMessage ?
@@ -27,7 +42,17 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
           {!products.length ?
             <p className={templateStyles.emptyState}>No models available.</p>
-          : <GridAdaptive products={products} />}
+          : <>
+              <GridAdaptive products={paginatedProducts} />
+
+              <TemplatePagePagination
+                count={products.length}
+                countOnPages={16}
+                handleChange={handleChange}
+                currentPage={currentPage}
+              />
+            </>
+          }
         </div>
       }
     </>
