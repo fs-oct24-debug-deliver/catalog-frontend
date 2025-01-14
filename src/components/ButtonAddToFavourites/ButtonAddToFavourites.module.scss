@@ -13,5 +13,11 @@
 
   &:hover {
     background-color: $icons;
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background-color: transparent;
+    border: 1px solid $elements;
   }
 }
