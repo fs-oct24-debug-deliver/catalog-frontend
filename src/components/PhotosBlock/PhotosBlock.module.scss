@@ -1,5 +1,5 @@
-@use '../../styles/utils/mixins.scss' as mixins;
-@use '../../styles/utils/variables.scss' as variables;
+@use '../../styles/utils/mixins.scss' as *;
+@use '../../styles/utils/variables.scss' as *;
 
 .photosBlock {
   display: flex;
@@ -10,22 +10,20 @@
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    flex-direction: column; /* For mobile: stack thumbnails below the main image */
+    flex-direction: column;
   }
 }
 
-/* Thumbnails column */
 .thumbnailColumn {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
   @media (max-width: 768px) {
-    flex-direction: row; /* For mobile: arrange thumbnails in a row */
+    flex-direction: row;
   }
 }
 
-/* Individual thumbnails */
 .thumbnail {
   width: 80px;
   height: 80px;
@@ -34,7 +32,7 @@
   transition: border 0.2s ease-in-out;
 
   &.selected {
-    border: 2px solid variables.$white;
+    border: 2px solid $white;
   }
 }
 
