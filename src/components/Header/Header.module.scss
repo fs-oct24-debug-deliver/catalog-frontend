@@ -26,12 +26,11 @@
     height: 22px;
     margin-inline: 16px;
     display: block;
+    transition: 0.3s;
+
     @include screen-width(desktop) {
       display: none;
     }
-
-    transition: transform 0.3s ease;
-    transform: scale(1);
 
     &:hover {
       transform: scale(1.1);
@@ -40,15 +39,14 @@
 
   &__iconDesktop {
     display: none;
+    transition: 0.3s;
+
     @include screen-width(desktop) {
       display: block;
       width: 80px;
       height: 28px;
       margin-inline: 24px;
     }
-
-    transition: transform 0.3s ease;
-    transform: scale(1);
 
     &:hover {
       transform: scale(1.1);
@@ -95,7 +93,7 @@
       height: 3px;
       border-radius: 3px;
       width: 100%;
-      scale: 0;
+      transform: scale(0);
       background: $white;
       transition: 0.3s;
     }
@@ -104,7 +102,7 @@
       color: $white;
 
       &::after {
-        scale: 100%;
+        transform: scale(100%);
       }
     }
 
