@@ -64,32 +64,32 @@ export const ProductDetailsPage = () => {
   return (
     <>
       {errorMessage ?
-          <h1>{errorMessage}</h1>
-          : <div>
-        <ButtonBack />
-        {isLoading && <Loader />}
-        <h1 className={productDetailsStyles.title}>{product.name}</h1>
-        <Gallery images={product.images} />
-        <AboutSection
-          description={product.description}
-          specs={{
-            screen: product.screen,
-            resolution: product.resolution,
-            processor: product.processor,
-            ram: product.ram,
-            camera: product.camera,
-            zoom: product.zoom,
-            cell: product.cell,
-          }}
-        />
-        {/* <TechSpecs /> */}
-        {!isLoadingRecomendedProducts && recomendedProducts?.length && (
-          <SwiperComponent
-            cards={recomendedProducts}
-            title="You may also like"
+        <h1>{errorMessage}</h1>
+      : <div>
+          <ButtonBack />
+          {isLoading && <Loader />}
+          <h1 className={productDetailsStyles.title}>{product.name}</h1>
+          <Gallery images={product.images} />
+          <AboutSection
+            description={product.description}
+            specs={{
+              screen: product.screen,
+              resolution: product.resolution,
+              processor: product.processor,
+              ram: product.ram,
+              camera: product.camera,
+              zoom: product.zoom,
+              cell: product.cell,
+            }}
           />
-        )}
-      </div>
+          {/* <TechSpecs /> */}
+          {!isLoadingRecomendedProducts && recomendedProducts?.length && (
+            <SwiperComponent
+              cards={recomendedProducts}
+              title="You may also like"
+            />
+          )}
+        </div>
       }
     </>
   );
