@@ -17,6 +17,7 @@
   width: 100%;
   margin: 0 auto;
   padding-inline: 16px;
+  margin-top: 48px;
 
   @include screen-width(tablet) {
     padding-inline: 24px;
@@ -24,5 +25,6 @@
 
   @include screen-width(desktop) {
     padding-inline: 32px;
+    margin-top: 64px;
   }
 }

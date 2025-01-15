@@ -21,12 +21,12 @@ export const Header: React.FC = () => {
         <div className={styles.header__right}>
           <Link to={'/'}>
             <img
-              src={'./img/icons/page-logo-bg.svg'}
+              src={'/img/icons/page-logo-bg.svg'}
               alt="Nice gadgets icon"
               className={styles.header__iconDesktop}
             />
             <img
-              src={'./img/icons/page-logo-sm.svg'}
+              src={'/img/icons/page-logo-sm.svg'}
               alt="Nice gadgets icon"
               className={styles.header__icon}
             />
@@ -68,13 +68,15 @@ export const Header: React.FC = () => {
               }
             >
               <div className={styles.header__link_block}>
-                <div className={styles.header__counter}>
-                  <span className={styles.header__counter_number}>
-                    {favoritesCount}
-                  </span>
-                </div>
+                {favoritesCount > 0 && (
+                  <div className={styles.header__counter}>
+                    <span className={styles.header__counter_number}>
+                      {favoritesCount}
+                    </span>
+                  </div>
+                )}
                 <img
-                  src="./img/icons/favorites-hart.svg"
+                  src="/img/icons/favorites-hart.svg"
                   alt="Favorites hart icon"
                 />
               </div>
@@ -90,13 +92,15 @@ export const Header: React.FC = () => {
               }
             >
               <div className={styles.header__link_block}>
-                <div className={styles.header__counter}>
-                  <span className={styles.header__counter_number}>
-                    {cartCount}
-                  </span>
-                </div>
+                {cartCount > 0 && (
+                  <div className={styles.header__counter}>
+                    <span className={styles.header__counter_number}>
+                      {cartCount}
+                    </span>
+                  </div>
+                )}
                 <img
-                  src="./img/icons/shopping-cart.svg"
+                  src="/img/icons/shopping-cart.svg"
                   alt="Shopping cart icon"
                 />
               </div>
@@ -107,7 +111,7 @@ export const Header: React.FC = () => {
             onClick={() => setOpenMenu(true)}
           >
             <img
-              src="./img/icons/burger.svg"
+              src="/img/icons/burger.svg"
               alt="Burger icon"
             />
           </button>
