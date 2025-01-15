@@ -29,9 +29,7 @@
 
       color: $accent;
 
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+      transition: 0.3;
       transform: scale(1.2);
     }
   }
