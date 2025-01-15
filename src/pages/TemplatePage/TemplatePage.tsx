@@ -21,39 +21,42 @@ export const TemplatePage: React.FC<Props> = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleChange = (_: React.ChangeEvent<unknown>, page: number) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setCurrentPage(page);
   };
 
-  const NUMBER_OF_PRODUCTS_ON_PAGE = 16;
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (valueSelectSort) {
+      case 'newest':
+        return b.year - a.year;
 
-  const paginatedProducts = products.slice(
-    (currentPage - 1) * NUMBER_OF_PRODUCTS_ON_PAGE,
-    currentPage * NUMBER_OF_PRODUCTS_ON_PAGE,
+      case 'priceLowToHigh':
+        return a.price - b.price;
+
+      case 'priceHighToLow':
+        return b.price - a.price;
+
+      case 'all':
+        return 0;
+
+      default:
+        return 0;
+    }
+  });
+
+  const countOnPage =
+    valueSelectItems === 'all' ?
+      sortedProducts.length
+    : Number(valueSelectItems);
+
+  const paginatedProducts = sortedProducts.slice(
+    (currentPage - 1) * Number(countOnPage),
+    currentPage * Number(countOnPage),
   );
 
-  // const sortedProducts = [...products].sort((a, b) => {
-  //   switch (valueSelectSort) {
-  //     case 'newest':
-  //       return b.year - a.year;
-
-  //     case 'priceLowToHigh':
-  //       return a.price - b.price;
-
-  //     case 'priceHighToLow':
-  //       return b.price - a.price;
-
-  //     case 'all':
-  //       return 0;
-
-  //     default:
-  //       return 0;
-  //   }
-  // });
-
-  // const itemsOnPageSorted =
-  //   valueSelectItems === 'all' ? sortedProducts : (
-  //     sortedProducts.slice(0, Number(valueSelectItems))
-  //   );
   return (
     <>
       <Breadcrumbs />
@@ -84,7 +87,7 @@ export const TemplatePage: React.FC<Props> = (props) => {
 
               <TemplatePagePagination
                 count={products.length}
-                countOnPages={16}
+                countOnPages={countOnPage}
                 handleChange={handleChange}
                 currentPage={currentPage}
               />
