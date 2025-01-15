@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from './Gallery.module.scss';
+import styles from './PhotosBlock.module.scss';
 
-export const Gallery = ({ images }: { images: string[] }) => {
+export const PhotosBlock = ({ images }: { images: string[] }) => {
   const [mainImage, setMainImage] = useState(images[0]);
 
   const handleThumbnailClick = (image: string) => {
@@ -12,7 +12,7 @@ export const Gallery = ({ images }: { images: string[] }) => {
     <div className={styles.photosBlock}>
       <div className={styles.mainPhoto}>
         <img
-          src={`/${mainImage}`}
+          src={mainImage}
           alt="Main"
         />
       </div>
@@ -24,7 +24,7 @@ export const Gallery = ({ images }: { images: string[] }) => {
               mainImage === image ? styles.selected : ''
             }`}
             key={image}
-            src={`/${image}`}
+            src={image}
             alt={`Thumbnail ${index + 1}`}
             onClick={() => handleThumbnailClick(image)}
           />

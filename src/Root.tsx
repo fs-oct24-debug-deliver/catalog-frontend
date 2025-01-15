@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams,
+} from 'react-router-dom';
 import App from './App';
 import { HomePage } from './pages/HomePage';
 import { PhonesPage } from './pages/PhonesPage';
@@ -8,6 +13,17 @@ import { AccessoriesPage } from './pages/AccessoriesPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { CartPage } from './pages/CartPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+
+const DynamicRouteWrapper = ({
+  DefaultComponent,
+  DetailsComponent,
+}: {
+  DefaultComponent: React.ComponentType;
+  DetailsComponent: React.ComponentType<{ itemId: string }>;
+}) => {
+  const { itemId } = useParams();
+  return itemId ? <DetailsComponent itemId={itemId} /> : <DefaultComponent />;
+};
 
 export const Root = () => (
   <Router>
@@ -20,33 +36,37 @@ export const Root = () => (
           index
           element={<HomePage />}
         />
+
         <Route
-          path="phones"
-          element={<PhonesPage />}
-        >
-          <Route
-            path=":itemId"
-            element={<ProductDetailsPage />}
-          />
-        </Route>
+          path="phones/:itemId?"
+          element={
+            <DynamicRouteWrapper
+              DefaultComponent={PhonesPage}
+              DetailsComponent={ProductDetailsPage}
+            />
+          }
+        />
+
         <Route
-          path="tablets"
-          element={<TabletsPage />}
-        >
-          <Route
-            path=":itemId"
-            element={<ProductDetailsPage />}
-          />
-        </Route>
+          path="tablets/:itemId?"
+          element={
+            <DynamicRouteWrapper
+              DefaultComponent={TabletsPage}
+              DetailsComponent={ProductDetailsPage}
+            />
+          }
+        />
+
         <Route
-          path="accessories"
-          element={<AccessoriesPage />}
-        >
-          <Route
-            path=":itemId"
-            element={<ProductDetailsPage />}
-          />
-        </Route>
+          path="accessories/:itemId?"
+          element={
+            <DynamicRouteWrapper
+              DefaultComponent={AccessoriesPage}
+              DetailsComponent={ProductDetailsPage}
+            />
+          }
+        />
+
         <Route
           path="favorites"
           element={<FavoritesPage />}
