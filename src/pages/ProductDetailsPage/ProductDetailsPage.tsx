@@ -1,5 +1,5 @@
 // import detailStyle from './ProductDetailsPage.module.scss';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getProductById } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
@@ -11,7 +11,16 @@ import { Loader } from '../../components/Loader/Loader.tsx';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
-  const category = 'phones';
+  const location = useLocation();
+
+  const getCategoryFromPath = (): string => {
+    if (location.pathname.includes('phones')) return 'phones';
+    if (location.pathname.includes('tablets')) return 'tablets';
+    if (location.pathname.includes('accessories')) return 'accessories';
+    return 'phones';
+  };
+
+  const category = getCategoryFromPath();
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');

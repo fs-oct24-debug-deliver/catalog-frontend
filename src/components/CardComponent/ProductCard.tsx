@@ -11,7 +11,17 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ card }) => {
-  const { itemId, image, name, fullPrice, price, screen, capacity, ram } = card;
+  const {
+    itemId,
+    category,
+    image,
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+  } = card;
 
   const isInCart = useAppSelector(({ cart }) =>
     cart.items.some((item) => item.id === card.id),
@@ -20,18 +30,18 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
   return (
     <section className={cardStyles.card}>
       <Link
-        to={`/phones/${itemId}`}
+        to={`/${category}/${itemId}`}
         className={cardStyles.imgLink}
       >
         <img
           src={image}
-          alt="Photo phone"
+          alt={`Photo ${category}`}
           className={cardStyles.photo}
         />
       </Link>
 
       <Link
-        to={`/phones/${itemId}`}
+        to={`/${category}/${itemId}`}
         className={cardStyles.titleLink}
       >
         <h4 className={cardStyles.title}>{name}</h4>
