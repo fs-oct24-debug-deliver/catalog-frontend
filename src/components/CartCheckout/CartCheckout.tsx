@@ -3,7 +3,6 @@ import { useAppDispatch } from '../../app/hooks';
 import { clearCart } from '../../features/cartSlice';
 import { ButtonAddToCard } from '../ButtonAddToCard/ButtonAddToCard';
 import checkoutStyles from './CartCheckout.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 interface Props {
   totalPrice: number;
@@ -12,11 +11,9 @@ interface Props {
 
 export const CartCheckout: React.FC<Props> = ({ totalPrice, count }) => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const hadleCheckoutClick = () => {
     dispatch(clearCart());
-    navigate('/');
     toast('Thank you for your order!', {
       icon: '🐱‍👤',
       style: {
