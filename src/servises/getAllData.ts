@@ -1,6 +1,6 @@
 import { Card } from '../types/Card';
 import { Product } from '../types/Product';
-import { getData } from '../utils/httpClient';
+import { getData } from './httpClient';
 
 export const getAllProducts = getData<Card[]>('/products.json');
 

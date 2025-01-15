@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Category.module.scss';
-import { getData } from '../../../../utils/httpClient';
-import { getModelCount } from '../../../../utils/getModelCounts';
+import { getData } from '../../../../servises/httpClient';
+import { getModelCount } from '../../../../servises/getModelCounts';
 import { Product } from '../../../../types/Product';
 import { CategoryCard } from './CategoryCard';
 
