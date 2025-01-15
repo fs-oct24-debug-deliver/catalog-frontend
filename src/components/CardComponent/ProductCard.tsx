@@ -4,13 +4,24 @@ import { ButtonAddToCard } from '../ButtonAddToCard/ButtonAddToCard';
 import { ButtonAddToFavourites } from '../ButtonAddToFavourites/ButtonAddToFavourites';
 import cardStyles from './ProductCard.module.scss';
 import { useAppSelector } from '../../app/hooks';
+import { Link } from 'react-router-dom';
 
 type Props = {
   card: Card;
 };
 
 export const ProductCard: React.FC<Props> = ({ card }) => {
-  const { image, name, fullPrice, price, screen, capacity, ram } = card;
+  const {
+    itemId,
+    category,
+    image,
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+  } = card;
 
   const isInCart = useAppSelector(({ cart }) =>
     cart.items.some((item) => item.id === card.id),
@@ -18,18 +29,23 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
 
   return (
     <section className={cardStyles.card}>
-      <a
-        href="#"
+      <Link
+        to={`/${category}/${itemId}`}
         className={cardStyles.imgLink}
       >
         <img
           src={image}
-          alt="Photo phone"
+          alt={`Photo ${category}`}
           className={cardStyles.photo}
         />
-      </a>
+      </Link>
 
-      <h4 className={cardStyles.title}>{name}</h4>
+      <Link
+        to={`/${category}/${itemId}`}
+        className={cardStyles.titleLink}
+      >
+        <h4 className={cardStyles.title}>{name}</h4>
+      </Link>
 
       <div className={cardStyles.price}>
         <div className={cardStyles.price__actual}>${price}</div>
