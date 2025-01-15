@@ -24,6 +24,13 @@
     @include screen-width(desktop) {
       display: none;
     }
+
+    transition: transform 0.3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__iconDesktop {
@@ -33,6 +40,13 @@
       width: 80px;
       height: 28px;
       margin-inline: 24px;
+    }
+
+    transition: transform 0.3s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
   &__nav {
