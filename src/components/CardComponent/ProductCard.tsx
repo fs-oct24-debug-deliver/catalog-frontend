@@ -48,7 +48,7 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
       </Link>
 
       <div className={cardStyles.price}>
-        <div className={cardStyles.price__actual}>${fullPrice - price}</div>
+        <div className={cardStyles.price__actual}>${price}</div>
         <div className={cardStyles.price__old}>${fullPrice}</div>
       </div>
 

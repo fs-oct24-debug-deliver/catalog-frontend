@@ -1,6 +1,6 @@
 @use '../../../../styles/index.scss' as *;
 @use '../../../../styles/utils/variables.scss' as *;
-@use '../../../../styles/utils/mixins.scss' as mixins;
+@use '../../../../styles/utils/mixins.scss' as *;
 
 .title {
   padding-top: 40px;
@@ -14,7 +14,7 @@
     margin: 16px 0 30px;
   }
 
-  @include mixins.screen-width(tablet) {
+  @include screen-width(tablet) {
     padding-top: 0;
   }
 }
@@ -24,7 +24,7 @@
   justify-content: space-between;
   width: 100%;
 
-  @include mixins.screen-width(tablet) {
+  @include screen-width(tablet) {
     width: 100%;
   }
 }

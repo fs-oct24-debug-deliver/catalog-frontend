@@ -23,7 +23,7 @@ export const Gallery = ({ images }: { images: string[] }) => {
             className={`${styles.thumbnail} ${
               mainImage === image ? styles.selected : ''
             }`}
-            key={index}
+            key={image}
             src={`/${image}`}
             alt={`Thumbnail ${index + 1}`}
             onClick={() => handleThumbnailClick(image)}
