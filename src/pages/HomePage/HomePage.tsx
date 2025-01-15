@@ -4,6 +4,7 @@ import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { useEffect, useState } from 'react';
 import { getAllProducts } from '../../servises/getAllData';
 import { Card } from '../../types/Card';
+import styles from './components/HomePage.module.scss';
 
 export const HomePage = () => {
   const [hotPriceProducts, setHotPriceProducts] = useState<Card[]>();
@@ -34,24 +35,30 @@ export const HomePage = () => {
   }, []);
   return (
     <div>
-      <h1>Welcome to Nice Gadgets store!</h1>
-      <section>
+      <h1 className={styles.margins}>Welcome to Nice Gadgets store!</h1>
+      <section className={styles.section}>
         <HomePageSwiper />
       </section>
-      {!isLoadingNewModelsProducts && newModelsProducts?.length && (
-        <SwiperComponent
-          cards={newModelsProducts}
-          title="Brand new models"
-        />
-      )}
+      <section className={styles.section}>
+        {!isLoadingNewModelsProducts && newModelsProducts?.length && (
+          <SwiperComponent
+            cards={newModelsProducts}
+            title="Brand new models"
+          />
+        )}
+      </section>
 
-      <Category />
-      {!isLoadingHotPriceProducts && hotPriceProducts?.length && (
-        <SwiperComponent
-          cards={hotPriceProducts}
-          title="Hot price"
-        />
-      )}
+      <section className={styles.section}>
+        <Category />
+      </section>
+      <section className={styles.section}>
+        {!isLoadingHotPriceProducts && hotPriceProducts?.length && (
+          <SwiperComponent
+            cards={hotPriceProducts}
+            title="Hot price"
+          />
+        )}
+      </section>
     </div>
   );
 };

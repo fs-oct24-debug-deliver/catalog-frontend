@@ -1,0 +1,30 @@
+@use '../../../styles/utils/mixins.scss' as *;
+
+.margins {
+  margin: 24px 0;
+  font-size: 32px;
+  line-height: 32px;
+  max-width: 320px;
+
+  @include screen-width(tablet) {
+    margin: 32px 0;
+    max-width: 450px;
+  }
+
+  @include screen-width(desktop) {
+    margin: 56px 0;
+    max-width: 1200px;
+  }
+}
+
+.section {
+  margin-bottom: 56px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin-bottom: 80px;
+  }
+}
