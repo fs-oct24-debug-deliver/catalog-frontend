@@ -1,7 +1,8 @@
-const BASE_URL = 'http://localhost:5173/api';
+const BASE_URL = 'https://fs-oct24-debug-deliver.netlify.app/api';
 
 export function getData<T>(url: string): Promise<T> {
-  return fetch(BASE_URL + url).then((response) => {
+  return fetch(BASE_URL + url, { mode: 'no-cors' }).then((response) => {
+    console.log(response);
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
     }
