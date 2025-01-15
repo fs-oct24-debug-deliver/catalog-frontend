@@ -44,7 +44,7 @@
     width: 204px;
   }
 
-  @include mixins.screen-width(tablet) {
+  @include screen-width(tablet) {
     width: 288px;
     height: 288px;
   }

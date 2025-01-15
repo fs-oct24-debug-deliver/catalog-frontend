@@ -1,7 +1,7 @@
 @use '../../../../styles/utils/mixins.scss' as *;
 @use '../../../../styles/utils/variables.scss' as *;
 
-.about, .info {
+.info {
   width: 100%;
   margin: 56px 0;
   display: flex;
@@ -21,7 +21,6 @@
   gap: 32px;
   width: 100%;
   padding-block: 32px;
-  border-top: 1px solid $elements;
 }
 
 .articleTitle {
@@ -57,7 +56,7 @@
 }
 
 @include screen-width(desktop) {
-  .about, .info {
+  .info {
     margin-right: 64px;
     width: 100%;
     flex-direction: row;

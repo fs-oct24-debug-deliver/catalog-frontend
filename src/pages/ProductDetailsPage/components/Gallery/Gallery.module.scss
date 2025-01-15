@@ -17,8 +17,6 @@
 .thumbnailColumn {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: row;
