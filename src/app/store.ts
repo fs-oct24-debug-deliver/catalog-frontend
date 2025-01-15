@@ -13,16 +13,18 @@ import storage from 'redux-persist/lib/storage';
 
 import favoriteReducer from '../features/favoritesSlice';
 import cartReducer from '../features/cartSlice';
+import themeSlice from '../features/themeSlice';
 
 const rootReducer = combineReducers({
   favorites: favoriteReducer,
   cart: cartReducer,
+  theme: themeSlice,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart', 'favorites'],
+  whitelist: ['cart', 'favorites', 'theme'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
