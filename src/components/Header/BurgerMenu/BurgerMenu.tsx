@@ -30,7 +30,7 @@ export const BurgerMenu: React.FC<Props> = ({
           className={styles.menu__logo}
         >
           <img
-            src="./img/icons/page-logo-sm.svg"
+            src="/img/icons/page-logo-sm.svg"
             alt="Logo icon"
           />
         </Link>
@@ -40,7 +40,7 @@ export const BurgerMenu: React.FC<Props> = ({
           className={`${styles.menu__topLink}`}
         >
           <img
-            src="./img/icons/burger-close.svg"
+            src="/img/icons/burger-close.svg"
             alt="Burger close icon"
           />
         </button>
@@ -82,13 +82,16 @@ export const BurgerMenu: React.FC<Props> = ({
           }
         >
           <div className={styles.menu__link_block}>
-            <div className={styles.menu__counter}>
-              <span className={styles.menu__counter_number}>
-                {favoritesCount}
-              </span>
-            </div>
+            {favoritesCount > 0 && (
+              <div className={styles.menu__counter}>
+                <span className={styles.menu__counter_number}>
+                  {favoritesCount}
+                </span>
+              </div>
+            )}
+
             <img
-              src="./img/icons/favorites-hart.svg"
+              src="/img/icons/favorites-hart.svg"
               alt="Favorites hart icon"
             />
           </div>
@@ -105,11 +108,14 @@ export const BurgerMenu: React.FC<Props> = ({
           }
         >
           <div className={styles.menu__link_block}>
-            <div className={styles.menu__counter}>
-              <span className={styles.menu__counter_number}>{cartCount}</span>
-            </div>
+            {cartCount > 0 && (
+              <div className={styles.menu__counter}>
+                <span className={styles.menu__counter_number}>{cartCount}</span>
+              </div>
+            )}
+
             <img
-              src="./img/icons/shopping-cart.svg"
+              src="/img/icons/shopping-cart.svg"
               alt="Cart icon"
             />
           </div>

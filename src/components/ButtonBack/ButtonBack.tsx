@@ -11,7 +11,7 @@ export const ButtonBack = () => {
       onClick={() => navigate(-1)}
     >
       <img
-        src="./img/icons/arrow-back.svg"
+        src="/img/icons/arrow-back.svg"
         alt="arrow-back-icon"
       />
       <span>Back</span>
