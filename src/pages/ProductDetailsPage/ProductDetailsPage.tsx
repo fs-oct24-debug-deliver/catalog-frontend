@@ -6,7 +6,7 @@ import {
 } from '../../servises/productFunctions';
 import { ButtonBack } from '../../components/ButtonBack';
 import { AboutSection } from './components/AboutSection';
-import productDetailsStyles from './ProductDetailsPage.module.scss';
+import styles from './ProductDetailsPage.module.scss';
 import { Gallery } from './components/Gallery';
 import { Product } from '../../types/Product';
 import { Loader } from '../../components/Loader';
@@ -35,6 +35,7 @@ export const ProductDetailsPage = () => {
   const [card, setCard] = useState<Card>();
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedCapacity, setSelectedCapacity] = useState('');
+  const [mainImage, setMainImage] = useState('');
 
   const navigate = useNavigate();
 
@@ -55,6 +56,7 @@ export const ProductDetailsPage = () => {
         if (loadedProduct) {
           setSelectedColor(loadedProduct.color);
           setSelectedCapacity(loadedProduct.capacity.toLowerCase());
+          setMainImage(loadedProduct.images[0]);
         }
       })
       .catch(() =>
@@ -75,6 +77,11 @@ export const ProductDetailsPage = () => {
     } else {
       newUrl = `/${category}/${product?.namespaceId}-${selectedCapacity}-${color}`;
     }
+
+    const colorImage = product?.images.find((img) =>
+      img.toLocaleLowerCase().includes(color.toLocaleLowerCase()),
+    );
+    if (colorImage) setMainImage(colorImage);
 
     navigate(newUrl);
   };
@@ -108,19 +115,24 @@ export const ProductDetailsPage = () => {
       : <div>
           <ButtonBack />
           {isLoading && <Loader />}
-          <h1 className={productDetailsStyles.title}>{product.name}</h1>
-          <Gallery images={product.images} />
+          <h1 className={styles.title}>{product.name}</h1>
 
-          {card && (
-            <Characteristics
-              product={product}
-              selectedColor={selectedColor}
-              selectedCapacity={selectedCapacity}
-              handleCapacityChange={handleCapacityChange}
-              handleColorChange={handleColorChange}
-              card={card}
+          <div className={styles.brief_info}>
+            <Gallery
+              images={product.images}
+              mainImage={mainImage}
             />
-          )}
+            {card && (
+              <Characteristics
+                product={product}
+                selectedColor={selectedColor}
+                selectedCapacity={selectedCapacity}
+                handleCapacityChange={handleCapacityChange}
+                handleColorChange={handleColorChange}
+                card={card}
+              />
+            )}
+          </div>
 
           <AboutSection
             description={product.description}
@@ -134,7 +146,6 @@ export const ProductDetailsPage = () => {
               cell: product.cell,
             }}
           />
-          {/* <TechSpecs /> */}
           {!isLoadingRecomendedProducts && recomendedProducts?.length && (
             <SwiperComponent
               cards={recomendedProducts}

@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Gallery.module.scss';
 
-export const Gallery = ({ images }: { images: string[] }) => {
-  const [mainImage, setMainImage] = useState(images[0]);
+export const Gallery = ({
+  images,
+  mainImage,
+}: {
+  images: string[];
+  mainImage: string;
+}) => {
+  const [currentImage, setCurrentImage] = useState(mainImage);
+
+  useEffect(() => {
+    setCurrentImage(mainImage);
+  }, [mainImage]);
 
   const handleThumbnailClick = (image: string) => {
-    setMainImage(image);
+    setCurrentImage(image);
   };
 
   return (
@@ -14,7 +24,7 @@ export const Gallery = ({ images }: { images: string[] }) => {
         <div className={styles.photosBlock}>
           <div className={styles.mainPhoto}>
             <img
-              src={`/${mainImage}`}
+              src={`/${currentImage}`}
               alt="Main"
             />
           </div>
@@ -22,7 +32,9 @@ export const Gallery = ({ images }: { images: string[] }) => {
           <div className={styles.thumbnailColumn}>
             {images.slice(0, 4).map((image, index) => (
               <div
-                className={`${styles.thumbnailWrapper} ${mainImage === image ? styles.selected : ''}`}
+                className={`${styles.thumbnailWrapper} ${
+                  currentImage === image ? styles.selected : ''
+                }`}
                 key={image}
                 onClick={() => handleThumbnailClick(image)}
               >
