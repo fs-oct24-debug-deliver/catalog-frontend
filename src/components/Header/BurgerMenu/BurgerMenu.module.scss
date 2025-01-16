@@ -15,13 +15,6 @@
     flex-direction: column;
   }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 48px;
-    border-bottom: 1px solid $secondary;
-  }
   &__logo {
     margin-inline: 16px;
   }
@@ -80,6 +73,9 @@
       }
     }
   }
+  &.top {
+    display: flex;
+  }
   &__bottom {
     height: 64px;
     display: grid;
@@ -107,6 +103,13 @@
       }
     }
   }
+
+  &.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__link_block {
     position: relative;
   }

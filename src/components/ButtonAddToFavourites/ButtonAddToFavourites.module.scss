@@ -1,22 +1,37 @@
-@use '../../styles/utils/variables.scss' as *;
-
 .buttonOfHeart {
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 40px;
   height: 40px;
-  background-color: $surface2;
+  background-color: var(--surface2);
   cursor: pointer;
-  border: 0;
+  border: 1px solid var(--border);
   box-sizing: border-box;
 
   &:hover {
-    background-color: $icons;
+    background-color: var(--icons);
   }
 
   &.active {
     background-color: transparent;
-    border: 1px solid $elements;
+    border: 1px solid var(--icon-border);
+  }
+
+  &.lightTheme {
+    background-color: var(--surface1);
+    border: 1px solid var(--border);
+
+    &:hover {
+      border: 1px solid var(--hover);
+    }
+  }
+
+  &.darkTheme {
+    background-color: var(--surface2);
+
+    &:hover {
+      background-color: var(--icon-hover-dark);
+    }
   }
 }

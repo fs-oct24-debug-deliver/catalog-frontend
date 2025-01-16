@@ -4,6 +4,8 @@ import { navLinks } from '../Links';
 import { Link, NavLink } from 'react-router-dom';
 import '../../../styles/index.scss';
 import { getNavLinkClass } from '../../../utils';
+import { useAppSelector } from '../../../app/hooks';
+import { ThemeToggle } from '../../ThemeToggle/ThemeToggle';
 
 interface Props {
   open: boolean;
@@ -21,6 +23,13 @@ export const BurgerMenu: React.FC<Props> = ({
   const handleCloseMenu = () => {
     setOpen(false);
   };
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const logo =
+    theme === 'dark' ?
+      '/img/icons/page-logo-sm.svg'
+    : '/img/icons/light-logo-sm.svg';
+
   return (
     <div className={`${styles.menu__layout} ${open ? styles.open : ''}`}>
       <div className={styles.menu__top}>
@@ -30,10 +39,12 @@ export const BurgerMenu: React.FC<Props> = ({
           className={styles.menu__logo}
         >
           <img
-            src="/img/icons/page-logo-sm.svg"
+            src={logo}
             alt="Logo icon"
           />
         </Link>
+
+        <ThemeToggle />
 
         <button
           onClick={handleCloseMenu}
@@ -69,6 +80,7 @@ export const BurgerMenu: React.FC<Props> = ({
           ))}
         </ul>
       </nav>
+
       <div className={styles.menu__bottom}>
         <NavLink
           to={'/favorites'}
