@@ -36,7 +36,6 @@ export const Gallery = ({ images }: { images: string[] }) => {
             ))}
           </div>
         </div>
-        <div className={styles.characteristics}></div>
       </div>
     </>
   );

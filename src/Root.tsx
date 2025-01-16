@@ -75,12 +75,11 @@ export const Root = () => (
           path="cart"
           element={<CartPage />}
         />
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Route>
-
-      <Route
-        path="*"
-        element={<NotFoundPage />}
-      />
     </Routes>
   </Router>
 );
