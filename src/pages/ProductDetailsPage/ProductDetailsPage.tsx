@@ -36,7 +36,7 @@ export const ProductDetailsPage = () => {
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedCapacity, setSelectedCapacity] = useState('');
   const [mainImage, setMainImage] = useState('');
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -133,20 +133,6 @@ export const ProductDetailsPage = () => {
               />
             )}
           </div>
-
-          <h1 className={productDetailsStyles.title}>{product.name}</h1>
-          <Gallery images={product.images} />
-
-          {card && (
-            <Characteristics
-              product={product}
-              selectedColor={selectedColor}
-              selectedCapacity={selectedCapacity}
-              handleCapacityChange={handleCapacityChange}
-              handleColorChange={handleColorChange}
-              card={card}
-            />
-          )}
 
           <AboutSection
             description={product.description}
