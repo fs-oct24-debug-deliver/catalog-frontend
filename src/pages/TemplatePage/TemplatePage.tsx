@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Card } from '../../types/Card';
 import templateStyles from './TemplatePage.module.scss';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
@@ -16,16 +17,25 @@ type Props = {
 
 export const TemplatePage: React.FC<Props> = (props) => {
   const { title, products, errorMessage, isLoading } = props;
-  const [valueSelectSort, setValueSelectSort] = useState<string>('newest');
-  const [valueSelectItems, setValueSelectItems] = useState<string>('16');
-  const [currentPage, setCurrentPage] = useState(1);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const valueSelectSort = searchParams.get('sort') || 'all';
+  const valueSelectItems = searchParams.get('perPage') || 'all';
+  const currentPage = Number(searchParams.get('page') || '1');
 
   const handleChange = (_: React.ChangeEvent<unknown>, page: number) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-    setCurrentPage(page);
+
+    const params = new URLSearchParams(searchParams);
+    if (page === 1) {
+      params.delete('page');
+    } else {
+      params.set('page', page.toString());
+    }
+    setSearchParams(params);
   };
 
   const sortedProducts = [...products].sort((a, b) => {
@@ -73,10 +83,8 @@ export const TemplatePage: React.FC<Props> = (props) => {
             <Loader />
           : products.length && (
               <SortSelectAndDropdowns
-                valueSelectSort={valueSelectSort}
-                setValueSelectSort={setValueSelectSort}
-                valueSelectItems={valueSelectItems}
-                setValueSelectItems={setValueSelectItems}
+                searchParams={searchParams}
+                setSearchParams={setSearchParams}
               />
             )
           }
@@ -85,12 +93,14 @@ export const TemplatePage: React.FC<Props> = (props) => {
           : <>
               <GridAdaptive products={paginatedProducts} />
 
-              <TemplatePagePagination
-                count={products.length}
-                countOnPages={countOnPage}
-                handleChange={handleChange}
-                currentPage={currentPage}
-              />
+              {valueSelectItems !== 'all' && (
+                <TemplatePagePagination
+                  count={products.length}
+                  countOnPages={countOnPage}
+                  handleChange={handleChange}
+                  currentPage={currentPage}
+                />
+              )}
             </>
           }
         </div>

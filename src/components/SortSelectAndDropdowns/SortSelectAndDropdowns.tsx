@@ -19,26 +19,38 @@ const optionsForItemsOnPage = [
 ];
 
 type Props = {
-  valueSelectSort: string;
-  setValueSelectSort: React.Dispatch<React.SetStateAction<string>>;
-  valueSelectItems: string;
-  setValueSelectItems: React.Dispatch<React.SetStateAction<string>>;
+  searchParams: URLSearchParams;
+  setSearchParams: (params: URLSearchParams) => void;
 };
 
 export const SortSelectAndDropdowns: React.FC<Props> = ({
-  valueSelectSort,
-  setValueSelectSort,
-  valueSelectItems,
-  setValueSelectItems,
+  searchParams,
+  setSearchParams,
 }) => {
+  const valueSelectSort = searchParams.get('sort') || 'all';
+  const valueSelectItems = searchParams.get('perPage') || 'all';
+  const params = new URLSearchParams(searchParams);
+
   const handleSortChange = (event: SelectChangeEvent) => {
     const option = event.target.value as string;
-    setValueSelectSort(option);
+
+    if (option === 'all') {
+      params.delete('sort');
+    } else {
+      params.set('sort', option);
+    }
+    setSearchParams(params);
   };
 
   const handleItemsOnPage = (event: SelectChangeEvent) => {
     const option = event.target.value as string;
-    setValueSelectItems(option);
+
+    if (option === 'all') {
+      params.delete('perPage');
+    } else {
+      params.set('perPage', option);
+    }
+    setSearchParams(params);
   };
 
   return (
