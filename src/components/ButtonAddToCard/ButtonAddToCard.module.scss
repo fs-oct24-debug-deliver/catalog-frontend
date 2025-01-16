@@ -18,10 +18,11 @@
 }
 
 .addedCard {
-  background: $surface2;
+  background: var(--surface2);
+  border: 1px solid var(--icon-border);
 
   &:hover {
-    background-color: $surface2;
+    background: var(--surface2);
   }
 }
 
