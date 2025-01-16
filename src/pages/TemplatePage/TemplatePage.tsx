@@ -35,7 +35,6 @@ export const TemplatePage: React.FC<Props> = (props) => {
     } else {
       params.set('page', page.toString());
     }
-    console.log(currentPage);
     setSearchParams(params);
   };
 
