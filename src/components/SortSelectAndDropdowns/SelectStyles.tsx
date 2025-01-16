@@ -64,6 +64,7 @@ export const useSelectStyles = () => {
       ...selectStylesBase,
       background: colors.white,
       color: `${colors.black} !important`,
+      border: `1px solid ${colors.secondary}`,
     };
     menuPropsStyles = {
       PaperProps: {
