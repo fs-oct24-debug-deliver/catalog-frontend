@@ -3,6 +3,7 @@ import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import React from 'react';
 import '../../styles/utils/variables.scss';
 import '../../styles/index.scss';
+import { useSelectStyles } from './SelectStyles';
 
 const optionsForSort = [
   { value: 'all', label: 'All' },
@@ -30,6 +31,7 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
   const valueSelectSort = searchParams.get('sort') || 'all';
   const valueSelectItems = searchParams.get('perPage') || 'all';
   const params = new URLSearchParams(searchParams);
+  const { selectStyles, menuPropsStyles } = useSelectStyles();
 
   const handleSortChange = (event: SelectChangeEvent) => {
     const option = event.target.value as string;
@@ -68,6 +70,8 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
             labelId="sortBy"
             value={valueSelectSort}
             onChange={handleSortChange}
+            sx={selectStyles}
+            MenuProps={menuPropsStyles}
           >
             {optionsForSort.map((option, index) => (
               <MenuItem
@@ -93,6 +97,8 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
             labelId="itemOnPage"
             value={valueSelectItems}
             onChange={handleItemsOnPage}
+            sx={selectStyles}
+            MenuProps={menuPropsStyles}
           >
             {optionsForItemsOnPage.map((option, index) => (
               <MenuItem
