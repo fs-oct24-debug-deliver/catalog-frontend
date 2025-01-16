@@ -9,27 +9,35 @@ export const Gallery = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <div className={styles.photosBlock}>
-      <div className={styles.mainPhoto}>
-        <img
-          src={`/${mainImage}`}
-          alt="Main"
-        />
-      </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.photosBlock}>
+          <div className={styles.mainPhoto}>
+            <img
+              src={`/${mainImage}`}
+              alt="Main"
+            />
+          </div>
 
-      <div className={styles.thumbnailColumn}>
-        {images.slice(0, 4).map((image, index) => (
-          <img
-            className={`${styles.thumbnail} ${
-              mainImage === image ? styles.selected : ''
-            }`}
-            key={image}
-            src={`/${image}`}
-            alt={`Thumbnail ${index + 1}`}
-            onClick={() => handleThumbnailClick(image)}
-          />
-        ))}
+          <div className={styles.thumbnailColumn}>
+            {images.slice(0, 4).map((image, index) => (
+              <div
+                className={`${styles.thumbnailWrapper} ${mainImage === image ? styles.selected : ''}`}
+                key={image}
+                onClick={() => handleThumbnailClick(image)}
+              >
+                <img
+                  className={styles.thumbnail}
+                  key={image}
+                  src={`/${image}`}
+                  alt={`Thumbnail ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.characteristics}></div>
       </div>
-    </div>
+    </>
   );
 };
