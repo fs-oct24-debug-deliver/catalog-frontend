@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom';
 
 type Props = {
   card: Card;
+  notScale?: boolean;
 };
 
-export const ProductCard: React.FC<Props> = ({ card }) => {
+export const ProductCard: React.FC<Props> = ({ card, notScale }) => {
   const {
     itemId,
     category,
@@ -28,7 +29,9 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
   );
 
   return (
-    <section className={cardStyles.card}>
+    <section
+      className={`${cardStyles.card} ${!notScale ? cardStyles.scale : ''}`}
+    >
       <Link
         to={`/${category}/${itemId}`}
         className={cardStyles.imgLink}
