@@ -15,19 +15,26 @@ export const Header: React.FC = () => {
   const favoritesCount = useAppSelector(
     ({ favorites }) => favorites.items,
   ).length;
+
   const theme = useAppSelector((state) => state.theme.theme);
+
   const logo =
     theme === 'dark' ?
       '/img/icons/page-logo-bg.svg'
     : '/img/icons/light-logo.svg';
+
   const favoritesIcon =
     theme === 'dark' ?
       '/img/icons/favorites-hart.svg'
     : '/img/icons/light-like.svg';
+
   const cartIcon =
     theme === 'dark' ?
       '/img/icons/shopping-cart.svg'
     : '/img/icons/light-cart.svg';
+
+  const openIcon =
+    theme === 'dark' ? '/img/icons/burger.svg' : '/img/icons/light-open.svg';
 
   return (
     <header>
@@ -133,7 +140,7 @@ export const Header: React.FC = () => {
             onClick={() => setOpenMenu(true)}
           >
             <img
-              src="/img/icons/burger.svg"
+              src={openIcon}
               alt="Burger icon"
             />
           </button>

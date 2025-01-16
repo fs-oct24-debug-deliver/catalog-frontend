@@ -14,6 +14,7 @@ $filter-purple: brightness(0) invert(36%) sepia(93%) saturate(550%)
   hue-rotate(210deg) brightness(95%) contrast(100%);
 
 html {
+  --icons: #b4bdc3;
   &.dark {
     --primary: #0f1121;
     --text: #f1f2f9;
@@ -38,6 +39,7 @@ html {
     --icons: #4a4d58;
     --surface1: #fafbfc;
     --surface2: #fafbfc;
+    --elements: #75767f;
     --border: #0f1121;
     --icon-hover-light: #fafbfc;
     --hover: #905bff;

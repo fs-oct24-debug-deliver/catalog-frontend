@@ -10,14 +10,32 @@
     width: 100%;
     transform: translateX(100%);
     transition: 0.4s;
-    background: $black;
+    background: var(--primary);
     display: flex;
     flex-direction: column;
   }
 
+  &__top {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    border-bottom: 1px solid $secondary;
+  }
+
   &__logo {
     margin-inline: 16px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
   }
+
+  .__theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid $secondary;
+  }
+
   &__topLink {
     width: 48px;
     border-left: 1px solid $secondary;
@@ -26,21 +44,25 @@
     align-items: center;
     height: 100%;
   }
+
   &__nav {
     margin-block: 24px;
     display: flex;
     justify-content: center;
     flex: 1;
   }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
+
   &__item {
     display: flex;
     justify-content: center;
   }
+
   &__link {
     color: $secondary;
     display: flex;
@@ -60,8 +82,8 @@
       height: 100%;
       position: relative;
       padding-block: 8px;
-
       color: $white;
+
       &::after {
         content: '';
         position: absolute;
@@ -73,9 +95,7 @@
       }
     }
   }
-  &.top {
-    display: flex;
-  }
+
   &__bottom {
     height: 64px;
     display: grid;
@@ -87,9 +107,11 @@
       align-items: center;
       justify-content: center;
       position: relative;
+
       &.border {
         border-right: 1px solid $secondary;
       }
+
       &.active {
         &::after {
           content: '';
@@ -104,15 +126,11 @@
     }
   }
 
-  &.themeToggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__link_block {
     position: relative;
+    color: var(--text);
   }
+
   &__counter {
     position: absolute;
     display: flex;
@@ -125,6 +143,7 @@
     border-radius: 50%;
     background: $red;
   }
+
   &__counter_number {
     transform: translateY(1px);
     font-family: Mont;
@@ -132,6 +151,10 @@
     font-weight: 700;
     line-height: 11.5px;
     color: $white;
+  }
+
+  .menu-icon {
+    filter: var(--filter-icons);
   }
 }
 
