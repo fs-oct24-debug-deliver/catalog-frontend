@@ -17,14 +17,20 @@ export const ThemeToggle: React.FC = () => {
   }, [theme]);
 
   return (
-    <label className={`${styles.switch} `}>
+    <label
+      className={`${styles.switch} ${
+        theme === `dark` ? styles.isDark : styles.isLight
+      } `}
+    >
       <input
         className={styles.input}
         type="checkbox"
         checked={theme === 'dark'}
         onChange={handleToggle}
       />
-      <span className={styles.slider}></span>
+      <span className={styles.slider}>
+        <span className={styles.icon}>{theme === 'dark' ? '🌘' : '☀️'}</span>
+      </span>
     </label>
   );
 };
