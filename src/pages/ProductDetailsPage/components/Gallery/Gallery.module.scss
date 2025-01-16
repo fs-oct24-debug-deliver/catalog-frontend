@@ -7,23 +7,26 @@
   justify-content: center;
   align-items: center;
   max-width: 800px;
-  gap: 16px;
+  gap: 26px;
 
   @include screen-width(tablet) {
     flex-direction: row-reverse;
+    align-items: flex-start;
   }
 }
 
 .mainPhoto {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 288px;
   height: 288px;
 
   img {
-    width: auto;
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   @include screen-width(desktop) {
@@ -35,13 +38,14 @@
 .thumbnailColumn {
   display: flex;
   width: 288px;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 8px;
 
   @include screen-width(tablet) {
     width: 35px;
     height: 208px;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   @include screen-width(desktop) {
