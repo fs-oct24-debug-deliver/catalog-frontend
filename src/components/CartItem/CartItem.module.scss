@@ -2,7 +2,8 @@
 @use '../../styles/utils/variables.scss' as *;
 
 .layout {
-  background: $surface1;
+  background: var(--surface1);
+  border: 1px solid var(--border);
   padding: 16px;
   display: flex;
   align-items: center;

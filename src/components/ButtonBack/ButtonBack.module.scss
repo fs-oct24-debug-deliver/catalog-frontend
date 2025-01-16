@@ -4,10 +4,10 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  color: $white;
+  color: var(--text);
   font-size: 12px;
   font-weight: 700;
-  background-color: $black;
+  background: var(--primary);
   line-height: 20px;
   padding: 3px;
   border-radius: 7px;
@@ -20,6 +20,7 @@
     width: 12px;
     height: 12px;
     transition: filter 0.3s;
+    filter: var(--filter-icons);
   }
 
   &:hover {

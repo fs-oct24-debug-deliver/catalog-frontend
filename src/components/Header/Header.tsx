@@ -6,6 +6,7 @@ import { navLinks } from './Links';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { getNavLinkClass } from '../../utils';
 import { useAppSelector } from '../../app/hooks';
+import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 
 export const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,6 +15,19 @@ export const Header: React.FC = () => {
   const favoritesCount = useAppSelector(
     ({ favorites }) => favorites.items,
   ).length;
+  const theme = useAppSelector((state) => state.theme.theme);
+  const logo =
+    theme === 'dark' ?
+      '/img/icons/page-logo-bg.svg'
+    : '/img/icons/light-logo.svg';
+  const favoritesIcon =
+    theme === 'dark' ?
+      '/img/icons/favorites-hart.svg'
+    : '/img/icons/light-like.svg';
+  const cartIcon =
+    theme === 'dark' ?
+      '/img/icons/shopping-cart.svg'
+    : '/img/icons/light-cart.svg';
 
   return (
     <header>
@@ -21,12 +35,16 @@ export const Header: React.FC = () => {
         <div className={styles.header__right}>
           <Link to={'/'}>
             <img
-              src={'/img/icons/page-logo-bg.svg'}
+              src={logo}
               alt="Nice gadgets icon"
               className={styles.header__iconDesktop}
             />
             <img
-              src={'/img/icons/page-logo-sm.svg'}
+              src={
+                theme === 'dark' ?
+                  '/img/icons/page-logo-sm.svg'
+                : '/img/icons/light-logo.svg'
+              }
               alt="Nice gadgets icon"
               className={styles.header__icon}
             />
@@ -55,7 +73,11 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
+
         <div className={styles.header__left}>
+          <div className={styles.header__themeToggle}>
+            <ThemeToggle />
+          </div>
           <div className={styles.header__left_links}>
             <NavLink
               to={'/favorites'}
@@ -76,7 +98,7 @@ export const Header: React.FC = () => {
                   </div>
                 )}
                 <img
-                  src="/img/icons/favorites-hart.svg"
+                  src={favoritesIcon}
                   alt="Favorites hart icon"
                 />
               </div>
@@ -100,7 +122,7 @@ export const Header: React.FC = () => {
                   </div>
                 )}
                 <img
-                  src="/img/icons/shopping-cart.svg"
+                  src={cartIcon}
                   alt="Shopping cart icon"
                 />
               </div>
