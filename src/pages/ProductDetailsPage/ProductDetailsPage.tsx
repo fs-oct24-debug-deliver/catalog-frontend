@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {
   getProductById,
@@ -12,6 +12,7 @@ import { Product } from '../../types/Product';
 import { Loader } from '../../components/Loader';
 import { Card } from '../../types/Card';
 import { SwiperComponent } from '../../components/Swiper/Swiper';
+import { Characteristics } from './components/Characteristics';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
@@ -31,26 +32,65 @@ export const ProductDetailsPage = () => {
   const [recomendedProducts, setRecomendedProducts] = useState<Card[]>();
   const [isLoadingRecomendedProducts, setIsLoadingRecomendedProducts] =
     useState(true);
+  const [card, setCard] = useState<Card>();
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedCapacity, setSelectedCapacity] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!itemId) return;
 
     setIsLoading(true);
 
-    getProductsByCategory('phones')
-      .then((products) => setRecomendedProducts(products.slice(0, 8)))
-      .catch(() => console.warn('Error to load '))
-      .finally(() => setIsLoadingRecomendedProducts(false));
+    Promise.all([
+      getProductsByCategory(category),
+      getProductById(itemId, category),
+    ])
+      .then(([loadedProducts, loadedProduct]) => {
+        setRecomendedProducts(loadedProducts.slice(0, 8));
+        setProduct(loadedProduct);
+        setCard(loadedProducts.find((c) => c.itemId === itemId));
 
-    getProductById(itemId, category)
-      .then((data) => {
-        setProduct(data);
+        if (loadedProduct) {
+          setSelectedColor(loadedProduct.color);
+          setSelectedCapacity(loadedProduct.capacity.toLowerCase());
+        }
       })
       .catch(() =>
         setErrorMessage('Failed to load product details. Please try again.'),
       )
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setIsLoadingRecomendedProducts(false);
+        setIsLoading(false);
+      });
   }, [itemId, category]);
+
+  const handleColorChange = (color: string) => {
+    setSelectedColor(color);
+    let newUrl = '';
+
+    if (category === 'accessories' && color === 'spacegray') {
+      newUrl = `/${category}/${product?.namespaceId}-${selectedCapacity}-space-gray`;
+    } else {
+      newUrl = `/${category}/${product?.namespaceId}-${selectedCapacity}-${color}`;
+    }
+
+    navigate(newUrl);
+  };
+
+  const handleCapacityChange = (capacity: string) => {
+    setSelectedCapacity(capacity);
+    let newUrl = '';
+
+    if (category === 'accessories' && selectedColor === 'space gray') {
+      newUrl = `/${category}/${product?.namespaceId}-${capacity}-space-gray`;
+    } else {
+      newUrl = `/${category}/${product?.namespaceId}-${capacity}-${selectedColor}`;
+    }
+
+    navigate(newUrl);
+  };
 
   if (!product) {
     return (
@@ -70,6 +110,18 @@ export const ProductDetailsPage = () => {
           {isLoading && <Loader />}
           <h1 className={productDetailsStyles.title}>{product.name}</h1>
           <Gallery images={product.images} />
+
+          {card && (
+            <Characteristics
+              product={product}
+              selectedColor={selectedColor}
+              selectedCapacity={selectedCapacity}
+              handleCapacityChange={handleCapacityChange}
+              handleColorChange={handleColorChange}
+              card={card}
+            />
+          )}
+
           <AboutSection
             description={product.description}
             specs={{

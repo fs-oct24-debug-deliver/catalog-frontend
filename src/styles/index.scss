@@ -3,19 +3,19 @@
 
 @font-face {
   font-family: Mont;
-  src: url('./fonts/Mont-Bold.otf');
+  src: url('/fonts/Mont-Bold.otf');
   font-weight: 800;
 }
 
 @font-face {
   font-family: Mont;
-  src: url('./fonts/Mont-SemiBold.otf');
+  src: url('/fonts/Mont-SemiBold.otf');
   font-weight: 700;
 }
 
 @font-face {
   font-family: Mont;
-  src: url('./fonts/Mont-Regular.otf');
+  src: url('/fonts/Mont-Regular.otf');
   font-weight: 500;
 }
 
@@ -58,6 +58,14 @@ h4 {
   font-size: 20px;
   line-height: 26px;
   letter-spacing: 0;
+}
+
+button {
+  font-family: Mont, 'serif';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  color: $white;
 }
 
 .defaultButtonStyles {

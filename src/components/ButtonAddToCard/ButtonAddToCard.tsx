@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import buttonStyle from './ButtonAddToCard.module.scss';
-import { useAppDispatch } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addCart, removeCart } from '../../features/cartSlice';
 import { Card } from '../../types/Card';
 import toast from 'react-hot-toast';
 
 type Props = {
-  title: string;
+  title?: string;
   onClick?: () => void;
   card?: Card;
 };
@@ -17,6 +17,15 @@ export const ButtonAddToCard: React.FC<Props> = ({
   card,
 }) => {
   const [title, setTitle] = useState(initialTitle);
+  const isInCart = useAppSelector(({ cart }) => cart.items).some(
+    (c) => c.itemId === card?.itemId,
+  );
+
+  if (card) {
+    useEffect(() => {
+      setTitle(isInCart ? 'Added to cart' : 'Add to cart');
+    }, [isInCart]);
+  }
 
   const dispatch = useAppDispatch();
 
@@ -31,7 +40,7 @@ export const ButtonAddToCard: React.FC<Props> = ({
               <div className={buttonStyle.modal}>
                 <img
                   className={buttonStyle.modal_image}
-                  src="./img/add-to-cart2.png"
+                  src="/img/add-to-cart2.png"
                   alt="add to cart icon"
                 />
               </div>
@@ -56,7 +65,7 @@ export const ButtonAddToCard: React.FC<Props> = ({
               <div className={buttonStyle.modal}>
                 <img
                   className={buttonStyle.modal_image}
-                  src="./img/remove-from-cart.png"
+                  src="/img/remove-from-cart.png"
                   alt="add to cart icon"
                 />
               </div>
