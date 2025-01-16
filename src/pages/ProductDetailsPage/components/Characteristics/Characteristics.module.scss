@@ -14,7 +14,7 @@
 }
 
 .title {
-  color: $secondary;
+  color: var(--secondary);
 }
 
 .selection_container {
@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 8px;
   padding-bottom: 24px;
-  border-bottom: 1px solid $elements;
+  border-bottom: 1px solid var(--elements);
 }
 
 .selection {
@@ -38,15 +38,11 @@
   transition: 0.3s;
 
   &:hover {
-    border: 1px solid $secondary;
+    border: 1px solid var(--secondary);
   }
 
   &.active {
-    border: 1px solid $white;
-
-    &:hover {
-      border: 1px solid $elements;
-    }
+    border: 1px solid var(--text);
   }
 }
 
@@ -55,23 +51,23 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px solid $black;
+  border: 2px solid var(--primary);
 }
 
 .capacity {
-  border: 1px solid $elements;
+  border: 1px solid var(--elements);
   padding: 8px;
-  color: $white;
+  color: var(--text);
   border-radius: 3px;
   transition: 0.3s;
 
   &:hover {
-    border: 1px solid $white;
+    border: 1px solid var(--text);
   }
 
   &.active {
-    background: $white;
-    color: $black;
+    background: var(--text);
+    color: var(--primary);
   }
 }
 
@@ -79,7 +75,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: $white;
+  color: var(--text);
   margin-bottom: 16px;
 
   &__actual {
@@ -94,7 +90,7 @@
     font-weight: 600;
     line-height: 28.12px;
     text-decoration: line-through;
-    color: $secondary;
+    color: var(--secondary);
   }
 }
 
@@ -112,7 +108,7 @@
 
 .description dt {
   text-align: left;
-  color: $secondary;
+  color: var(--secondary);
 }
 
 .description dd {
