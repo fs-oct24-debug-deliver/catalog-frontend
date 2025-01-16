@@ -1,0 +1,12 @@
+@use '../../../src/styles/utils/variables.scss' as *;
+@use '../../../src/styles/utils/mixins.scss' as *;
+
+.brief_info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include screen-width(tablet) {
+    flex-direction: row;
+  }
+}

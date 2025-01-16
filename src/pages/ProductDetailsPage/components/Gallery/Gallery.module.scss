@@ -3,48 +3,70 @@
 
 .photosBlock {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  flex-direction: column;
+  gap: 16px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @include screen-width(tablet) {
+    flex-direction: row-reverse;
+  }
+}
+
+.mainPhoto {
+  width: 288px;
+  height: 288px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 100%;
+  }
+
+  @include screen-width(desktop) {
+    width: 464px;
+    height: 464px;
   }
 }
 
 .thumbnailColumn {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
 
-  @media (max-width: 768px) {
-    flex-direction: row;
+  @include screen-width(tablet) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.thumbnailWrapper {
+  cursor: pointer;
+  border: 2px solid $elements;
+  border-radius: 4px;
+  transition: border 0.2s ease-in-out;
+  height: 50px;
+
+  &.selected {
+    border: 2px solid $white;
+    border-radius: 4px;
+  }
+
+  @include screen-width(tablet) {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include screen-width(desktop) {
+    height: 80px;
+    width: 80px;
   }
 }
 
 .thumbnail {
-  width: 80px;
-  height: 80px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border 0.2s ease-in-out;
-
-  &.selected {
-    border: 2px solid $white;
-  }
+  height: 100%;
 }
 
-.mainPhoto {
-  flex: 1;
-  text-align: center;
-
-  img {
-    width: 204px;
-  }
-
-  @include screen-width(tablet) {
-    width: 288px;
-    height: 288px;
-  }
+.container {
+  display: flex;
 }
