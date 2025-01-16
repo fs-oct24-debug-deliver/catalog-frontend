@@ -4,6 +4,8 @@ import { navLinks } from '../Links';
 import { Link, NavLink } from 'react-router-dom';
 import '../../../styles/index.scss';
 import { getNavLinkClass } from '../../../utils';
+import { useAppSelector } from '../../../app/hooks';
+import { ThemeToggle } from '../../ThemeToggle/ThemeToggle';
 
 interface Props {
   open: boolean;
@@ -21,30 +23,59 @@ export const BurgerMenu: React.FC<Props> = ({
   const handleCloseMenu = () => {
     setOpen(false);
   };
+  const theme = useAppSelector((state) => state.theme.theme);
+
+  const logo =
+    theme === 'dark' ?
+      '/img/icons/page-logo-sm.svg'
+    : '/img/icons/light-logo-sm.svg';
+
+  const favoritesIcon =
+    theme === 'dark' ?
+      '/img/icons/favorites-hart.svg'
+    : '/img/icons/light-like.svg';
+
+  const cartIcon =
+    theme === 'dark' ?
+      '/img/icons/shopping-cart.svg'
+    : '/img/icons/light-cart.svg';
+
+  const closeIcon =
+    theme === 'dark' ?
+      '/img/icons/burger-close.svg'
+    : '/img/icons/light-close.svg';
+
   return (
     <div className={`${styles.menu__layout} ${open ? styles.open : ''}`}>
       <div className={styles.menu__top}>
+        <div></div>
         <Link
           to={'/'}
           onClick={handleCloseMenu}
           className={styles.menu__logo}
         >
           <img
-            src="/img/icons/page-logo-sm.svg"
+            src={logo}
             alt="Logo icon"
           />
         </Link>
 
+        <div className={styles.theme}>
+          <ThemeToggle />
+        </div>
+
         <button
           onClick={handleCloseMenu}
-          className={`${styles.menu__topLink}`}
+          className={styles.menu__topLink}
         >
           <img
-            src="/img/icons/burger-close.svg"
+            src={closeIcon}
             alt="Burger close icon"
+            className="menu-icon"
           />
         </button>
       </div>
+
       <nav className={styles.menu__nav}>
         <ul className={styles.menu__list}>
           {navLinks.map((link) => (
@@ -69,6 +100,7 @@ export const BurgerMenu: React.FC<Props> = ({
           ))}
         </ul>
       </nav>
+
       <div className={styles.menu__bottom}>
         <NavLink
           to={'/favorites'}
@@ -91,8 +123,9 @@ export const BurgerMenu: React.FC<Props> = ({
             )}
 
             <img
-              src="/img/icons/favorites-hart.svg"
+              src={favoritesIcon}
               alt="Favorites hart icon"
+              className="menu-icon"
             />
           </div>
         </NavLink>
@@ -115,8 +148,9 @@ export const BurgerMenu: React.FC<Props> = ({
             )}
 
             <img
-              src="/img/icons/shopping-cart.svg"
+              src={cartIcon}
               alt="Cart icon"
+              className="menu-icon"
             />
           </div>
         </NavLink>

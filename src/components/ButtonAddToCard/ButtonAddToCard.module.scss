@@ -4,7 +4,7 @@
   width: 100%;
   height: 40px;
   background-color: $accent;
-  color: $white;
+  color: var(--text);
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
@@ -18,10 +18,11 @@
 }
 
 .addedCard {
-  background: $surface2;
+  background: var(--surface2);
+  border: 1px solid var(--icon-border);
 
   &:hover {
-    background-color: $surface2;
+    background: var(--surface2);
   }
 }
 

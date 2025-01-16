@@ -10,7 +10,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    background-color: $elements;
+    background-color: var(--elements);
     margin: 16px 0 30px;
   }
 
@@ -30,7 +30,7 @@
 }
 
 .tech_specs_title {
-  color: $secondary;
+  color: var(--secondary);
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0;
@@ -38,7 +38,7 @@
 }
 
 .tech_specs_description {
-  color: $white;
+  color: var(--text);
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0;

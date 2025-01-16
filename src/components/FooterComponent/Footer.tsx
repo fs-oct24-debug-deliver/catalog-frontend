@@ -2,6 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 import footerStyles from './Footer.module.scss';
 import ArrowUp from './img/arrow-up.svg?react';
 import Logo from './img/logo.svg?react';
+import LightLogo from './img/light-logo.svg?react';
+import { useAppSelector } from '../../app/hooks';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -10,14 +12,14 @@ export const Footer = () => {
       behavior: 'smooth',
     });
   };
+  const theme = useAppSelector((state) => state.theme.theme);
+  const logo = theme === 'dark' ? <Logo /> : <LightLogo />;
 
   return (
     <footer className={footerStyles.footer}>
       <div className={footerStyles.wrapper}>
         <div className={footerStyles.logo}>
-          <NavLink to="/">
-            <Logo />
-          </NavLink>
+          <NavLink to="/">{logo}</NavLink>
         </div>
 
         <div className={footerStyles.links}>
@@ -55,7 +57,9 @@ export const Footer = () => {
             onClick={scrollToTop}
           >
             {' '}
-            <ArrowUp />
+            <div style={{ color: 'var(--text)' }}>
+              <ArrowUp />
+            </div>
           </button>
         </div>
       </div>

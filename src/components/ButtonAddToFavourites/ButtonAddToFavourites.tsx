@@ -1,10 +1,9 @@
-import imgHeart from './imagesOfHeart/unSelectedHeart.svg';
-import imgHeartFilled from './imagesOfHeart/selectedHeart.svg';
-import styles from './ButtonAddToFavourites.module.scss';
-import { Card } from '../../types/Card';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
+import { Card } from '../../types/Card';
+import styles from './ButtonAddToFavourites.module.scss';
 import { addFavorite, removeFavorite } from '../../features/favoritesSlice';
+import { HeartIcon } from './HeartIcon/HeartIcon';
 
 type ButtonAddToFavouritesProps = {
   card: Card;
@@ -15,6 +14,7 @@ export const ButtonAddToFavourites = ({ card }: ButtonAddToFavouritesProps) => {
   const favorites = useAppSelector(
     (state: RootState) => state.favorites.items || [],
   );
+  const theme = useAppSelector((state: RootState) => state.theme.theme);
 
   const isFavorite = favorites.some((item) => item?.id === card.id);
 
@@ -28,12 +28,12 @@ export const ButtonAddToFavourites = ({ card }: ButtonAddToFavouritesProps) => {
 
   return (
     <button
-      className={`${styles.buttonOfHeart} ${isFavorite ? styles.active : ''}`}
+      className={`${styles.buttonOfHeart} ${isFavorite ? styles.active : ''} ${theme === 'light' ? styles.lightTheme : styles.darkTheme}`}
       onClick={handleClick}
     >
-      <img
-        src={isFavorite ? imgHeartFilled : imgHeart}
-        alt={isFavorite ? 'selected heart' : 'unselected heart'}
+      <HeartIcon
+        isFavorite={isFavorite}
+        theme={theme}
       />
     </button>
   );

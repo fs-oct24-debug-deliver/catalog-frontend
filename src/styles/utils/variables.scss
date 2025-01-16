@@ -12,3 +12,39 @@ $green: #27ae60;
 $red: #eb5757;
 $filter-purple: brightness(0) invert(36%) sepia(93%) saturate(550%)
   hue-rotate(210deg) brightness(95%) contrast(100%);
+
+html {
+  --icons: #b4bdc3;
+  &.dark {
+    --primary: #0f1121;
+    --text: #f1f2f9;
+    --secondary: #89939a;
+    --icon-border: #4a4d58;
+    --icons: #b4bdc3;
+    --surface1: #161827;
+    --surface2: #323542;
+    --elements: #3b3e4a;
+    --border: #161827;
+    --icon-hover-dark: #4a4d58;
+
+    --filter-icons: brightness(100%) invert(0%) sepia(0%) saturate(0%)
+      hue-rotate(0deg) brightness(100%) contrast(100%);
+  }
+
+  &.light {
+    --primary: #fafbfc;
+    --text: #313237;
+    --secondary: #89939a;
+    --icon-border: #89939a;
+    --icons: #4a4d58;
+    --surface1: #fafbfc;
+    --surface2: #fafbfc;
+    --elements: #75767f;
+    --border: #0f1121;
+    --icon-hover-light: #fafbfc;
+    --hover: #905bff;
+
+    --filter-icons: brightness(0) invert(50%) sepia(20%) saturate(150%)
+      hue-rotate(0deg) brightness(100%) contrast(120%);
+  }
+}

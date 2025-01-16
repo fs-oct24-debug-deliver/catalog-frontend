@@ -1,0 +1,19 @@
+.heart-icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  fill: none;
+  stroke: var(--border);
+
+  &.active {
+    fill: red;
+    stroke: red;
+  }
+
+  .light-theme & {
+    stroke: var(--border);
+  }
+
+  .dark-theme & {
+    stroke: var(--icon-border);
+  }
+}

@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $surface1;
+  background: var(--surface1);
+  border: 1px solid var(--border);
 
   transition: 0.3s;
 
@@ -43,14 +44,14 @@
   font-weight: 600;
   line-height: 21px;
   text-align: left;
-  color: $white;
+  color: var(--text);
 }
 
 .price {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: $white;
+  color: var(--text);
 
   &__actual {
     font-size: 22px;
@@ -97,7 +98,7 @@
 .itemValue {
   margin: 0;
   text-align: right;
-  color: $white;
+  color: var(--text);
 }
 
 .buttons {
