@@ -134,23 +134,6 @@ export const ProductDetailsPage = () => {
             )}
           </div>
 
-          <h1 className={styles.title}>{product.name}</h1>
-          <Gallery
-            images={product.images}
-            mainImage={mainImage}
-          />
-
-          {card && (
-            <Characteristics
-              product={product}
-              selectedColor={selectedColor}
-              selectedCapacity={selectedCapacity}
-              handleCapacityChange={handleCapacityChange}
-              handleColorChange={handleColorChange}
-              card={card}
-            />
-          )}
-
           <AboutSection
             description={product.description}
             specs={{
