@@ -38,7 +38,7 @@
   transition: 0.3s;
 
   &:hover {
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--border-button);
   }
 
   &.active {
@@ -51,23 +51,28 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px solid var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .capacity {
-  border: 1px solid var(--elements);
+  border: 1px solid var(--icon-border);
   padding: 8px;
   color: var(--text);
-  border-radius: 3px;
   transition: 0.3s;
 
   &:hover {
-    border: 1px solid var(--text);
+    border: 1px solid var(--active-button-hover);
+    background: var(--active-button-hover);
   }
 
   &.active {
     background: var(--text);
     color: var(--primary);
+    border: inherit;
+
+    &:hover {
+      background: var(--active-button-hover);
+    }
   }
 }
 
