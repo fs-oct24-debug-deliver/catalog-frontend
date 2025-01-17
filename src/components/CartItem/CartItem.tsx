@@ -43,7 +43,7 @@ export const CartItem: React.FC<Props> = ({ card }) => {
             alt="product image"
           />
         </div>
-        <Link to={`products/${card.itemId}`}>{card.name}</Link>
+        <Link to={`/${card.category}/${card.itemId}`}>{card.name}</Link>
       </div>
       <div className={styles.second}>
         <div className={styles.second_right}>
