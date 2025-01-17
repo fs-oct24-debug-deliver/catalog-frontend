@@ -1,5 +1,17 @@
 @use '../../../../styles/utils/mixins.scss' as *;
 
+.main {
+  margin-bottom: 56px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin-bottom: 80px;
+  }
+}
+
 .container {
   display: grid;
   justify-content: center;

@@ -9,7 +9,7 @@ type Props = {
 
 export const GridAdaptive: React.FC<Props> = ({ products }) => {
   return (
-    <main>
+    <main className={stylesGrid.main}>
       <div className={stylesGrid.container}>
         {products.map((product) => (
           <ProductCard
