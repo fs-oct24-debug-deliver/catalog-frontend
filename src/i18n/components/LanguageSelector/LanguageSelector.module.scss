@@ -1,0 +1,32 @@
+@use '../../../styles/utils/variables.scss' as *;
+
+.languageSelector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 12px;
+}
+
+.languageButton {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  background-color: var(--surface4);
+  color: var(--primary);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--surface4);
+  }
+
+  &.active {
+    background-color: $accent2;
+    color: var(--surface4);
+  }
+}

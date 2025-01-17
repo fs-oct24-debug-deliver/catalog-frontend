@@ -1,0 +1,220 @@
+{
+  "homePage": {
+    "mainTitle": "Witaj w sklepie Nice Gadgets!",
+    "newModelsTitle": "Nowe modele",
+    "hotPricesTitle": "Gorące ceny",
+    "categoryTitle": "Zakupy według kategorii"
+  },
+  "categories": {
+    "phones": "Telefony komórkowe",
+    "phonesCount": "{{count}} modele",
+    "tablets": "Tablety",
+    "tabletsCount": "{{count}} modele",
+    "accessories": "Akcesoria",
+    "accessoriesCount": "{{count}} modele"
+  },
+  "pages": {
+    "phonesPage": "Telefony komórkowe",
+    "tabletsPage": "Tablety",
+    "accessoriesPage": "Akcesoria"
+  },
+  "errorMessage": "Błąd: {{errorMessage}}",
+  "productsCount": "{{count}} modele",
+  "noModelsAvailable": "Brak dostępnych modeli.",
+  "header": {
+    "home": "Strona główna",
+    "phones": "Telefony",
+    "tablets": "Tablety",
+    "accessories": "Akcesoria"
+  },
+  "footer": {
+    "github": "GitHub",
+    "contacts": "Kontakt",
+    "rights": "prawa",
+    "back_to_top": "Powrót na górę"
+  },
+  "cart": {
+    "title": "Koszyk",
+    "items": "0 przedmiotów",
+    "empty": "Twój koszyk jest pusty. Możesz otrzymać nasz produkt na stronie."
+  },
+  "favorites": {
+    "title": "Ulubione",
+    "items": "{{count}} przedmiot",
+    "items_plural": "{{count}} przedmioty",
+    "empty": "Brak przedmiotów w ulubionych."
+  },
+  "error404": {
+    "title": "404",
+    "message": "Nie mogliśmy znaleźć strony, której szukasz."
+  },
+  "rights": {
+    "right": "Wszystkie prawa należą do zespołu Debug&Deliver i są chronione. Nasz kod to nasz kompas dla innowacji i postępu. Każda linia kodu to krok w stronę naszej misji tworzenia technologii, które są intuicyjne, wpływowe i umożliwiają każdemu osiąganie więcej."
+  },
+  "buttons": {
+    "add_to_cart": "Dodaj do koszyka",
+    "added": "Dodano",
+    "back": "Powrót",
+    "checkout": "Przejdź do kasy"
+  },
+  "actions": {
+    "total_for_items": "Razem za {{count}} przedmiotów"
+  },
+  "breadcrumbs": {
+    "home": "Strona główna",
+    "tablets": "Tablety",
+    "accessories": "Akcesoria",
+    "phones": "Telefony",
+    "favorites": "Ulubione"
+  },
+  "contact_us": {
+    "names": {
+      "daniil_kononchuk": "Daniil Kononczuk",
+      "oksana_moroz": "Oksana Moroz",
+      "oleksandr_kotliar": "Ołeksandr Kotliar",
+      "semen_vodolazkij": "Semen Wodolazkij",
+      "stanislav_sokolov": "Stanisław Sokołow",
+      "yuliia_zubenko": "Julija Zubenko"
+    },
+    "roles": {
+      "fullstack_developer": "Fullstack Developer",
+      "mentor": "Mentor"
+    }
+  },
+  "sort_and_items": {
+    "labels": {
+      "sort_by": "Sortuj według",
+      "items_on_page": "Elementy na stronie"
+    },
+    "options": {
+      "all": "Wszystkie",
+      "newest": "Najnowosze",
+      "priceLowToHigh": "Cena rosnąco",
+      "priceHighToLow": "Cena malejąco",
+      "items8": "8",
+      "items16": "16",
+      "items32": "32"
+    }
+  },
+
+  "details": {
+    "screen": "Ekran",
+    "capacity": "Pojemność",
+    "ram": "RAM",
+    "resolution": "Rozdzielczość",
+    "processor": "Procesor",
+    "built_in_memory": "RAM",
+    "camera": "Aparat",
+    "zoom": "Zoom",
+    "cell": "Komórka",
+    "title": {
+      "tech_specs": "Specyfikacja techniczna",
+      "about": "O produkcie",
+      "color": "Dostępne kolory",
+      "capacity": "Wybierz pojemność",
+      "you_may_also_like": "Możesz również polubić"
+    },
+    "description_phones": {
+      "title": {
+        "title_camera": "Aparat",
+        "title_pro": "A potem pojawił się Pro",
+        "title_shoot_flip_zoom_crop_cut_light_tweak_love": "Zrób zdjęcie. Odwróć je. Powiększ. Przytnij. Zdejmij. Oświetl. Dostosuj. Pokochaj.",
+        "title_wonderfull": "Wspaniale",
+        "title_blast_past_fast": "Szybkie przejście",
+        "title_a14_bionic_chip": "Chip A14 Bionic. Jedyną rzeczą, która była nawet blisko, był nasz ostatni chip.",
+        "title_night_mode": "Tryb nocny wchodzi na wszystkie twoje aparaty.",
+        "title_new_superpower": "Twoja nowa supermoc.",
+        "title_a15_bionic_chip": "Chip A15 Bionic. Super moc. W mini wersji.",
+        "title_amazing_camera": "Niesamowity aparat. Nie wymaga Pro.",
+        "title_ultimate_pro_camera": "Najlepszy system aparatu Pro",
+        "title_cinematic_mode": "Tryb kinowy"
+      },
+      "text": {
+        "text_pro_triple-camera": "Transformujący system potrójnego aparatu, który dodaje mnóstwo możliwości bez komplikacji.",
+        "text_pro_battery_chip": "Bezprecedensowy skok w żywotności baterii. I niesamowity chip, który podwaja możliwości uczenia maszynowego i przesuwa granice tego, co może zrobić smartfon. Witamy w pierwszym iPhonie wystarczająco potężnym, aby nazywać go Pro.",
+        "text_camera": "Poznaj pierwszy system potrójnego aparatu, który łączy nowoczesną technologię z legendarną prostotą iPhone'a. Uchwyć do czterech razy więcej scenerii. Zrób piękne zdjęcia w znacznie niższym świetle. Nagraj najwyższej jakości wideo w smartfonie — a potem edytuj przy użyciu tych samych narzędzi, których używasz do zdjęć. Nigdy wcześniej nie robiłeś zdjęć z takim aparatem.",
+        "text_video": "iPhone 11 Pro pozwala na nagrywanie wideo, które jest pięknie wierne rzeczywistości, z większymi detalami i płynniejszym ruchem. Epicka moc obliczeniowa oznacza, że może nagrywać wideo 4K z rozszerzonym zakresem dynamicznym i stabilizacją kinową — wszystko w 60 klatkach na sekundę. Zyskujesz także więcej kreatywnej kontroli, z czterokrotnie większą sceną i potężnymi nowymi narzędziami do edycji.",
+        "text_speed": "Szybkość 5G. A14 Bionic, najszybszy chip w smartfonie. Wyświetlacz OLED od krawędzi do krawędzi. Ceramiczna tarcza z czterokrotnie lepszą odpornością na upadki. I tryb nocny na każdym aparacie. iPhone 12 ma to wszystko — w dwóch idealnych rozmiarach.",
+        "text_bionic_chip": "A14 Bionic to pierwszy w branży chip o wymiarach 5 nanometrów, z zaawansowanymi komponentami o szerokości dosłownie atomów. Czterdzieści procent więcej tranzystorów przyspiesza prędkości, zwiększając wydajność i oferując świetną żywotność baterii. A nowy ISP napędza nagrywanie Dolby Vision — coś, czego nie potrafi żadna profesjonalna kamera filmowa, a tym bardziej żaden inny telefon.",
+        "text_night_mode": "Słabe światło staje się teraz atutem. Od słabo oświetlonych restauracji po plaże oświetlone księżycem, nowy tryb nocny zapewnia naturalne zdjęcia w słabym świetle — automatycznie.",
+        "text_new_superpower": "A15 Bionic, najszybszy chip w historii smartfonów. Wyświetlacz Super Retina XDR z ProMotion. Trwała Ceramiczna Tarcza z 4 razy lepszą odpornością na upadki. Nowy tryb nocny na wszystkich aparatach. To ostateczny iPhone, napędzany ostatecznym chipem.",
+        "text_a15_bionic_chip": "Chip A15 Bionic to najszybszy chip w historii smartfonów. Napędza wszystko, od fotografii po gry. A niesamowite akceleratory uczenia maszynowego pozwalają Ci doświadczyć rozszerzonej rzeczywistości jak nigdy dotąd.",
+        "text_amazing_camera": "iPhone 13 Mini robi oszałamiające zdjęcia i wideo dzięki zaawansowanemu systemowi podwójnych aparatów, z nowym trybem nocnym na wszystkich aparatach. A style fotograficzne personalizują twoje zdjęcia w danym momencie, zapewniając piękny wygląd.",
+        "text_ultimate_pro_camera": "Przedstawiamy pierwszy system aparatu Pro, który jest jednocześnie iPhone'em — oferujący 3x zoom optyczny, fotografię makro, portrety w trybie nocnym i nowy format ProRes do najwyższej jakości wideo w smartfonie. Przygotuj się, by kręcić jak profesjonalista.",
+        "text_cinematic_mode": "Filmuj jak profesjonalista z ekskluzywnym dostępem do efektu głębi ostrości w trybie kinowym, teraz także na szerokokątnych i teleobiektywach. Dodaj przejścia ostrości, by uzyskać kreatywny efekt, i łatwo przełączaj aparaty, by uchwycić więcej z chwili.",
+        "text_a15_bionic": "A15 Bionic to najszybszy chip w historii smartfonów. Napędza niesamowite doświadczenia w fotografii, wideo, grach i więcej — wszystko przy zachowaniu długiej żywotności baterii. I umożliwia najbardziej zaawansowane możliwości uczenia maszynowego w każdym smartfonie, oferując nowe doświadczenia.",
+        "text_pro_motion": "Technologia ProMotion automatycznie dostosowuje wyświetlacz do ruchu na ekranie, zapewniając płynniejsze przewijanie, lepszą reakcję i gładszy ruch — oraz baterię, która wystarcza na cały dzień."
+      }
+    },
+
+    "description_tablets": {
+      "title": {
+        "title_powerful_performance": "Potężna wydajność",
+        "title_retina_display": "Oszałamiający wyświetlacz Liquid Retina",
+        "title_versatile_camera_system": "Wszechstronny system aparatów",
+        "title_thin_light_powerful": "Cienki, lekki i potężny",
+        "title_apple_pencil": "Wszechstronne funkcje i wsparcie Apple Pencil",
+        "title_compact_and_portable": "Kompaktowy i przenośny",
+        "title_neural_engine": "Chip A15 Bionic i Neural Engine",
+        "title_advanced_cameras": "Zaawansowane aparaty i Center Stage",
+        "title_versatile_and_affordable": "Wszechstronny i przystępny cenowo",
+        "title_apple_pencil_smart_keyboard": "Wsparcie Apple Pencil i Smart Keyboard",
+        "title_compact_powerful": "Kompaktowy i potężny",
+        "title_retina_display_true_tone": "Wyświetlacz Retina i True Tone"
+      },
+      "text": {
+        "text_powerful_performance": "Doświadcz niesamowitej mocy i wydajności z Apple iPad Pro 11. Dzięki chipowi M1 oferuje nowy poziom wydajności, czyniąc go szybszym i bardziej efektywnym niż kiedykolwiek wcześniej.",
+        "text_powerful_performance2": "Niezależnie od tego, czy edytujesz zdjęcia, projektujesz dzieła sztuki, czy multitaskujesz z wymagającymi aplikacjami, iPad Pro 11 poradzi sobie ze wszystkim bez problemu.",
+        "text_retina_display": "Ciesz się wciągającym doświadczeniem wizualnym dzięki wyświetlaczowi Liquid Retina w iPad Pro 11. Z technologią ProMotion i True Tone, twój ekran będzie niesamowicie płynny i pełen detali. To idealny ekran do pracy, nauki i rozrywki.",
+        "text_versatile_camera_system": "Nowoczesny system aparatów z ultra szerokokątnym obiektywem, który sprawia, że robienie zdjęć i nagrywanie wideo na iPad Pro jest łatwiejsze i bardziej satysfakcjonujące.",
+        "text_advanced_cameras": "Aparaty na iPadzie Pro zapewniają wysoką jakość zdjęć w dowolnych warunkach, a system kamer TrueDepth sprawia, że FaceTime i portrety wyglądają lepiej niż kiedykolwiek.",
+        "text_thin_light_powerful": "iPad Pro jest ultracienki i ultralekki, ale nie oszczędza na mocy. Wciąż ma wszystko, czego potrzebujesz, aby efektywnie pracować, tworzyć i bawić się.",
+        "text_apple_pencil": "Twórz, rysuj i pisz z Apple Pencil, które jest teraz bardziej precyzyjne niż kiedykolwiek. Dzięki obsłudze różnych aplikacji możesz zrobić więcej.",
+        "text_neural_engine": "Z chipem M1 i neuralnym silnikiem iPad Pro 11 oferuje niesamowitą wydajność przy sztucznej inteligencji i zadaniach związanych z uczeniem maszynowym.",
+        "text_compact_and_portable": "Wielka moc w kompaktowej formie! iPad Pro 11 zapewnia wszystko, czego potrzebujesz w lekkiej i przenośnej formie. Idealny do pracy w podróży.",
+        "text_versatile_and_affordable": "iPad Pro 11 to wszechstronny tablet w przystępnej cenie, który spełni wszystkie Twoje potrzeby edukacyjne, profesjonalne i rozrywkowe.",
+        "text_apple_pencil_smart_keyboard": "Apple Pencil i Smart Keyboard czynią iPad Pro 11 jeszcze bardziej wszechstronnym. Twórz, edytuj i pisz jak nigdy wcześniej."
+      }
+    },
+    "description_accessories": {
+      "title": {
+        "title_monitor_your_health": "Monitoruj swoje zdrowie",
+        "title_stay_connected": "Pozostań połączony w drodze",
+        "title_stream_music": "Strumieniuj swoją ulubioną muzykę",
+        "title_retina_display": "Wyświetlacz Retina Always-On",
+        "title_blood_oxygen_sensor": "Czujnik poziomu tlenu we krwi",
+        "title_daily_activity": "Śledź swoją codzienną aktywność",
+        "title_ecg_app": "Aplikacja EKG",
+        "title_workouts": "Śledź swoje treningi",
+        "title_larger_display": "Większy wyświetlacz",
+        "title_fall_detection": "Wykrywanie upadków",
+        "title_retina": "Wyświetlacz Retina",
+        "title_family_setup": "Ustawienia rodziny",
+        "title_fitness": "Śledzenie kondycji",
+        "title_connected": "Pozostań połączony"
+      },
+      "text": {
+        "text_monitor_your_health": "Apple Watch Series 3 wyposażony jest w czujniki do monitorowania tętna, spalonych kalorii i innych parametrów kondycji przez cały dzień. Może nawet śledzić twoje treningi i sugerować spersonalizowane cele fitness.",
+        "text_stay_connected": "Dzięki łączności komórkowej możesz dzwonić i wysyłać wiadomości bez iPhone'a. Z Siri możesz uzyskać wskazówki, wysyłać wiadomości i ustawiać przypomnienia bez użycia rąk.",
+        "text_stream_music": "Za pomocą Apple Music i Siri możesz strumieniować ponad 75 milionów utworów na Apple Watch Series 3. Lub słuchać swoich ulubionych podcastów, audiobooków i stacji radiowych.",
+        "text_retina_display": "Apple Watch Series 6 wyposażony jest w wyświetlacz Retina Always-On, który jest 2,5 razy jaśniejszy na zewnątrz, gdy nadgarstek jest opadły. Dzięki temu możesz szybko zobaczyć wszystkie informacje na wyświetlaczu.",
+        "text_blood_oxygen_sensor": "Aplikacja Blood Oxygen mierzy poziom tlenu we krwi za pomocą rewolucyjnego czujnika i aplikacji. Możesz także wykonać EKG z nadgarstka w dowolnym miejscu i czasie.",
+        "text_daily_activity": "Apple Watch Series 6 śledzi twoją codzienną aktywność, w tym treningi, kroki i spalone kalorie. Posiada również wbudowany GPS do śledzenia biegania, spacerów i wędrówek.",
+        "text_display": "Dzięki wyświetlaczowi Retina Always-On możesz łatwo zobaczyć godzinę i ważne informacje bez podnoszenia nadgarstka. Wyświetlacz jest również o 30% większy niż w Series 3, co ułatwia czytanie i interakcję.",
+        "text_ecg_app": "Aplikacja EKG może wykrywać nieregularne rytmy serca i powiadomić cię, jeśli coś jest nie tak. Możesz również wykonać EKG w dowolnym momencie z nadgarstka.",
+        "text_ecg_app2": "Za pomocą aplikacji EKG możesz wykonać elektrokardiogram z nadgarstka w dowolnym czasie i miejscu.",
+        "text_workouts": "Apple Watch Series 5 śledzi twoje treningi, w tym bieganie, chodzenie, jazdę na rowerze i pływanie. Posiada również wbudowany GPS do śledzenia trasy.",
+        "text_display2": "Apple Watch Series 5 wyposażony jest w wyświetlacz Retina Always-On, który pozwala na szybkie spojrzenie na zegarek bez podnoszenia nadgarstka.",
+        "text_larger_display": "Apple Watch Series 4 ma większy wyświetlacz, dzięki któremu możesz zobaczyć więcej informacji od razu. Wyświetlacz jest o ponad 30% większy niż w Series 3 i ma zaokrąglone rogi.",
+        "text_fall_detection": "Apple Watch Series 4 może wykrywać upadki i wysłać powiadomienie do służb ratunkowych, jeśli nie odpowiesz w ciągu minuty. Funkcja ta jest dostępna tylko dla osób powyżej 65. roku życia.",
+        "text_retina": "Apple Watch SE ma wyświetlacz Retina, który zapewnia wyraźny i żywy obraz, co ułatwia czytanie.",
+        "text_retina2": "Apple Watch SE ma oszałamiający wyświetlacz Retina Always-On, dzięki któremu możesz łatwo zobaczyć godzinę i ważne informacje bez podnoszenia nadgarstka.",
+        "text_family_setup": "Za pomocą Family Setup możesz sparować Apple Watch SE z iPhonem członka rodziny, aby pozostać połączonym, nawet jeśli nie posiadasz własnego iPhone'a.",
+        "text_fitness": "Apple Watch SE oferuje pełną funkcjonalność śledzenia kondycji, w tym monitorowanie aktywności, tętna i wbudowany GPS do śledzenia treningów na świeżym powietrzu.",
+        "text_fitness2": "Apple Watch SE ma wszystkie funkcje, których potrzebujesz, aby pozostać zdrowym i aktywnym, w tym monitorowanie tętna, śledzenie aktywności i monitorowanie snu. Posiada również wbudowany GPS, dzięki czemu możesz śledzić swoje treningi i aktywności na świeżym powietrzu.",
+        "text_connected": "Dzięki łączności komórkowej i Wi-Fi możesz pozostać połączonym wszędzie, gdziekolwiek się znajdujesz. Możesz wykonywać i odbierać połączenia, wysyłać wiadomości i strumieniować muzykę bezpośrednio z nadgarstka.",
+        "text_connected2": "Apple Watch SE pomaga ci pozostać połączonym z osobami i informacjami, które są dla ciebie najważniejsze. Dzięki łączności komórkowej możesz odbierać połączenia i wiadomości, strumieniować muzykę i używać Siri, wszystko bez potrzeby posiadania iPhone'a."
+      }
+    }
+  }
+}
