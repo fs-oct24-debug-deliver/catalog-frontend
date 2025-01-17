@@ -6,15 +6,13 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import { HomePage } from './pages/HomePage';
-import { PhonesPage } from './pages/PhonesPage';
 import { ProductDetailsPage } from './pages/ProductDetailsPage';
-import { TabletsPage } from './pages/TabletsPage';
-import { AccessoriesPage } from './pages/AccessoriesPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { CartPage } from './pages/CartPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 // import { ContactsPage } from './pages/ContactsPage/ContactsPage';
 import { RightsPage } from './pages/RightsPage/RightsPage';
+import { CategoryPage } from './pages/CategoryPage/CategoryPage';
 
 const DynamicRouteWrapper = ({
   DefaultComponent,
@@ -43,7 +41,7 @@ export const Root = () => (
           path="phones/:itemId?"
           element={
             <DynamicRouteWrapper
-              DefaultComponent={PhonesPage}
+              DefaultComponent={CategoryPage}
               DetailsComponent={ProductDetailsPage}
             />
           }
@@ -53,7 +51,7 @@ export const Root = () => (
           path="tablets/:itemId?"
           element={
             <DynamicRouteWrapper
-              DefaultComponent={TabletsPage}
+              DefaultComponent={CategoryPage}
               DetailsComponent={ProductDetailsPage}
             />
           }
@@ -63,7 +61,7 @@ export const Root = () => (
           path="accessories/:itemId?"
           element={
             <DynamicRouteWrapper
-              DefaultComponent={AccessoriesPage}
+              DefaultComponent={CategoryPage}
               DetailsComponent={ProductDetailsPage}
             />
           }

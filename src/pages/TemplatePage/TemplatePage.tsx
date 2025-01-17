@@ -89,7 +89,7 @@ export const TemplatePage: React.FC<Props> = (props) => {
                 <SkeletonProduct key={i} />
               ))}
             </div>
-          : !products.length ?
+          : !products ?
             <p className={templateStyles.emptyState}>No models available.</p>
           : <>
               <GridAdaptive products={paginatedProducts} />
