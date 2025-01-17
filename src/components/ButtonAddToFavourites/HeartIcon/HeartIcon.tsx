@@ -15,7 +15,7 @@ export const HeartIcon = ({ isFavorite, theme }: HeartIconProps) => {
       className={`${theme === 'light' ? 'light-theme' : 'dark-theme'} ${isFavorite ? styles.active : ''}`}
     >
       <path
-        fill={isFavorite ? 'red' : 'none'}
+        fill={isFavorite ? '#eb5757' : 'none'}
         stroke={
           isFavorite ? 'none'
           : theme === 'light' ?

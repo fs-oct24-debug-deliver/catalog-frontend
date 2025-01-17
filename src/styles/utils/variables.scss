@@ -23,9 +23,14 @@ html {
     --icons: #b4bdc3;
     --surface1: #161827;
     --surface2: #323542;
+    --surface3: #323542;
+
     --elements: #3b3e4a;
     --border: #161827;
     --icon-hover-dark: #4a4d58;
+    --active-button: #313237;
+    --active-button-hover: #4a4d58;
+    --border-button: #f1f2f9;
 
     --filter-icons: brightness(100%) invert(0%) sepia(0%) saturate(0%)
       hue-rotate(0deg) brightness(100%) contrast(100%);
@@ -39,10 +44,15 @@ html {
     --icons: #4a4d58;
     --surface1: #fafbfc;
     --surface2: #fafbfc;
+    --surface3: #e2e6e9;
+
     --elements: #75767f;
     --border: #0f1121;
     --icon-hover-light: #fafbfc;
     --hover: #905bff;
+    --active-button: #313237;
+    --active-button-hover: #4a4d58;
+    --border-button: #313237;
 
     --filter-icons: brightness(0) invert(50%) sepia(20%) saturate(150%)
       hue-rotate(0deg) brightness(100%) contrast(120%);

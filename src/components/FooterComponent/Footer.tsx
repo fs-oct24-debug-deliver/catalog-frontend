@@ -31,21 +31,19 @@ export const Footer = () => {
             github
           </Link>
 
-          <Link
-            to="https://github.com/fs-oct24-debug-deliver/catalog-frontend"
-            target="_blank"
+          <NavLink
+            to={'/contacts'}
             className={`${footerStyles.link} defaultUppercaseStyles`}
           >
             contacts
-          </Link>
+          </NavLink>
 
-          <Link
-            to="https://github.com/fs-oct24-debug-deliver/catalog-frontend"
-            target="_blank"
+          <NavLink
+            to={'/rights'}
             className={`${footerStyles.link} defaultUppercaseStyles`}
           >
             rights
-          </Link>
+          </NavLink>
         </div>
 
         <div className={footerStyles.to_top}>

@@ -16,6 +16,7 @@ export const useSelectStyles = () => {
     'fontSize': '14px',
     'fontWeight': 700,
     'lineHeight': '21px',
+    'border-radius': 0,
 
     '& .MuiOutlinedInput-notchedOutline': {
       border: 'none',
@@ -25,6 +26,9 @@ export const useSelectStyles = () => {
     },
     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
       border: 'none',
+    },
+    '& .MuiSvgIcon-root': {
+      color: '#75767F',
     },
   };
 
@@ -38,10 +42,12 @@ export const useSelectStyles = () => {
           'marginTop': '4px',
           'background': colors.black,
           'border': `1px solid ${colors.elements}`,
+          'border-radius': 0,
 
           '& .MuiMenuItem-root': {
             'fontFamily': 'Mont, serif',
             'color': `${colors.secondary} !important`,
+
             'fontSize': '14px',
             'fontWeight': 600,
             'lineHeight': '21px',
@@ -62,9 +68,10 @@ export const useSelectStyles = () => {
   } else {
     selectStyles = {
       ...selectStylesBase,
-      background: colors.white,
-      color: `${colors.black} !important`,
-      border: `1px solid ${colors.secondary}`,
+      'background': colors.white,
+      'color': `${colors.black} !important`,
+      'border': `1px solid ${colors.secondary}`,
+      'border-radius': 0,
     };
     menuPropsStyles = {
       PaperProps: {
@@ -79,6 +86,7 @@ export const useSelectStyles = () => {
             'fontSize': '14px',
             'fontWeight': 600,
             'lineHeight': '21px',
+
             '&.Mui-selected': {
               backgroundColor: `${hexToRgba(colors.text, 0.4)} !important`,
               color: `${colors.black} !important`,

@@ -16,9 +16,9 @@
 .swiperButtonNext {
   height: 32px;
   width: 32px;
-  background: $surface2;
+  background: var(--surface3);
   border: 1px solid $surface2;
-  color: $white;
+  color: var(--text);
   transition: 0.2s;
 
   @include screen-width(desktop) {

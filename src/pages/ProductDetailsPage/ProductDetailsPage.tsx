@@ -116,6 +116,7 @@ export const ProductDetailsPage = () => {
       {errorMessage ?
         <h1>{errorMessage}</h1>
       : <div>
+          <div className={styles.bread_crumps}>BreadCrumps...</div>
           <ButtonBack />
           {isLoading && <Loader />}
 
@@ -138,23 +139,28 @@ export const ProductDetailsPage = () => {
             )}
           </div>
 
-          <AboutSection
-            description={product.description}
-            specs={{
-              screen: product.screen,
-              resolution: product.resolution,
-              processor: product.processor,
-              ram: product.ram,
-              camera: product.camera,
-              zoom: product.zoom,
-              cell: product.cell,
-            }}
-          />
-          {!isLoadingRecomendedProducts && recomendedProducts?.length && (
-            <SwiperComponent
-              cards={recomendedProducts}
-              title="You may also like"
+          <div className={styles.about_section}>
+            <AboutSection
+              description={product.description}
+              specs={{
+                screen: product.screen,
+                resolution: product.resolution,
+                processor: product.processor,
+                ram: product.ram,
+                camera: product.camera,
+                zoom: product.zoom,
+                cell: product.cell,
+              }}
             />
+          </div>
+
+          {!isLoadingRecomendedProducts && recomendedProducts?.length && (
+            <div className={styles.swiper_component}>
+              <SwiperComponent
+                cards={recomendedProducts}
+                title="You may also like"
+              />
+            </div>
           )}
         </div>
       }

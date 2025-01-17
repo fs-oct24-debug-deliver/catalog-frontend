@@ -10,7 +10,7 @@
   font-weight: 700;
   line-height: 21px;
   text-align: center;
-  border: 0;
+  border: 1px solid inherit;
 
   &:hover {
     background-color: $accent2;
@@ -18,11 +18,11 @@
 }
 
 .addedCard {
-  background: var(--surface2);
-  border: 1px solid var(--icon-border);
+  background: var(--active-button);
+  border: 1px solid inherit;
 
   &:hover {
-    background: var(--surface2);
+    background: var(--active-button-hover);
   }
 }
 
