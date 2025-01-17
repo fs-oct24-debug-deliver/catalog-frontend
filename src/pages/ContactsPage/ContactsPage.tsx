@@ -1,22 +1,35 @@
-export const ContactsPage = () => {
-  return (
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur non
-      reprehenderit fugit voluptate deserunt, eum temporibus itaque sequi
-      dolores impedit quod praesentium quae voluptatem accusamus. Nobis fuga
-      natus repellendus voluptatibus. Deserunt quo tenetur perspiciatis
-      voluptatem veritatis exercitationem ad ipsum aut assumenda cum fugit eos
-      nam, laboriosam at magnam eum totam esse maxime voluptate debitis
-      necessitatibus sint? Ipsum dicta harum tenetur! Illum mollitia non porro
-      debitis, beatae a aut veniam deleniti. Explicabo eveniet soluta illum
-      quaerat pariatur atque ea tenetur, quidem, ab voluptate quos, tempore quo?
-      Nobis molestiae a error adipisci? Dolore ratione laboriosam totam dolores
-      fuga doloribus eligendi consequatur exercitationem, voluptas maxime? Neque
-      cum esse autem voluptas id, repellat sit provident nam facere iure ea
-      delectus rem porro quae omnis! Totam debitis ullam dignissimos aut
-      deleniti inventore hic ea qui amet distinctio! Tempore harum veniam, aut,
-      illo eum enim fugiat incidunt doloribus veritatis modi accusantium
-      praesentium repellat nam tempora corrupti.
-    </p>
-  );
-};
+// import styles from './ContactsPage.module.scss';
+
+// import Daniil from '../../../public/img/contacts/Daniil.jpg';
+// import Oksana from '../../../public/img/contacts/Oksana.jpg';
+// import Oleksandr from '../../../public/img/contacts/Oleksandr.jpg';
+// import Semen from '../../../public/img/contacts/Semen.jpg';
+// import Stanislav from '../../../public/img/contacts/Stanislav.jpg';
+// import Yuliia from '../../../public/img/contacts/Yuliia.jpg';
+
+// export const ContactsPage: React.FC = () => {
+//   const contacts = [
+//     {
+//       name: 'Daniil Kononchuk'
+//     },
+//     {
+//       name: 'Oksana Moroz'
+//     },
+//     {
+//       name: 'Oleksandr Kotliar'
+//     },
+//     {
+//       name: 'Semen Vodolazkij'
+//     },
+//     {
+//       name: 'Stanislav Sokolov'
+//     },
+//     {
+//       name: 'Yuliia Zubenko'
+//     }
+//   ]
+
+//   return (
+//     <></>
+//   );
+// };

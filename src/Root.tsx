@@ -13,7 +13,7 @@ import { AccessoriesPage } from './pages/AccessoriesPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { CartPage } from './pages/CartPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-// import { ContactsPage } from './pages/ContactsPage/ContactsPage';
+import { ContactsPage } from './pages/ContactsPage/ContactsPage';
 import { RightsPage } from './pages/RightsPage/RightsPage';
 
 const DynamicRouteWrapper = ({
@@ -77,10 +77,10 @@ export const Root = () => (
           path="cart"
           element={<CartPage />}
         />
-        {/* <Route
+        <Route
           path="contacts"
           element={<ContactsPage />}
-        /> */}
+        />
         <Route
           path="rights"
           element={<RightsPage />}
