@@ -22,6 +22,14 @@ Meet the brilliant minds behind **Debug & Deliver**:
 
 ---
 
+### Special Thanks 🙏
+
+We extend our heartfelt gratitude to our mentor:
+
+- **Stanislav Sokolov** – [GitHub](https://github.com/StasSokolov1)
+
+For his invaluable guidance, expertise, and support throughout the development of this project. His mentorship has been crucial in helping us achieve our goals and deliver a high-quality product.
+
 ## Project Overview 🛍️
 
 ### Core Features
