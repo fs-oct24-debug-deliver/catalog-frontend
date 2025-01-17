@@ -49,11 +49,11 @@ export const useSelectStyles = () => {
               background: colors.surface1,
             },
             '&.Mui-selected': {
-              backgroundColor: `${colors.surface2} !important`,
+              backgroundColor: `${hexToRgba(colors.surface2, 0.7)} !important`,
               color: `${colors.white} !important`,
             },
             '&.Mui-selected:hover': {
-              backgroundColor: `${colors.elements} !important`,
+              backgroundColor: `${colors.surface2} !important`,
             },
           },
         },
