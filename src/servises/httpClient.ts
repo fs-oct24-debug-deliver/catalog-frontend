@@ -8,7 +8,6 @@ export function getData<T>(url: string): Promise<T> {
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`);
       }
-
       return response.json();
     });
   });
