@@ -8,6 +8,10 @@ import Stanislav from '../../../public/img/contacts/Stanislav.jpg';
 import Yuliia from '../../../public/img/contacts/Yuliia.jpg';
 
 export const ContactsPage: React.FC = () => {
+  window.scrollTo({
+    top: 0,
+  });
+
   const contacts = [
     {
       name: 'Daniil Kononchuk',
