@@ -1,7 +1,62 @@
+@use '../../styles/utils/variables.scss' as *;
+@use '../../styles/utils/mixins.scss' as *;
+
 .switch {
-  width: 48px;
+  width: 45px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  border-radius: 35px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+
+  @include screen-width(desktop) {
+    width: 65px;
+    height: 30px;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  left: 0px;
+  top: 0.5px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px rgba(0, 0, 0, 0.2);
+
+  @include screen-width(desktop) {
+    top: 5px;
+    left: 2px;
+  }
+}
+
+.isLight {
+  background-color: $accent;
+}
+
+.isDark {
+  background-color: #e0e0e0;
+}
+
+.input:checked + .slider {
+  transform: translateX(25px);
+  @include screen-width(desktop) {
+    transform: translateX(35px);
+  }
+}
+
+.icon {
+  font-size: 15px;
+  @include screen-width(desktop) {
+    font-size: 20px;
+  }
 }
