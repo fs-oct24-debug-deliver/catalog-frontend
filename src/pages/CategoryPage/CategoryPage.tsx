@@ -10,6 +10,7 @@ export const CategoryPage: React.FC = () => {
   const [products, setProducts] = useState<Card[]>([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
