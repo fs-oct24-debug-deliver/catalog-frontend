@@ -5,8 +5,54 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-bottom: 56px;
 
   @include screen-width(tablet) {
     flex-direction: row;
+    margin-bottom: 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin-bottom: 80px;
+  }
+}
+
+.title {
+  margin: 16px 0 32px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.about_section {
+  margin-bottom: 56px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin-bottom: 80px;
+  }
+}
+
+.swiper_component {
+  margin-bottom: 56px;
+
+  @include screen-width(tablet) {
+    margin-bottom: 64px;
+  }
+
+  @include screen-width(desktop) {
+    margin-bottom: 80px;
+  }
+}
+
+.bread_crumps {
+  margin: 24px 0;
+
+  @include screen-width(tablet) {
+    margin: 24px 0 40px;
   }
 }
