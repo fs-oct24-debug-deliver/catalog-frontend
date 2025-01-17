@@ -4,9 +4,7 @@
   align-items: center;
   min-width: 40px;
   height: 40px;
-  background-color: var(--surface2);
   cursor: pointer;
-  border: 1px solid var(--border);
   box-sizing: border-box;
 
   &:hover {
@@ -20,7 +18,7 @@
 
   &.lightTheme {
     background-color: var(--surface1);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-card);
 
     &:hover {
       border: 1px solid var(--active-button-hover);
