@@ -64,7 +64,9 @@
   border: 1px solid $surface2;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &_plus {
     background: $surface2;

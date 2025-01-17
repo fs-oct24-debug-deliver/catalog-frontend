@@ -82,7 +82,7 @@
       height: 100%;
       position: relative;
       padding-block: 8px;
-      color: $white;
+      color: var(--text);
 
       &::after {
         content: '';
@@ -91,7 +91,7 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: $white;
+        background: var(--text);
       }
     }
   }
