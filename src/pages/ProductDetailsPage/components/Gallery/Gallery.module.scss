@@ -40,13 +40,13 @@
 
 .thumbnailWrapper {
   cursor: pointer;
-  border: 2px solid $elements;
+  border: 2px solid var(--secondary);
   border-radius: 4px;
   transition: border 0.2s ease-in-out;
   height: 50px;
 
   &.selected {
-    border: 2px solid $white;
+    border: 2px solid var(--text);
     border-radius: 4px;
   }
 

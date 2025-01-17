@@ -40,6 +40,10 @@ export const ProductDetailsPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [itemId]);
+
+  useEffect(() => {
     if (!itemId) return;
 
     setIsLoading(true);

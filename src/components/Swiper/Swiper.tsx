@@ -62,7 +62,10 @@ export const SwiperComponent: React.FC<Props> = ({ cards, title }) => {
       >
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
-            <ProductCard card={card} />
+            <ProductCard
+              card={card}
+              notScale={true}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
