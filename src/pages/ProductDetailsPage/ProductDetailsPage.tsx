@@ -13,6 +13,9 @@ import { Loader } from '../../components/Loader';
 import { Card } from '../../types/Card';
 import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { Characteristics } from './components/Characteristics';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+
+import Alarm from '../../../public/img/icons/alarm.svg';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
@@ -105,18 +108,31 @@ export const ProductDetailsPage = () => {
   if (!product) {
     return (
       <>
-        <ButtonBack />
-        <h1>Product not found! {product}</h1>
+        <div className={styles.container_back}>
+          <ButtonBack />
+        </div>
+        <div className={styles.container}>
+          <div className={styles.icon}>
+            <img
+              src={Alarm}
+              alt="Coding icon"
+              className="not-found__icon"
+            />
+          </div>
+          <div>
+            <p className={styles.text}>Product not found</p>
+          </div>
+        </div>
       </>
     );
   }
 
   return (
     <>
+      <Breadcrumbs />
       {errorMessage ?
         <h1>{errorMessage}</h1>
       : <div>
-          <div className={styles.bread_crumps}>BreadCrumps...</div>
           <ButtonBack />
           {isLoading && <Loader />}
 

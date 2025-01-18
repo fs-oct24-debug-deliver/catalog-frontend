@@ -56,3 +56,54 @@
     margin: 24px 0 40px;
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  @include screen-width(tablet) {
+    flex-direction: row;
+  }
+}
+
+.icon img {
+  width: 80px;
+  height: 80px;
+  padding-bottom: 14px;
+
+  @include screen-width(tablet) {
+    width: 160px;
+    height: 160px;
+  }
+
+  @include screen-width(desktop) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.text {
+  text-align: center;
+  color: $text;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  width: 50vh;
+
+  @include screen-width(tablet) {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  @include screen-width(desktop) {
+    font-size: 24px;
+  }
+}
+
+.container_back {
+  margin: 40px 0 16px 0;
+  display: flex;
+  gap: 4px;
+}
