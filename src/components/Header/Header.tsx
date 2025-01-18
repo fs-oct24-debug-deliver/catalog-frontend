@@ -40,7 +40,10 @@ export const Header: React.FC = () => {
     <header>
       <div className={styles.header}>
         <div className={styles.header__right}>
-          <Link to={'/'}>
+          <Link
+            onClick={() => window.scrollTo({ top: 0 })}
+            to={'/'}
+          >
             <img
               src={logo}
               alt="Nice gadgets icon"
@@ -64,6 +67,7 @@ export const Header: React.FC = () => {
                   className={`defaultUppercaseStyles ${styles.header__item}`}
                 >
                   <NavLink
+                    onClick={() => window.scrollTo({ top: 0 })}
                     className={({ isActive }) =>
                       getNavLinkClass(
                         isActive,
@@ -87,6 +91,7 @@ export const Header: React.FC = () => {
           </div>
           <div className={styles.header__left_links}>
             <NavLink
+              onClick={() => window.scrollTo({ top: 0 })}
               to={'/favorites'}
               className={({ isActive }) =>
                 `${getNavLinkClass(
@@ -111,6 +116,7 @@ export const Header: React.FC = () => {
               </div>
             </NavLink>
             <NavLink
+              onClick={() => window.scrollTo({ top: 0 })}
               to={'/cart'}
               className={({ isActive }) =>
                 `${getNavLinkClass(
