@@ -16,6 +16,7 @@ $filter-purple: brightness(0) invert(36%) sepia(93%) saturate(550%)
 html {
   --icons: #b4bdc3;
   &.dark {
+    --switcher: #4219d0;
     --primary: #0f1121;
     --text: #f1f2f9;
     --secondary: #89939a;
@@ -42,6 +43,7 @@ html {
   }
 
   &.light {
+    --switcher: #e0e0e0;
     --primary: #fafbfc;
     --text: #313237;
     --secondary: #89939a;

@@ -15,6 +15,8 @@ export const SwiperComponent: React.FC<Props> = ({ cards, title }) => {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
+  const uniqueId = `swiper-${Math.random().toString(36).slice(2, 11)}`;
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSwiperUpdate = (swiper: any) => {
     setIsBeginning(swiper.isBeginning);
@@ -27,6 +29,7 @@ export const SwiperComponent: React.FC<Props> = ({ cards, title }) => {
         <h2>{title}</h2>
         <div className={styles.navigation}>
           <button
+            id={`prev-${uniqueId}`}
             className={`${styles.swiperButtonPrev} ${
               isBeginning ? styles.disabled : ''
             }`}
@@ -34,6 +37,7 @@ export const SwiperComponent: React.FC<Props> = ({ cards, title }) => {
             {'<'}
           </button>
           <button
+            id={`next-${uniqueId}`}
             className={`${styles.swiperButtonNext} ${
               isEnd ? styles.disabled : ''
             }`}
@@ -47,8 +51,8 @@ export const SwiperComponent: React.FC<Props> = ({ cards, title }) => {
         spaceBetween={16}
         slidesPerView={1}
         navigation={{
-          nextEl: `.${styles.swiperButtonNext}`,
-          prevEl: `.${styles.swiperButtonPrev}`,
+          nextEl: `#next-${uniqueId}`,
+          prevEl: `#prev-${uniqueId}`,
         }}
         autoHeight={false}
         breakpoints={{

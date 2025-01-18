@@ -22,6 +22,7 @@ export const BurgerMenu: React.FC<Props> = ({
 }) => {
   const handleCloseMenu = () => {
     setOpen(false);
+    window.scrollTo({ top: 0 });
   };
   const theme = useAppSelector((state) => state.theme.theme);
 
