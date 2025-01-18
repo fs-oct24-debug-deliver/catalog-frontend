@@ -10,7 +10,7 @@ import { ProductDetailsPage } from './pages/ProductDetailsPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { CartPage } from './pages/CartPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-// import { ContactsPage } from './pages/ContactsPage/ContactsPage';
+import { ContactsPage } from './pages/ContactsPage/ContactsPage';
 import { RightsPage } from './pages/RightsPage/RightsPage';
 import { CategoryPage } from './pages/CategoryPage/CategoryPage';
 
@@ -75,10 +75,10 @@ export const Root = () => (
           path="cart"
           element={<CartPage />}
         />
-        {/* <Route
+        <Route
           path="contacts"
           element={<ContactsPage />}
-        /> */}
+        />
         <Route
           path="rights"
           element={<RightsPage />}
