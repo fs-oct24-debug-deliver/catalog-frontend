@@ -7,7 +7,6 @@ import { Loader } from '../../components/Loader';
 import { TemplatePagePagination } from './components/templatePagePagination';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { SortSelectAndDropdowns } from '../../components/SortSelectAndDropdowns/SortSelectAndDropdowns';
-import { NoProductsFound } from './components/NotFoundProducts/NorFoundProducts';
 
 type Props = {
   title: string;
@@ -106,7 +105,7 @@ export const TemplatePage: React.FC<Props> = (props) => {
                   handleChange={handleChange}
                   currentPage={currentPage}
                 />
-              : <NoProductsFound />}
+              : <p className={templateStyles.not_found}>Not found products</p>}
             </>
           }
         </div>
