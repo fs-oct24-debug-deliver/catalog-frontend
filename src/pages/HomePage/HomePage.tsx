@@ -4,6 +4,7 @@ import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { useEffect, useState } from 'react';
 import { getAllProducts } from '../../servises/getAllData';
 import { Card } from '../../types/Card';
+import { motion } from 'motion/react';
 import styles from './components/HomePage.module.scss';
 
 export const HomePage = () => {
@@ -35,7 +36,12 @@ export const HomePage = () => {
   }, []);
   return (
     <div>
-      <h1 className={styles.margins}>Welcome to Nice Gadgets store!</h1>
+      <motion.h1
+        whileInView={{ opacity: 1 }}
+        className={styles.margins}
+      >
+        Welcome to Nice Gadgets store!
+      </motion.h1>
       <section className={styles.section}>
         <HomePageSwiper />
       </section>
