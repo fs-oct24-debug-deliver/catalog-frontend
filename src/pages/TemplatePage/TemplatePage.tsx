@@ -3,10 +3,11 @@ import { useSearchParams } from 'react-router-dom';
 import { Card } from '../../types/Card';
 import templateStyles from './TemplatePage.module.scss';
 import { GridAdaptive } from '../../components/GridAdaptive/GridAdaptive';
-import { Loader } from '../../components/Loader';
+import '../../styles/index.scss';
 import { TemplatePagePagination } from './components/templatePagePagination';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 import { SortSelectAndDropdowns } from '../../components/SortSelectAndDropdowns/SortSelectAndDropdowns';
+import { SkeletonProduct } from '../../components/SkeletonProduct/SkeletonProduct';
 
 type Props = {
   title: string;
@@ -78,17 +79,17 @@ export const TemplatePage: React.FC<Props> = (props) => {
           <p
             className={templateStyles.countOfModels}
           >{`${products.length} models`}</p>
-
+          <SortSelectAndDropdowns
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
           {isLoading ?
-            <Loader />
-          : products.length && (
-              <SortSelectAndDropdowns
-                searchParams={searchParams}
-                setSearchParams={setSearchParams}
-              />
-            )
-          }
-          {!products.length ?
+            <div className="grid_container">
+              {Array.from({ length: 10 }).map((_, i) => (
+                <SkeletonProduct key={i} />
+              ))}
+            </div>
+          : !products ?
             <p className={templateStyles.emptyState}>No models available.</p>
           : <>
               <GridAdaptive products={paginatedProducts} />
