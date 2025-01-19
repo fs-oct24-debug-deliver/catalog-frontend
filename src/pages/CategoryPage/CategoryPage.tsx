@@ -34,12 +34,6 @@ export const CategoryPage: React.FC = () => {
 
   return (
     <TemplatePage
-      title={
-        location.pathname.includes('phones') ? 'Mobile phones'
-        : location.pathname.includes('tablets') ?
-          'Tablets'
-        : 'Accessories'
-      }
       products={products}
       errorMessage={errorMessage}
       isLoading={isLoading}
