@@ -1,11 +1,11 @@
 import styles from './ContactsPage.module.scss';
 
-import Daniil from '../../../public/img/contacts/Daniil.jpg';
-import Oksana from '../../../public/img/contacts/Oksana.jpg';
-import Oleksandr from '../../../public/img/contacts/Oleksandr.jpg';
-import Semen from '../../../public/img/contacts/Semen.jpg';
-import Stanislav from '../../../public/img/contacts/Stanislav.jpg';
-import Yuliia from '../../../public/img/contacts/Yuliia.jpg';
+import Daniil from './contacts/Daniil.jpg';
+import Oksana from './contacts/Oksana.jpg';
+import Oleksandr from './contacts/Oleksandr.jpg';
+import Semen from './contacts/Semen.jpg';
+import Stanislav from './contacts/Stanislav.jpg';
+import Yuliia from './contacts/Yuliia.jpg';
 import { useTranslation } from 'react-i18next';
 
 export const ContactsPage: React.FC = () => {
