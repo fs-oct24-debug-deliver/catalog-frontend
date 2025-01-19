@@ -4,35 +4,41 @@ import React from 'react';
 import '../../styles/utils/variables.scss';
 import '../../styles/index.scss';
 import { useSelectStyles } from './SelectStyles';
-
-const optionsForSort = [
-  { value: 'all', label: 'All' },
-  { value: 'newest', label: 'Newest' },
-  { value: 'priceLowToHigh', label: 'Low to high price' },
-  { value: 'priceHighToLow', label: 'High to low price' },
-];
-
-const optionsForItemsOnPage = [
-  { value: '8', label: '8' },
-  { value: '16', label: '16' },
-  { value: '32', label: '32' },
-  { value: 'all', label: 'All' },
-];
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   searchParams: URLSearchParams;
   setSearchParams: (params: URLSearchParams) => void;
 };
 
+// Опції для сортування та кількості елементів на сторінці з локалізованими мітками
+const optionsForSort = [
+  { value: 'all', label: 'all' },
+  { value: 'newest', label: 'newest' },
+  { value: 'priceLowToHigh', label: 'priceLowToHigh' },
+  { value: 'priceHighToLow', label: 'priceHighToLow' },
+];
+
+const optionsForItemsOnPage = [
+  { value: '8', label: 'items8' },
+  { value: '16', label: 'items16' },
+  { value: '32', label: 'items32' },
+  { value: 'all', label: 'all' },
+];
+
 export const SortSelectAndDropdowns: React.FC<Props> = ({
   searchParams,
   setSearchParams,
 }) => {
+  const { t } = useTranslation(); // Ініціалізація функції перекладу
+
+  // Отримуємо значення для сортування та кількості елементів на сторінці з searchParams
   const valueSelectSort = searchParams.get('sort') || 'all';
   const valueSelectItems = searchParams.get('perPage') || 'all';
   const params = new URLSearchParams(searchParams);
   const { selectStyles, menuPropsStyles } = useSelectStyles();
 
+  // Функція для обробки зміни сортування
   const handleSortChange = (event: SelectChangeEvent) => {
     const option = event.target.value as string;
 
@@ -44,6 +50,7 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
     setSearchParams(params);
   };
 
+  // Функція для обробки зміни кількості елементів на сторінці
   const handleItemsOnPage = (event: SelectChangeEvent) => {
     const option = event.target.value as string;
 
@@ -63,7 +70,7 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
             className={styles.input_label}
             id="sortBy"
           >
-            Sort by
+            {t('sort_and_items.labels.sort_by')}
           </InputLabel>
           <Select
             className={`${styles.selectSort} defaultSmallTextStyles`}
@@ -79,7 +86,8 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
                 key={index}
                 className={`${styles.option} defaultSmallTextStyles`}
               >
-                {option.label}
+                {t(`sort_and_items.options.${option.label}`)}{' '}
+                {/* Використовуємо t() для перекладу */}
               </MenuItem>
             ))}
           </Select>
@@ -90,7 +98,7 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
             className={styles.input_label}
             id="itemOnPage"
           >
-            Items on page
+            {t('sort_and_items.labels.items_on_page')}
           </InputLabel>
           <Select
             className={`${styles.selectItemOnPage} defaultSmallTextStyles`}
@@ -106,7 +114,8 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
                 key={index}
                 className={`${styles.option} defaultSmallTextStyles`}
               >
-                {option.label}
+                {t(`sort_and_items.options.${option.label}`)}{' '}
+                {/* Використовуємо t() для перекладу */}
               </MenuItem>
             ))}
           </Select>

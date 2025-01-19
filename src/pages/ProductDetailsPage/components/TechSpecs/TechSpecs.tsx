@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './TechSpecs.module.scss';
+import { useTranslation } from 'react-i18next';
 
 type TechSpecsProps = {
   specs: {
@@ -14,6 +15,8 @@ type TechSpecsProps = {
 };
 
 export const TechSpecs = ({ specs }: TechSpecsProps) => {
+  const { t } = useTranslation();
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 400);
 
   useEffect(() => {
@@ -28,33 +31,41 @@ export const TechSpecs = ({ specs }: TechSpecsProps) => {
 
   return (
     <>
-      <h3 className={styles.title}>Tech specs</h3>
+      <h3 className={styles.title}>{t('details.title.tech_specs')}</h3>
       <div className={styles.wrapper}>
         <dl className={styles.tech_specs}>
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>Screen</dt>
+            <dt className={styles.tech_specs_title}>{t('details.screen')}</dt>
             <dd className={styles.tech_specs_description}>{specs.screen}</dd>
           </div>
 
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>Resolution</dt>
+            <dt className={styles.tech_specs_title}>
+              {t('details.resolution')}
+            </dt>
             <dd className={styles.tech_specs_description}>
               {specs.resolution}
             </dd>
           </div>
 
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>Processor</dt>
+            <dt className={styles.tech_specs_title}>
+              {' '}
+              {t('details.processor')}
+            </dt>
             <dd className={styles.tech_specs_description}>{specs.processor}</dd>
           </div>
 
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>RAM</dt>
+            <dt className={styles.tech_specs_title}>
+              {t('details.built_in_memory')}
+            </dt>
+
             <dd className={styles.tech_specs_description}>{specs.ram}</dd>
           </div>
 
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>Camera</dt>
+            <dt className={styles.tech_specs_title}> {t('details.camera')}</dt>
             <dd className={styles.tech_specs_description}>{specs.camera}</dd>
           </div>
 
@@ -64,7 +75,7 @@ export const TechSpecs = ({ specs }: TechSpecsProps) => {
           </div>
 
           <div className={styles.tech_spec}>
-            <dt className={styles.tech_specs_title}>Cell</dt>
+            <dt className={styles.tech_specs_title}>{t('details.cell')}</dt>
             <dd className={styles.tech_specs_description}>
               {isMobile ?
                 specs.cell.slice(0, 4).join(', ')
