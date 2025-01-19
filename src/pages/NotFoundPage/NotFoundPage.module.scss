@@ -5,12 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-block: 36px;
+  margin: auto;
 
   @include screen-width(tablet) {
     flex-direction: row;
-    margin: auto;
-    gap: 20px;
   }
 }
 

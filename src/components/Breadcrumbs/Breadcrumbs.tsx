@@ -18,7 +18,7 @@ export const Breadcrumbs = () => {
         >
           <Link
             to={match.pathname}
-            className={`${styles.link}`}
+            className={`${styles.link} ${index < breadcrumbs.length - 1 ? styles.linkWithFilter : ''}`}
           >
             {breadcrumb}
           </Link>

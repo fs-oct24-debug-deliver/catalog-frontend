@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
-import './NotFoundPage.scss';
 import { useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
+
+import styles from './NotFoundPage.module.scss';
+import Coding from '../../../public/img/icons/coding.svg';
 
 export const NotFoundPage: React.FC = () => {
   const theme = useAppSelector((state: RootState) => state.theme.theme);
@@ -12,11 +14,20 @@ export const NotFoundPage: React.FC = () => {
   }, [theme]);
 
   return (
-    <div className="not-found">
-      <p className="not-found__404">404</p>
-      <p className="not-found__text">
-        We couldn’t find the page you were looking for
-      </p>
-    </div>
+    <>
+      <div className={styles.container}>
+        <div className={styles.icon}>
+          <img
+            src={Coding}
+            alt="Coding icon"
+            className="not-found__icon"
+          />
+        </div>
+        <div>
+          <p className={styles.number}>404</p>
+          <p className={styles.text}>Page not found</p>
+        </div>
+      </div>
+    </>
   );
 };
