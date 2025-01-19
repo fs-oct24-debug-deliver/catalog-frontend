@@ -20,7 +20,6 @@ export const AccessoriesPage = () => {
 
   return (
     <TemplatePage
-      title={'Accessories'}
       products={accessories}
       errorMessage={errorMessage}
       isLoading={isLoading}
