@@ -43,7 +43,7 @@ export const HomePage = () => {
         whileInView={{ opacity: 1 }}
         className={styles.margins}
       >
-       {t('homePage.mainTitle')}
+        {t('homePage.mainTitle')}
       </motion.h1>
       <section className={styles.section}>
         <HomePageSwiper />
