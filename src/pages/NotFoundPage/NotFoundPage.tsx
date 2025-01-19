@@ -4,7 +4,7 @@ import { RootState } from '../../app/store';
 import { useTranslation } from 'react-i18next';
 
 import styles from './NotFoundPage.module.scss';
-import Coding from '../../../public/img/icons/coding.svg';
+import Coding from '/img/icons/coding.svg';
 
 export const NotFoundPage: React.FC = () => {
   const theme = useAppSelector((state: RootState) => state.theme.theme);

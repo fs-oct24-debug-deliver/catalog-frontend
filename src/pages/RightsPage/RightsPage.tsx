@@ -1,7 +1,7 @@
 import styles from './RightsPage.module.scss';
 import { useTranslation } from 'react-i18next';
 
-import Protection from '../../../public/img/icons/protection.svg';
+import Protection from './protection.svg';
 
 export const RightsPage = () => {
   const { t } = useTranslation();

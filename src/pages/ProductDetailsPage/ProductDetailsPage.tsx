@@ -16,7 +16,7 @@ import { Characteristics } from './components/Characteristics';
 import { useTranslation } from 'react-i18next';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
-import Alarm from '../../../public/img/icons/alarm.svg';
+import Alarm from '/img/icons/alarm.svg';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
