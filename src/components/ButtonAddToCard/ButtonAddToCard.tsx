@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addCart, removeCart } from '../../features/cartSlice';
 import { Card } from '../../types/Card';
 import toast from 'react-hot-toast';
+import { motion } from 'motion/react';
 
 type Props = {
   title?: string;
@@ -86,13 +87,14 @@ export const ButtonAddToCard: React.FC<Props> = ({
   };
 
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       className={`${buttonStyle.addCard} ${
         title === 'Added to cart' ? buttonStyle.addedCard : ''
       }`}
       onClick={onClick || handleClick}
     >
       {title}
-    </button>
+    </motion.button>
   );
 };
