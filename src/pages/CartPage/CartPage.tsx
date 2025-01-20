@@ -44,7 +44,6 @@ export const CartPage = () => {
           <p className={styles.countOfProducts}>
             {t('cart.items', { count: cards.length })}
           </p>
-
           <div className={styles.container}>
             <div className={styles.icon}>
               <img
