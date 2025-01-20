@@ -3,9 +3,15 @@
 .title {
   margin-bottom: 8px;
 }
-//
 
 .countOfModels {
   color: $secondary;
   margin-bottom: 8px;
+}
+
+.not_found {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 50px;
 }

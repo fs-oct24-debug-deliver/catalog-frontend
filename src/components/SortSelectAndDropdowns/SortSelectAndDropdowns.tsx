@@ -1,5 +1,11 @@
 import styles from './SortSelectAndDropdowns.module.scss';
-import { InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import {
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+} from '@mui/material';
 import React from 'react';
 import '../../styles/utils/variables.scss';
 import '../../styles/index.scss';
@@ -35,8 +41,9 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
   // Отримуємо значення для сортування та кількості елементів на сторінці з searchParams
   const valueSelectSort = searchParams.get('sort') || 'all';
   const valueSelectItems = searchParams.get('perPage') || 'all';
+  const searchInput = searchParams.get('query') || '';
   const params = new URLSearchParams(searchParams);
-  const { selectStyles, menuPropsStyles } = useSelectStyles();
+  const { selectStyles, menuPropsStyles, inputStyles } = useSelectStyles();
 
   // Функція для обробки зміни сортування
   const handleSortChange = (event: SelectChangeEvent) => {
@@ -62,9 +69,32 @@ export const SortSelectAndDropdowns: React.FC<Props> = ({
     setSearchParams(params);
   };
 
+  const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target.value as string;
+
+    if (input.trim() === '') {
+      params.delete('query');
+    } else {
+      params.set('query', input);
+    }
+
+    setSearchParams(params);
+  };
+
   return (
     <>
       <div className={styles.wrapper}>
+        <div>
+          <TextField
+            id="filled-search"
+            label="Search"
+            type="search"
+            variant="filled"
+            value={searchInput}
+            sx={inputStyles}
+            onChange={handleSearchInput}
+          />
+        </div>
         <div>
           <InputLabel
             className={styles.input_label}

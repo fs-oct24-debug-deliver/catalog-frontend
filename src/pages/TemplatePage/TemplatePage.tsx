@@ -27,6 +27,7 @@ export const TemplatePage: React.FC<Props> = ({
   const valueSelectSort = searchParams.get('sort') || 'all';
   const valueSelectItems = searchParams.get('perPage') || 'all';
   const currentPage = Number(searchParams.get('page') || '1');
+  const searchInput = searchParams.get('query') || '';
 
   const getPageTitle = () => {
     const path = location.pathname;
@@ -59,31 +60,35 @@ export const TemplatePage: React.FC<Props> = ({
     setSearchParams(params);
   };
 
-  const sortedProducts = [...products].sort((a, b) => {
-    switch (valueSelectSort) {
-      case 'newest':
-        return b.year - a.year;
+  const filteredAndSortedProducts = [...products]
+    .filter((product) =>
+      product.name.toLowerCase().includes(searchInput.toLowerCase()),
+    )
+    .sort((a, b) => {
+      switch (valueSelectSort) {
+        case 'newest':
+          return b.year - a.year;
 
-      case 'priceLowToHigh':
-        return a.price - b.price;
+        case 'priceLowToHigh':
+          return a.price - b.price;
 
-      case 'priceHighToLow':
-        return b.price - a.price;
+        case 'priceHighToLow':
+          return b.price - a.price;
 
-      case 'all':
-        return 0;
+        case 'all':
+          return 0;
 
-      default:
-        return 0;
-    }
-  });
+        default:
+          return 0;
+      }
+    });
 
   const countOnPage =
     valueSelectItems === 'all' ?
-      sortedProducts.length
+      filteredAndSortedProducts.length
     : Number(valueSelectItems);
 
-  const paginatedProducts = sortedProducts.slice(
+  const paginatedProducts = filteredAndSortedProducts.slice(
     (currentPage - 1) * Number(countOnPage),
     currentPage * Number(countOnPage),
   );
@@ -120,14 +125,14 @@ export const TemplatePage: React.FC<Props> = ({
           : <>
               <GridAdaptive products={paginatedProducts} />
 
-              {valueSelectItems !== 'all' && (
+              {valueSelectItems !== 'all' && filteredAndSortedProducts.length ?
                 <TemplatePagePagination
                   count={products.length}
                   countOnPages={countOnPage}
                   handleChange={handleChange}
                   currentPage={currentPage}
                 />
-              )}
+              : <p className={templateStyles.not_found}>Not found products</p>}
             </>
           }
         </div>

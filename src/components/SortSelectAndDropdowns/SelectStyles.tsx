@@ -10,6 +10,7 @@ export const useSelectStyles = () => {
   let menuPropsStyles: { PaperProps: { sx: SxProps } } = {
     PaperProps: { sx: {} },
   };
+  let inputStyles: SxProps = {};
 
   const selectStylesBase = {
     'fontFamily': 'Mont',
@@ -100,5 +101,43 @@ export const useSelectStyles = () => {
     };
   }
 
-  return { selectStyles, menuPropsStyles };
+  const inputStylesBase = {
+    'fontFamily': 'Mont',
+    'fontSize': '14px',
+    'fontWeight': 700,
+    'lineHeight': '21px',
+
+    '& .MuiOutlinedInput-root': {
+      'borderRadius': 0,
+      'backgroundColor': theme === 'dark' ? colors.black : colors.white,
+      'color': theme === 'dark' ? colors.white : colors.black,
+      '& fieldset': {
+        border: `1px solid ${theme === 'dark' ? colors.elements : colors.secondary}`,
+      },
+      '&:hover fieldset': {
+        border: `1px solid ${theme === 'dark' ? colors.surface1 : colors.text}`,
+      },
+      '&.Mui-focused fieldset': {
+        border: `1px solid ${theme === 'dark' ? colors.surface2 : '#0f1121'}`,
+      },
+    },
+
+    '& .MuiInputLabel-root': {
+      'color': theme === 'dark' ? colors.secondary : colors.text,
+      '&.Mui-focused': {
+        color: theme === 'dark' ? colors.white : '#0f1121',
+      },
+    },
+
+    '& .MuiInputBase-input': {
+      fontFamily: 'Mont',
+      color: theme === 'dark' ? colors.white : colors.black,
+    },
+  };
+
+  inputStyles = {
+    ...inputStylesBase,
+  };
+
+  return { selectStyles, menuPropsStyles, inputStyles };
 };
