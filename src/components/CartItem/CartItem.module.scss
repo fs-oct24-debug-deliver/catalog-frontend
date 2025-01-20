@@ -85,4 +85,8 @@
   &.button_minus_active {
     background: $surface2;
   }
+
+  &.button_minus_disabled {
+    background: var(--disabled-button);
+  }
 }
