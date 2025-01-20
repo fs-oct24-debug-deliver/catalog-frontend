@@ -40,11 +40,11 @@
 }
 
 .isLight {
-  background-color: $accent;
+  background-color: var(--switcher);
 }
 
 .isDark {
-  background-color: #e0e0e0;
+  background-color: var(--switcher);
 }
 
 .input:checked + .slider {

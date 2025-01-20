@@ -48,12 +48,12 @@ export const CartItem: React.FC<Props> = ({ card }) => {
       <div className={styles.second}>
         <div className={styles.second_right}>
           <button
-            className={styles.button}
+            className={`${styles.button} ${card.quantity > 1 ? styles.button_minus_active : ''}`}
             onClick={handleDecreaseQuantity}
           >
             <img
               src="./img/icons/minus-cart.svg"
-              alt="Plus icon"
+              alt="Minus icon"
             />
           </button>
           <span>{card.quantity}</span>
@@ -63,7 +63,7 @@ export const CartItem: React.FC<Props> = ({ card }) => {
           >
             <img
               src="./img/icons/plus-cart.svg"
-              alt="Minus icon"
+              alt="Plus icon"
             />
           </button>
         </div>

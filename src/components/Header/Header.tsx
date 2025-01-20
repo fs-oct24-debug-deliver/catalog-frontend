@@ -7,8 +7,12 @@ import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { getNavLinkClass } from '../../utils';
 import { useAppSelector } from '../../app/hooks';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
+import { LanguageSelector } from '../../i18n/components/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 export const Header: React.FC = () => {
+  const { t } = useTranslation();
+
   const [openMenu, setOpenMenu] = useState(false);
 
   const cartCount = useAppSelector(({ cart }) => cart.items).length;
@@ -40,7 +44,10 @@ export const Header: React.FC = () => {
     <header>
       <div className={styles.header}>
         <div className={styles.header__right}>
-          <Link to={'/'}>
+          <Link
+            onClick={() => window.scrollTo({ top: 0 })}
+            to={'/'}
+          >
             <img
               src={logo}
               alt="Nice gadgets icon"
@@ -64,6 +71,7 @@ export const Header: React.FC = () => {
                   className={`defaultUppercaseStyles ${styles.header__item}`}
                 >
                   <NavLink
+                    onClick={() => window.scrollTo({ top: 0 })}
                     className={({ isActive }) =>
                       getNavLinkClass(
                         isActive,
@@ -73,7 +81,7 @@ export const Header: React.FC = () => {
                     }
                     to={link.link}
                   >
-                    {link.title}
+                    {t(`header.${link.title}`)}
                   </NavLink>
                 </li>
               ))}
@@ -82,11 +90,14 @@ export const Header: React.FC = () => {
         </div>
 
         <div className={styles.header__left}>
+          <LanguageSelector />
+
           <div className={styles.header__themeToggle}>
             <ThemeToggle />
           </div>
           <div className={styles.header__left_links}>
             <NavLink
+              onClick={() => window.scrollTo({ top: 0 })}
               to={'/favorites'}
               className={({ isActive }) =>
                 `${getNavLinkClass(
@@ -111,6 +122,7 @@ export const Header: React.FC = () => {
               </div>
             </NavLink>
             <NavLink
+              onClick={() => window.scrollTo({ top: 0 })}
               to={'/cart'}
               className={({ isActive }) =>
                 `${getNavLinkClass(

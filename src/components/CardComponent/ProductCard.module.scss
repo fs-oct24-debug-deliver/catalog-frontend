@@ -4,14 +4,14 @@
 .card {
   min-width: 212px;
   padding: 32px;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   box-sizing: border-box;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   background: var(--surface1);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-card);
 
   transition: 0.3s;
 
@@ -69,7 +69,7 @@
 }
 
 .separator {
-  border: 1px solid $elements;
+  border: 1px solid var(--separator);
 }
 
 .details {

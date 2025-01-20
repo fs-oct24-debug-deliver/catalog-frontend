@@ -6,6 +6,7 @@ import '../../../styles/index.scss';
 import { getNavLinkClass } from '../../../utils';
 import { useAppSelector } from '../../../app/hooks';
 import { ThemeToggle } from '../../ThemeToggle/ThemeToggle';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   open: boolean;
@@ -22,7 +23,10 @@ export const BurgerMenu: React.FC<Props> = ({
 }) => {
   const handleCloseMenu = () => {
     setOpen(false);
+    window.scrollTo({ top: 0 });
   };
+  const { t } = useTranslation();
+
   const theme = useAppSelector((state) => state.theme.theme);
 
   const logo =
@@ -94,7 +98,7 @@ export const BurgerMenu: React.FC<Props> = ({
                   )
                 }
               >
-                {link.title}
+                {t(`header.${link.title}`)}
               </NavLink>
             </li>
           ))}

@@ -20,7 +20,6 @@ export const PhonesPage = () => {
 
   return (
     <TemplatePage
-      title={'Mobile phones'}
       products={phones}
       errorMessage={errorMessage}
       isLoading={isLoading}

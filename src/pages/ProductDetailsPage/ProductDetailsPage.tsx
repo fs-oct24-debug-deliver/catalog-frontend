@@ -13,10 +13,15 @@ import { Loader } from '../../components/Loader';
 import { Card } from '../../types/Card';
 import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { Characteristics } from './components/Characteristics';
+import { useTranslation } from 'react-i18next';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+
+import Alarm from '/img/icons/alarm.svg';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const getCategoryFromPath = (): string => {
     if (location.pathname.includes('phones')) return 'phones';
@@ -105,18 +110,31 @@ export const ProductDetailsPage = () => {
   if (!product) {
     return (
       <>
-        <ButtonBack />
-        <h1>Product not found! {product}</h1>
+        <div className={styles.container_back}>
+          <ButtonBack />
+        </div>
+        <div className={styles.container}>
+          <div className={styles.icon}>
+            <img
+              src={Alarm}
+              alt="Coding icon"
+              className="not-found__icon"
+            />
+          </div>
+          <div>
+            <p className={styles.text}>Product not found</p>
+          </div>
+        </div>
       </>
     );
   }
 
   return (
     <>
+      <Breadcrumbs />
       {errorMessage ?
         <h1>{errorMessage}</h1>
       : <div>
-          <div className={styles.bread_crumps}>Breadcrumps...</div>
           <ButtonBack />
           {isLoading && <Loader />}
 
@@ -158,7 +176,7 @@ export const ProductDetailsPage = () => {
             <div className={styles.swiper_component}>
               <SwiperComponent
                 cards={recomendedProducts}
-                title="You may also like"
+                title={t('homePage.newModelsTitle')}
               />
             </div>
           )}

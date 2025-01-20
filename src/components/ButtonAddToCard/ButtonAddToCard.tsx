@@ -4,6 +4,8 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { addCart, removeCart } from '../../features/cartSlice';
 import { Card } from '../../types/Card';
 import toast from 'react-hot-toast';
+import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   title?: string;
@@ -16,6 +18,7 @@ export const ButtonAddToCard: React.FC<Props> = ({
   onClick,
   card,
 }) => {
+  const { t } = useTranslation();
   const [title, setTitle] = useState(initialTitle);
   const isInCart = useAppSelector(({ cart }) => cart.items).some(
     (c) => c.itemId === card?.itemId,
@@ -23,8 +26,8 @@ export const ButtonAddToCard: React.FC<Props> = ({
 
   if (card) {
     useEffect(() => {
-      setTitle(isInCart ? 'Added to cart' : 'Add to cart');
-    }, [isInCart]);
+      setTitle(isInCart ? t('buttons.added') : t('buttons.add_to_cart'));
+    }, [isInCart, t]);
   }
 
   const dispatch = useAppDispatch();
@@ -32,10 +35,10 @@ export const ButtonAddToCard: React.FC<Props> = ({
   const handleClick = () => {
     toast.dismiss();
     setTitle((prevTitle) => {
-      if (prevTitle === 'Add to cart') {
+      if (prevTitle === t('buttons.add_to_cart')) {
         if (card) {
           dispatch(addCart({ ...card, quantity: 1 }));
-          toast('Added to cart', {
+          toast(t('buttons.added'), {
             icon: (
               <div className={buttonStyle.modal}>
                 <img
@@ -52,15 +55,14 @@ export const ButtonAddToCard: React.FC<Props> = ({
             },
           });
         } else {
-          toast.error('Something went wrong');
+          toast.error(t('buttons.something_wrong'));
           console.warn('No card provided for adding to cart.');
         }
-
-        return 'Added to cart';
+        return t('buttons.added');
       } else {
         if (card) {
           dispatch(removeCart(card.id));
-          toast.error('Removed from cart', {
+          toast.error(t('buttons.removed'), {
             icon: (
               <div className={buttonStyle.modal}>
                 <img
@@ -77,22 +79,22 @@ export const ButtonAddToCard: React.FC<Props> = ({
             },
           });
         } else {
-          toast.error('Something went wrong');
+          toast.error(t('buttons.something_wrong'));
         }
-
-        return 'Add to cart';
+        return t('buttons.add_to_cart');
       }
     });
   };
 
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       className={`${buttonStyle.addCard} ${
-        title === 'Added to cart' ? buttonStyle.addedCard : ''
+        title === t('buttons.added') ? buttonStyle.addedCard : ''
       }`}
       onClick={onClick || handleClick}
     >
       {title}
-    </button>
+    </motion.button>
   );
 };

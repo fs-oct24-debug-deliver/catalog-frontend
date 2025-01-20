@@ -4,9 +4,13 @@ import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { useEffect, useState } from 'react';
 import { getAllProducts } from '../../servises/getAllData';
 import { Card } from '../../types/Card';
+import { motion } from 'motion/react';
 import styles from './components/HomePage.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const HomePage = () => {
+  const { t } = useTranslation();
+
   const [hotPriceProducts, setHotPriceProducts] = useState<Card[]>();
   const [newModelsProducts, setNewModelsProducts] = useState<Card[]>();
   const [isLoadingHotPriceProducts, setIsLoadingHotPriceProducts] =
@@ -35,7 +39,12 @@ export const HomePage = () => {
   }, []);
   return (
     <div>
-      <h1 className={styles.margins}>Welcome to Nice Gadgets store!</h1>
+      <motion.h1
+        whileInView={{ opacity: 1 }}
+        className={styles.margins}
+      >
+        {t('homePage.mainTitle')}
+      </motion.h1>
       <section className={styles.section}>
         <HomePageSwiper />
       </section>
@@ -43,7 +52,7 @@ export const HomePage = () => {
         {!isLoadingNewModelsProducts && newModelsProducts?.length && (
           <SwiperComponent
             cards={newModelsProducts}
-            title="Brand new models"
+            title={t('homePage.newModelsTitle')}
           />
         )}
       </section>
@@ -55,7 +64,7 @@ export const HomePage = () => {
         {!isLoadingHotPriceProducts && hotPriceProducts?.length && (
           <SwiperComponent
             cards={hotPriceProducts}
-            title="Hot price"
+            title={t('homePage.hotPricesTitle')}
           />
         )}
       </section>

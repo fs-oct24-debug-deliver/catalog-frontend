@@ -5,6 +5,7 @@ import { ButtonAddToFavourites } from '../ButtonAddToFavourites/ButtonAddToFavou
 import cardStyles from './ProductCard.module.scss';
 import { useAppSelector } from '../../app/hooks';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   card: Card;
@@ -23,6 +24,7 @@ export const ProductCard: React.FC<Props> = ({ card, notScale }) => {
     capacity,
     ram,
   } = card;
+  const { t } = useTranslation();
 
   const isInCart = useAppSelector(({ cart }) =>
     cart.items.some((item) => item.id === card.id),
@@ -59,15 +61,16 @@ export const ProductCard: React.FC<Props> = ({ card, notScale }) => {
 
       <ul className={cardStyles.details}>
         <li className={cardStyles.item}>
-          <p className={cardStyles.itemName}>Screen</p>
+          <p className={cardStyles.itemName}>{t('details.screen')}</p>
           <p className={cardStyles.itemValue}>{screen}</p>
         </li>
         <li className={cardStyles.item}>
-          <p className={cardStyles.itemName}>Capacity</p>
+          <p className={cardStyles.itemName}>{t('details.capacity')}</p>
           <p className={cardStyles.itemValue}>{capacity}</p>
         </li>
         <li className={cardStyles.item}>
-          <p className={cardStyles.itemName}>RAM</p>
+          <p className={cardStyles.itemName}>{t('details.built_in_memory')}</p>
+
           <p className={cardStyles.itemValue}>{ram}</p>
         </li>
       </ul>

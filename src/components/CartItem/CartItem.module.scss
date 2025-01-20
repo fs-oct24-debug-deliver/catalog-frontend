@@ -52,12 +52,22 @@
     display: flex;
     gap: 14px;
     align-items: center;
+    justify-content: space-between;
+    min-width: 120px;
   }
+
+  &_left {
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+  }
+
   @include screen-width(tablet) {
     justify-content: end;
     gap: 24px;
   }
 }
+
 .button {
   height: 32px;
   width: 32px;
@@ -69,6 +79,10 @@
   justify-content: center;
 
   &_plus {
+    background: $surface2;
+  }
+
+  &.button_minus_active {
     background: $surface2;
   }
 }

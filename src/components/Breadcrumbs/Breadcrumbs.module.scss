@@ -25,15 +25,12 @@
     color: var(--secondary);
     transition: transform 0.5s;
     transform: scale(1);
+    cursor: default;
+  }
 
-    &:hover {
-      text-decoration: none;
-
-      color: $accent;
-
-      transition: 0.5s;
-      transform: scale(1.1);
-    }
+  & .linkWithFilter:hover {
+    filter: $filter-purple;
+    cursor: pointer;
   }
 
   & .icon {

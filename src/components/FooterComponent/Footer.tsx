@@ -4,6 +4,7 @@ import ArrowUp from './img/arrow-up.svg?react';
 import Logo from './img/logo.svg?react';
 import LightLogo from './img/light-logo.svg?react';
 import { useAppSelector } from '../../app/hooks';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -12,6 +13,8 @@ export const Footer = () => {
       behavior: 'smooth',
     });
   };
+  const { t } = useTranslation();
+
   const theme = useAppSelector((state) => state.theme.theme);
   const logo = theme === 'dark' ? <Logo /> : <LightLogo />;
 
@@ -28,27 +31,27 @@ export const Footer = () => {
             target="_blank"
             className={`${footerStyles.link} defaultUppercaseStyles`}
           >
-            github
+            {t('footer.github')}
           </Link>
 
           <NavLink
             to={'/contacts'}
             className={`${footerStyles.link} defaultUppercaseStyles`}
           >
-            contacts
+            {t('footer.contacts')}
           </NavLink>
 
           <NavLink
             to={'/rights'}
             className={`${footerStyles.link} defaultUppercaseStyles`}
           >
-            rights
+            {t('footer.rights')}
           </NavLink>
         </div>
 
         <div className={footerStyles.to_top}>
           <span className={`${footerStyles.label} defaultSmallTextStyles`}>
-            Back to top
+            {t('footer.back_to_top')}
           </span>
           <button
             className={footerStyles.button}

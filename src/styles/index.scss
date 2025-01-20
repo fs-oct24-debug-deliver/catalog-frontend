@@ -89,3 +89,11 @@ button {
   line-height: 11px;
   letter-spacing: 4%;
 }
+
+.grid_container {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  gap: 40px 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 256px));
+}

@@ -3,21 +3,21 @@
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  gap: 10px;
+  align-items: center;
+  margin-block: 36px;
 
   @include screen-width(tablet) {
     flex-direction: row;
-    justify-content: space-evenly;
+    margin: auto;
+    gap: 20px;
   }
 }
 
 .icon img {
   width: 80px;
   height: 80px;
+  padding-bottom: 14px;
 
   @include screen-width(tablet) {
     width: 160px;
@@ -30,7 +30,22 @@
   }
 }
 
+.number {
+  text-align: center;
+  color: $text;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  width: 50vh;
+  line-height: 1.25;
+
+  @include screen-width(desktop) {
+    font-size: 30px;
+  }
+}
+
 .text {
+  text-align: center;
   color: $text;
   font-weight: 600;
   font-size: 16px;
@@ -39,7 +54,6 @@
 
   @include screen-width(tablet) {
     font-size: 20px;
-    width: 50%;
     line-height: 1.3;
   }
 
