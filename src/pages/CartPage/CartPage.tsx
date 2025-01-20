@@ -5,6 +5,8 @@ import { CartCheckout } from '../../components/CartCheckout/CartCheckout.tsx';
 import { useAppSelector } from '../../app/hooks.ts';
 import { useTranslation } from 'react-i18next';
 
+import Cart from '../../../public/img/icons/cart.svg';
+
 export const CartPage = () => {
   const cards = useAppSelector(({ cart }) => cart.items);
   const { t } = useTranslation();
@@ -42,7 +44,18 @@ export const CartPage = () => {
           <p className={styles.countOfProducts}>
             {t('cart.items', { count: cards.length })}
           </p>
-          <p className={styles.empty}>{t('cart.empty')}</p>
+          <div className={styles.container}>
+            <div className={styles.icon}>
+              <img
+                src={Cart}
+                alt="Rights icon"
+                className={styles.emptyCart}
+              />
+            </div>
+            <div className={styles.text}>
+              <p className={styles.empty}>{t('cart.empty')}</p>
+            </div>
+          </div>
         </>
       }
     </>
