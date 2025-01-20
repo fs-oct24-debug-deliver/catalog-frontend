@@ -48,7 +48,7 @@ export const CartItem: React.FC<Props> = ({ card }) => {
       <div className={styles.second}>
         <div className={styles.second_right}>
           <button
-            className={`${styles.button} ${card.quantity > 1 ? styles.button_minus_active : ''}`}
+            className={`${styles.button} ${card.quantity > 1 ? styles.button_minus_active : styles.button_minus_disabled}`}
             onClick={handleDecreaseQuantity}
           >
             <img
