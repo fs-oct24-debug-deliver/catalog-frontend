@@ -6,6 +6,7 @@ import '../../../../styles/index.scss';
 import { ButtonAddToCard } from '../../../../components/ButtonAddToCard/ButtonAddToCard';
 import { ButtonAddToFavourites } from '../../../../components/ButtonAddToFavourites/ButtonAddToFavourites';
 import { Card } from '../../../../types/Card';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   product: Product;
@@ -16,20 +17,23 @@ interface Props {
   card: Card;
 }
 
-export const Characteristics: React.FC<Props> = ({
-  product,
-  handleCapacityChange,
-  handleColorChange,
-  selectedColor,
-  selectedCapacity,
-  card,
-}) => {
+export const Characteristics: React.FC<Props> = (props) => {
+  const {
+    product,
+    handleCapacityChange,
+    handleColorChange,
+    selectedColor,
+    selectedCapacity,
+    card,
+  } = props;
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <div className={styles.selections}>
         <div className={styles.selection_container}>
           <h3 className={`${styles.title} defaultSmallTextStyles`}>
-            Available colors:
+            {t('details.title.color')}
           </h3>
           <div className={styles.selection}>
             {product.colorsAvailable.map((color) => {
@@ -58,7 +62,7 @@ export const Characteristics: React.FC<Props> = ({
         </div>
         <div className={styles.selection_container}>
           <h3 className={`${styles.title} defaultSmallTextStyles`}>
-            Select capacity:
+            {t('details.title.capacity')}
           </h3>
           <div className={styles.selection}>
             {product.capacityAvailable.map((capacity) => (
@@ -88,13 +92,13 @@ export const Characteristics: React.FC<Props> = ({
         </div>
       </div>
       <dl className={`defaultSmallTextStyles ${styles.description}`}>
-        <dt>Screen</dt>
+        <dt>{t('details.screen')}</dt>
         <dd>{product.screen}</dd>
 
-        <dt>Resolution</dt>
+        <dt>{t('details.resolution')}</dt>
         <dd>{product.resolution}</dd>
 
-        <dt>Processor</dt>
+        <dt> {t('details.processor')}</dt>
         <dd>{product.processor}</dd>
 
         <dt>RAM</dt>

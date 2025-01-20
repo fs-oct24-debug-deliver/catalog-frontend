@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import styleButton from './ButtonBack.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const ButtonBack = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <button
@@ -14,7 +16,7 @@ export const ButtonBack = () => {
         src="/img/icons/arrow-back.svg"
         alt="arrow-back-icon"
       />
-      <span>Back</span>
+      <span>{t('buttons.back')}</span>
     </button>
   );
 };

@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
+import { useTranslation } from 'react-i18next';
 
 import styles from './NotFoundPage.module.scss';
-import Coding from '../../../public/img/icons/coding.svg';
+import Coding from '/img/icons/coding.svg';
 
 export const NotFoundPage: React.FC = () => {
   const theme = useAppSelector((state: RootState) => state.theme.theme);
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark');
@@ -24,8 +26,8 @@ export const NotFoundPage: React.FC = () => {
           />
         </div>
         <div>
-          <p className={styles.number}>404</p>
-          <p className={styles.text}>Page not found</p>
+          <p className={styles.number}>{t('error404.title')}</p>
+          <p className={styles.text}>{t('error404.message')}</p>
         </div>
       </div>
     </>

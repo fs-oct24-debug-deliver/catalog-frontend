@@ -13,13 +13,15 @@ import { Loader } from '../../components/Loader';
 import { Card } from '../../types/Card';
 import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { Characteristics } from './components/Characteristics';
+import { useTranslation } from 'react-i18next';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
-import Alarm from '../../../public/img/icons/alarm.svg';
+import Alarm from '/img/icons/alarm.svg';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const getCategoryFromPath = (): string => {
     if (location.pathname.includes('phones')) return 'phones';
@@ -174,7 +176,7 @@ export const ProductDetailsPage = () => {
             <div className={styles.swiper_component}>
               <SwiperComponent
                 cards={recomendedProducts}
-                title="You may also like"
+                title={t('homePage.newModelsTitle')}
               />
             </div>
           )}

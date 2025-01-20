@@ -1,8 +1,11 @@
 import styles from './RightsPage.module.scss';
+import { useTranslation } from 'react-i18next';
 
-import Protection from '../../../public/img/icons/protection.svg';
+import Protection from './protection.svg';
 
 export const RightsPage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={styles.container}>
@@ -13,14 +16,7 @@ export const RightsPage = () => {
             className="rights__icon"
           />
         </div>
-        <div className={styles.text}>
-          <p>
-            All rights belong to the Debug&Deliver team and are protected. Our
-            code is our compass for innovation and progress. Every line of code
-            represents a stride toward our mission to craft technology that is
-            intuitive, impactful, and empowers everyone to achieve more.
-          </p>
-        </div>
+        <p className={styles.text}>{t('rights.right')}</p>
       </div>
     </>
   );

@@ -3,11 +3,13 @@ import { CartItem } from '../../components/CartItem/CartItem.tsx';
 import { ButtonBack } from '../../components/ButtonBack';
 import { CartCheckout } from '../../components/CartCheckout/CartCheckout.tsx';
 import { useAppSelector } from '../../app/hooks.ts';
+import { useTranslation } from 'react-i18next';
 
 import Cart from '../../../public/img/icons/cart.svg';
 
 export const CartPage = () => {
   const cards = useAppSelector(({ cart }) => cart.items);
+  const { t } = useTranslation();
 
   const totalPrice = cards.reduce(
     (acc, card) => acc + card.price * card.quantity,
@@ -19,7 +21,8 @@ export const CartPage = () => {
       <div className={styles.container_back}>
         <ButtonBack />
       </div>
-      <h1>Cart</h1>
+      <h1>{t('cart.title')}</h1>
+
       {cards.length ?
         <div className={styles.wrapper}>
           <div className={styles.card_wrapper}>
@@ -43,7 +46,7 @@ export const CartPage = () => {
             <div className={styles.icon}>
               <img
                 src={Cart}
-                alt="Rights icon"
+                alt="Cart icon"
                 className={styles.emptyCart}
               />
             </div>
