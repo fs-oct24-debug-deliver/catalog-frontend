@@ -13,7 +13,6 @@ import { Loader } from '../../components/Loader';
 import { Card } from '../../types/Card';
 import { SwiperComponent } from '../../components/Swiper/Swiper';
 import { Characteristics } from './components/Characteristics';
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
 export const ProductDetailsPage = () => {
   const { itemId } = useParams();
@@ -117,9 +116,7 @@ export const ProductDetailsPage = () => {
       {errorMessage ?
         <h1>{errorMessage}</h1>
       : <div>
-          <div className={styles.bread_crumps}>
-            <Breadcrumbs />
-          </div>
+          <div className={styles.bread_crumps}>Breadcrumps...</div>
           <ButtonBack />
           {isLoading && <Loader />}
 
