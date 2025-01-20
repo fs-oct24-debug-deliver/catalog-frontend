@@ -4,6 +4,8 @@ import { ButtonBack } from '../../components/ButtonBack';
 import { CartCheckout } from '../../components/CartCheckout/CartCheckout.tsx';
 import { useAppSelector } from '../../app/hooks.ts';
 
+import Cart from '../../../public/img/icons/cart.svg';
+
 export const CartPage = () => {
   const cards = useAppSelector(({ cart }) => cart.items);
 
@@ -37,9 +39,20 @@ export const CartPage = () => {
         </div>
       : <>
           <p className={styles.countOfProducts}>{cards.length} items</p>
-          <p className={styles.empty}>
-            Your cart is empty. You can receive our product on the site.
-          </p>
+          <div className={styles.container}>
+            <div className={styles.icon}>
+              <img
+                src={Cart}
+                alt="Rights icon"
+                className={styles.emptyCart}
+              />
+            </div>
+            <div className={styles.text}>
+              <p className={styles.empty}>
+                Your cart is empty. You can receive our product on the site.
+              </p>
+            </div>
+          </div>
         </>
       }
     </>
