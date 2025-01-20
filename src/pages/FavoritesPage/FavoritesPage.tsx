@@ -29,19 +29,7 @@ export const FavoritesPage: React.FC<Props> = ({ isLoading = false }) => {
         </p>
 
         {favorites.length === 0 ?
-          <>
-            <div className={styles.container}>
-              <div className={styles.icon}>
-                <img
-                  src={Charity}
-                  alt="Empty favorites icon"
-                />
-              </div>
-              <div className={styles.text}>
-                <p className={styles.empty}>No items in your favorites.</p>
-              </div>
-            </div>
-          </>
+          <p className={styles.emptyState}>{t('favorites.empty')}</p>
         : <GridAdaptive products={favorites} />}
       </div>
     </>
